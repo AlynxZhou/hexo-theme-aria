@@ -1,0 +1,36 @@
+.author {
+    text-align: center;
+    .author-avatar {
+	    max-width: $avatar-max-width;
+    }
+    .author-name {
+        color: $black-deep;
+        font-size: 1.5em;
+    }
+    .author-description {
+        color: $grey-dark;
+        font-size: 1.2em;
+    }
+}
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    a {
+        display: block;
+        text-decoration: none;
+        color: $black-dim;
+        &:hover {
+            border-radius: 4px;
+            background: $grey-light;
+            transition-property: background-color;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 0s;
+        }
+        padding: 5px;
+        margin: 0 5px;
+    }
+}

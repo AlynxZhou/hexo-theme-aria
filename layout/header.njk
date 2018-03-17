@@ -1,0 +1,11 @@
+{% block header %}
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-title">
+      <h1 class="title"><a href="{{ url_for() }}">{{ config.title }}</a></h1>
+      <h2 class="subtitle">{{ config.subtitle }}</h2>
+    </div>
+    {% include "nav.njk" %}
+  </div>
+</header>
+{% endblock %}

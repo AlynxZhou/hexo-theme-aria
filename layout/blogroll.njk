@@ -1,0 +1,12 @@
+{% block blogroll %}
+{% if theme.blogroll %}
+<div class="blogroll">
+  <p><i class="fas fa-link"></i> Blog Roll</p>
+  <ul>
+    {% for k, v in theme.blogroll %}
+    <li><a href="{{ v }}" target="_blank">{{ k }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% endblock %}

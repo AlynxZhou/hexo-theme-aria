@@ -1,0 +1,21 @@
+{% block author %}
+<div class="author" id="author">
+  {% if theme.avatar %}
+  <img class="author-avatar" src="{{ theme.avatar }}" alt="{{ config.author }}">
+  {% endif %}
+  <p class="author-name">{{ config.author }}</p>
+  <p class="author-description"> {{ config.description }}</p>
+</div>
+{% if theme.social %}
+<div class="social-links">
+  {% for k, v in theme.social %}
+  <a href="{{ v.link }}">
+    {% if v.icon %}
+    <i class="{{ v.icon }}"></i>
+    {% endif %}
+    {{ k }}
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

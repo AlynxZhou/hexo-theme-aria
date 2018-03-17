@@ -1,0 +1,20 @@
+{
+  "name": "aria",
+  "version": "0.0.1",
+  "description": "A Hexo theme inspired by Kalafina's song ARIA.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlynxZhou/hexo-theme-aria.git"
+  },
+  "keywords": [
+    "Hexo",
+    "Theme",
+    "ARIA"
+  ],
+  "author": "AlynxZhou",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/AlynxZhou/hexo-theme-aria/issues"
+  },
+  "homepage": "https://github.com/AlynxZhou/hexo-theme-aria#readme"
+}

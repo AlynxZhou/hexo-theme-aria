@@ -1,0 +1,27 @@
+nav:
+  Index: /
+  Archives: /archives/
+  Categories: /categories/
+  Tags: /tags/
+  About: /about/
+
+avatar: /images/Future_Gazer.jpg
+
+since: 2016
+
+social:
+  GitHub:
+    link: https://github.com/
+    icon: fab fa-github
+  Weibo:
+    link: https://weibo.com/
+    icon: fab fa-weibo
+
+blogroll:
+  MDN: https://developer.mozilla.org/
+  Nunjucks: https://mozilla.github.io/nunjucks/
+  Stylus: http://stylus-lang.com/
+
+comment: false
+
+sidebar: right

@@ -1,0 +1,56 @@
+@import "variables";
+@import "header";
+@import "main";
+@import "sidebar";
+@import "author";
+@import "blogroll";
+@import "footer";
+html, body, .container {
+    height: 100%;
+}
+::selection {
+    color: $color-selection-font;
+    background: $color-selection;
+}
+body {
+    color: $color-font;
+    background: $color-background;
+    font: $font-size $font-sans;
+    -webkit-text-size-adjust: 100%;
+}
+a {
+    color: $color-link;
+    &:hover {
+        color: $color-link-hover;
+    }
+}
+hr {
+    margin: 40px 0;
+    height: 3px;
+    border: none;
+    margin-left:auto;
+    margin-right:auto;
+    width: auto;
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    background-color: #ddd;
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+}
+code {
+    margin: 0 2px;
+    color: #e96900;
+    padding: 3px 5px;
+    font-size: 0.8em;
+    border-radius: 2px;
+    font-family: $font-mono;
+    background-color: #f8f8f8;
+}
+.container {
+    position: relative;
+    padding: 0;
+    max-width: $container-max-width;
+    min-width: $container-min-width;
+    width: 100%;
+    margin: 0 auto;
+}
