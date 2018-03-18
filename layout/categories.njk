@@ -1,0 +1,26 @@
+{% extends "_layout.njk" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block content %}
+<section class="categories animate" id="categories">
+  <div class="categories-counter">
+    {% set visibleCategories = 0 %}
+    {% for cat in site.categories.toArray() %}
+    {% if cat.length %}
+    {% set visibleCategories = visibleCategories + 1 %}
+    {% endif %}
+    {% endfor %}
+    {% if visibleCategories > 1 %}
+    <p>You have {{ visibleCategories }} categories.</p>
+    {% elif visibleCategories == 1 %}
+    <p>You have {{ visibleCategories }} category.</p>
+    {% else %}
+    <p>You have no category.</p>
+    {% endif %}
+  </div>
+  <div class="categories-list">
+    {{ list_categories() }}
+  </div>
+</section>
+{% endblock %}

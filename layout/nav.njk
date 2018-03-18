@@ -1,9 +1,9 @@
 {% block nav %}
 <nav id="nav" class="nav">
   <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
-  <ul>
+  <ul id="menu">
     {% for k, v in theme.nav %}
-    <li><a href="{{ url_for(v) }}" {% if (url_for(v) + "index.html") == ("/" + path) %}class="current"{% endif %}>{{ k }}</a></li>
+    <li class="menu-item"><a href="{{ url_for(v) }}" {% if (url_for(v) + "index.html") == ("/" + path) %}class="current"{% endif %}>{{ k }}</a></li>
     {% endfor %}
   </ul>
 </nav>

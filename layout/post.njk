@@ -1,9 +1,87 @@
 {% extends "_layout.njk" %}
 
-{% block title %}{{ config.title }} - {{ config.subtitle }}{% endblock %}
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<section id="posts" class="posts">
-  <h1>Fucking hidden template.</h1>
+<section id="post-content" class="post-content">
+  {% set post = page %}
+  <article class="post animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="{{ config.author }}">
+       <meta itemprop="description" content="{{ config.description }}">
+       <meta itemprop="image" content="{{ url_for( theme.avatar) }}">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="{{ config.title }}">
+      </span>
+    </div>
+    <header class="post-header">
+      <h3 class="post-title" itemprop="name headline">
+       <span class="{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}">{{ post.title }}</span>
+      </h3>
+      <div class="post-meta">
+       {% if post.date %}
+       <span class="post-date">
+        <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }}</time>
+       </span>
+       {% endif %}
+       {% if post.categories and post.categories.toArray().length %}
+       <span class="post-meta-divider"> | </span>
+       <span class="post-categories">
+        <i class="far fa-folder-open"></i>
+        {% for cat in post.categories.toArray() %}
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
+        {% endfor %}
+       </span>
+       {% endif %}
+       {% if post.comments and theme.comment %}
+       <span class="post-meta-divider"> | </span>
+        {% if theme.disqus.enable and theme.disqus.count %}
+        <span class="post-comments-count">
+          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
+        </span>
+        {% elif theme.hypercomments_id %}
+        <!--noindex-->
+        <span class="post-comments-count">
+          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
+        </span>
+        <!--/noindex-->
+        {% endif %}
+       {% endif %}
+      </div>
+    </header>
+    <main class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
+      {{ post.content }}
+    </main>
+    <footer class="post-footer">
+      {% if theme.alipay or theme.wechatpay %}
+      {% include "reward.njk" %}
+      {% endif %}
+      {% if post.tags and post.tags.toArray().length %}
+      <div class="post-tags">
+       {% for tag in post.tags.toArray() %}
+       <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
+       {% endfor %}
+      </div>
+      {% endif %}
+    </footer>
+  </article>
+  {% if post.prev or post.next %}
+  <div class="post-nav animate">
+    {% if post.next %}
+    <div class="post-nav-next post-nav-item">
+      <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}"><i class="fas fa-angle-left"></i> {{ post.next.title }}</a>
+    </div>
+    {% endif %}
+    <span class="post-nav-divider"></span>
+    {% if post.prev %}
+    <div class="post-nav-prev post-nav-item">
+      <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">{{ post.prev.title }} <i class="fas fa-angle-right"></i></a>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
 </section>
 {% endblock %}

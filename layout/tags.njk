@@ -1,0 +1,26 @@
+{% extends "_layout.njk" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block content %}
+<section class="tags animate" id="tags">
+  <div class="tags-counter">
+    {% set visibleTags = 0 %}
+    {% for tag in site.tags.toArray() %}
+    {% if tag.length %}
+    {% set visibleTags = visibleTags + 1 %}
+    {% endif %}
+    {% endfor %}
+    {% if visibleTags > 1 %}
+    <p>You have {{ visibleTags }} tags.</p>
+    {% elif visibleTags == 1 %}
+    <p>You have {{ visibleTags }} tag.</p>
+    {% else %}
+    <p>You have no tag.</p>
+    {% endif %}
+  </div>
+  <div class="tags-cloud">
+    {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: "#777", end_color: "#111"}) }}
+  </div>
+</section>
+{% endblock %}

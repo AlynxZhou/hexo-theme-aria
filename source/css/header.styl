@@ -1,28 +1,46 @@
 @import "nav";
 .header {
-    margin-bottom: 0px;
-    background: $color-header-background;
-    position: relative;
-    ::selection {
-        color: $color-header-selection-font;
-        background: $color-header-selection;
-    }
+  padding-bottom: $sidebar-toggle-height;
+  margin-bottom: 0;
+  background: $color-header-background;
+  position: relative;
+  &::selection {
+    color: $color-light-selection-font;
+    background: $color-light-selection;
+  }
+  .header-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-betweem;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: 100%;
     .header-title {
+      flex-grow: 2;
+      color: $color-title;
+      padding: 10px 10px;
+      a {
         color: $color-title;
-        padding: 10px 10px;
-        a {
-            color: $color-title;
-            text-decoration: none;
-            &:hover {
-                color: $color-title-hover;
-            }
+        text-decoration: none;
+        &:hover {
+          color: $color-title;
         }
-        .title {
-            font-size: $font-size-title;
-        }
-        .subtitle {
-            font-style: italic;
-            text-shadow: 0 1px rgba(0, 0, 0, 0.2);
-        }
+      }
+      .title {
+        font-size: $font-size-title;
+      }
+      .subtitle {
+        font-style: italic;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+      }
     }
+    .logo {
+      flex-grow:  1;
+      text-align: center;
+      padding-top:20px;
+      img {
+        max-width: 400px;
+      }
+    }
+  }
 }

@@ -1,27 +1,78 @@
 .main {
-    margin-top: 0px;
-    .container {
-        background-color: white;
+  margin-top: - $sidebar-toggle-height;
+  .main-body {
+    background: $color-main-background;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+    border-bottom-left-radius: $corner-radius;
+    border-bottom-right-radius: $corner-radius;
+    display: flex;
+    if (hexo-config("sidebar") == "right") {
+      flex-direction: row;
+    } else if (hexo-config("sidebar") == "left") {
+      flex-direction: row-reverse;
     }
-    .main-body {
-        box-sizing: border-box;
-        box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
-        border-bottom-left-radius: 7px;
-        border-bottom-right-radius: 7px;
-        display: flex;
-        if (hexo-config("sidebar") == "right") {
-            flex-direction: row;
-        } else if (hexo-config("sidebar") == "left") {
-            flex-direction: row-reverse;
-        }
-        justify-content: space-around;
-        align-items: stretch;
-        flex-wrap: wrap;
-    }
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    padding: 0;
     .content {
-        flex-grow: 4;
-        padding: 10px 15px;
-        min-width: $content-min-width;
-        max-width: $content-max-width;
+      flex-grow: 4;
+      flex-basis: 75%;
+      .index-post {
+        background: white;
+        padding: 20px;
+        // margin: 10px;
+        // box-sizing: border-box;
+        // box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+        img {
+          max-width: 100%;
+        }
+        .readmore {
+          display: inline-block;
+          padding: 5px 20px;
+          font-size: 1em;
+          color: $color-link;
+          border: 2px solid #555;
+          text-decoration: none;
+          border-radius: $corner-radius;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            color: $color-light-link-hover;
+            background: $color-light-link-hover-background;
+          }
+        }
+        .post-header {
+          padding: 5px 5px;
+          .post-title-link {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            color: $color-font;
+            &::after {
+              content: " ";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background: $color-font;
+              visibility: hidden;
+              transform: scaleX(0);
+              transition: 0.2s ease-in-out;
+            }
+            &:hover::after {
+              visibility: visible;
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
     }
+  }
+  @media (max-width: 768px) {
+    .main-body {
+      flex-direction: column;
+    }
+  }
 }

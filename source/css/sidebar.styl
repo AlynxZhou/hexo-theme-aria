@@ -1,18 +1,57 @@
 .sidebar {
-    background: $color-sidebar-background;
-    flex-grow: 1;
-    padding: 10px 15px;
-    hr {
-        margin: 40px 0;
-        height: 3px;
-        border: none;
-        margin-left:auto;
-        margin-right:auto;
-        width: auto;
-        position: relative;
-        display: block;
-        box-sizing: content-box;
-        background-color: #ddd;
-        background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+  flex-grow: 1;
+  flex-basis: 20%
+  padding: 0;
+  transition: 0.2s ease-in-out;
+  .sidebar-toggle {
+    height: $sidebar-toggle-height;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    background: $blue;
+    color: $color-light-link;
+    &:hover {
+      color: $color-light-link-hover;
     }
+    &:active {
+      top: 2px;
+    }
+  }
+  .sidebar-content {
+    display: block;
+    padding: 15px;
+  }
+  &.fold {
+    .sidebar-content {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      padding: 0;
+    }
+    flex-basis: 1%
+    transition: 0.2s ease-in-out;
+  }
+  &.unfold {
+    .sidebar-content {
+      opacity: 1;
+      width: auto;
+      height: auto;
+      padding: 15px;
+    }
+    flex-basis: 20%
+    transition: 0.2s ease-in-out;
+  }
+  hr {
+    margin: 40px 0;
+    height: 3px;
+    border: none;
+    margin-left:auto;
+    margin-right:auto;
+    width: auto;
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    background-color: #ddd;
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+  }
 }

@@ -3,9 +3,9 @@
 {% block title %}{{ config.title }} - {{ config.subtitle }}{% endblock %}
 
 {% block content %}
-<section id="posts" class="posts">
+<section id="index" class="index">
   {% for post in page.posts.toArray() %}
-  <article class="index-post" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -18,9 +18,9 @@
       </span>
     </div>
     <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.link) }}" itemprop="url">{{ post.title }}</a>
-      </h2>
+      <h3 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+      </h3>
       <div class="post-meta">
         {% if post.date %}
         <span class="post-date">
@@ -70,7 +70,7 @@
       {% elif post.excerpt  %}
       {{ post.excerpt }}
       <div class="post-button">
-        <a class="readmore" href="{{ url_for(post.path) }}">Read More &raquo;</a>
+        <a class="readmore" href="{{ url_for(post.path) }}#more">Read More &gt;&gt;</a>
       </div>
       {% else %}
       {{ post.content }}
@@ -87,5 +87,16 @@
     </footer>
   </article>
   {% endfor %}
+  {% if page.prev or page.next %}
+  <nav class="pagination">
+  {{
+    paginator({
+      prev_text: '<i class="fas fa-angle-left"></i>',
+      next_text: '<i class="fas fa-angle-right"></i>',
+      mid_size: 1
+    })
+  }}
+  </nav>
+  {% endif %}
 </section>
 {% endblock %}

@@ -6,6 +6,7 @@ nav:
   About: /about/
 
 avatar: /images/Future_Gazer.jpg
+logo: /images/ARIA_logo.png
 
 since: 2016
 
@@ -24,4 +25,4 @@ blogroll:
 
 comment: false
 
-sidebar: right
+sidebar: left

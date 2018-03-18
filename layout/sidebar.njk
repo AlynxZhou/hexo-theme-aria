@@ -1,7 +1,12 @@
 {% block sidebar %}
 <aside class="sidebar" id="sidebar">
-  {% include "author.njk" %}
-  <hr>
-  {% include "blogroll.njk" %}
+  <a class="sidebar-toggle" id="sidebar-toggle"><i class="fas fa-angle-double-up"></i></a>
+  <div class="sidebar-content unfold">
+    {% include "author.njk" %}
+    {% include "blogroll.njk" %}
+    {% if page.content %}
+    {% include "toc.njk" %}
+    {% endif %}
+  </div>
 </aside>
 {% endblock %}

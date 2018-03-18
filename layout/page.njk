@@ -1,9 +1,16 @@
+{% if page.layout == "index" or page.type == "index" %}
+{% include "index.njk" %}
+{% elif page.layout == "categories" or page.type == "categories" %}
+{% include "categories.njk" %}
+{% elif page.layout == "tags" or page.type == "tags" %}
+{% include "tags.njk" %}
+{% else %}
 {% extends "_layout.njk" %}
-
-{% block title %}{{ page.title }} | {{ config.title }} - {{ config.subtitle }}{% endblock %}
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<section id="posts" class="posts">
-  <h1>Fucking hidden template.</h1>
+<section id="page-content" class="page-content animate">
+  {{ page.content }}
 </section>
 {% endblock %}
+{% endif %}
