@@ -1,11 +1,11 @@
 nav:
   Index: /
   Archives: /archives/
-  Categories: /categories/
-  Tags: /tags/
+  # Categories: /categories/
+  # Tags: /tags/
   About: /about/
 
-avatar: /images/Future_Gazer.jpg
+avatar: /images/avatar.jpg
 logo: /images/ARIA_logo.png
 
 since: 2016
