@@ -11,6 +11,7 @@ Usage:
 
 TODO:
   - More function
+  - Image display
   - Local search
   - Language translation
   - Docs
