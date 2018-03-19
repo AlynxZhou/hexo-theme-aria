@@ -6,10 +6,6 @@
       $("body, html").animate({ scrollTop: 0 }, 600);
     });
 
-    // Nav bar toggle
-    $("#nav-toggle").on("click", function () {
-      $("#menu").slideToggle();
-    });
 
     // Sidebar expend
     $("#sidebar-toggle").click(function () {
@@ -28,36 +24,54 @@
       }
     });
 
+    // Nav bar toggle
+    $("#nav-toggle").on("click", function () {
+      $("#menu").slideToggle();
+    });
+
+    // Auto hide main nav menus
+    function autoHideMenus() {
+        if ($(window).width() > 768) {
+          $("#menu").show();
+        } else {
+          $("#menu").hide();
+        }
+    }
+    autoHideMenus();
+    $(window).resize(function () {
+      autoHideMenus();
+    });
+
     // // Caption
-    // $('.article-entry').each(function(i) {
-    //   $(this).find('img').each(function() {
-    //     if (this.alt && !(!!$.prototype.justifiedGallery && $(this).parent('.justified-gallery').length)) {
-    //       $(this).after('<span class="caption">' + this.alt + '</span>');
+    // $(".article-entry").each(function(i) {
+    //   $(this).find("img").each(function() {
+    //     if (this.alt && !(!!$.prototype.justifiedGallery && $(this).parent(".justified-gallery").length)) {
+    //       $(this).after("<span class="caption">" + this.alt + "</span>");
     //     }
   	//
     //     // 对于已经包含在链接内的图片不适用lightGallery
-    //     if ($(this).parent().prop("tagName") !== 'A') {
-    //       $(this).wrap('<a href="' + this.src + '" title="' + this.alt + '" class="gallery-item"></a>');
+    //     if ($(this).parent().prop("tagName") !== "A") {
+    //       $(this).wrap("<a href="" + this.src + "" title="" + this.alt + "" class="gallery-item"></a>");
     //     }
     //   });
   	//
     // });
-    // if (typeof lightGallery != 'undefined') {
+    // if (typeof lightGallery != "undefined") {
     //   var options = {
-    //     selector: '.gallery-item',
+    //     selector: ".gallery-item",
     //   };
-    //   $('.article-entry').each(function(i, entry) {
+    //   $(".article-entry").each(function(i, entry) {
     //     lightGallery(entry, options);
     //   });
-    //   lightGallery($('.article-gallery')[0], options);
+    //   lightGallery($(".article-gallery")[0], options);
     // }
     // if (!!$.prototype.justifiedGallery) {  // if justifiedGallery method is defined
     //   var options = {
     //     rowHeight: 140,
     //     margins: 4,
-    //     lastRow: 'justify'
+    //     lastRow: "justify"
     //   };
-    //   $('.justified-gallery').justifiedGallery(options);
+    //   $(".justified-gallery").justifiedGallery(options);
     // }
 
   });
