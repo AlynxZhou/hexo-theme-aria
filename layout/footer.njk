@@ -8,6 +8,9 @@
       <p><span class="author">{{ config.author }}</span> <i class="far fa-copyright"></i> <span class="year">{% if moment().format("YYYY") != theme.since %}{{ moment().format("YYYY") }} - {% endif %}{{ theme.since }}</span></p>
       <p>由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/">ARIA</a></p>
     </div>
+    {% if theme.busuanzi %}
+    {% include "busuanzi.njk" %}
+    {% endif %}
   </div>
 </footer>
 {% endblock %}

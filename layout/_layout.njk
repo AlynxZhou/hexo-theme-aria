@@ -10,8 +10,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/normalize.css") }}">
     <script type="text/javascript" src="{{ url_for("js/jquery.min.js")}}"></script>
     <script defer type="text/javascript" src="{{ url_for("js/fontawesome-all.min.js")}}"></script>
+    {% if theme.busuanzi %}
+    <script async src="{{ url_for("js/busuanzi.pure.mini.js")}}"></script>
+    {% endif %}
     <script type="text/javascript" src="{{ url_for("js/index.js")}}"></script>
+    {% if theme.animate %}
     <script type="text/javascript" src="{{ url_for("js/animate.js")}}"></script>
+    {% endif %}
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -22,7 +27,10 @@
           <div class="content">
             {% block content %}{% endblock %}
           </div>
+          {# Sidebar can be `left`, `right` or `false`. #}
+          {% if theme.sidebar != false %}
           {% include "sidebar.njk" %}
+          {% endif %}
         </div>
       </div>
     </main>

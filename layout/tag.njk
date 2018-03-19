@@ -4,30 +4,32 @@
 
 {% block content %}
 <section id="tag" class="tag">
-  <div class="tag-title">
-    <h3>{{ page.tag }}</h3>
+  <div class="tag-container">
+    <div class="tag-title">
+      <h3>{{ page.tag }}</h3>
+    </div>
+    {% for post in page.posts.toArray() %}
+    <article class="tag-post animate" itemscope itemtype="http://schema.org/Article">
+      <h3 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+        {% if post.date %}
+        <span class="post-date">
+          <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
+        </span>
+        {% endif %}
+      </h3>
+    </article>
+    {% endfor %}
   </div>
-  {% for post in page.posts.toArray() %}
-  <article class="tag-post animate" itemscope itemtype="http://schema.org/Article">
-    <h3 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
-      {% if post.date %}
-      <span class="post-date">
-        <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
-      </span>
-      {% endif %}
-    </h3>
-  </article>
-  {% endfor %}
   {% if page.prev or page.next %}
-  <nav class="pagination">
-  {{
-    paginator({
-      prev_text: '<i class="fas fa-angle-left"></i>',
-      next_text: '<i class="fas fa-angle-right"></i>',
-      mid_size: 1
-    })
-  }}
+  <nav class="pagination animate">
+    {{
+      paginator({
+        prev_text: '<i class="fas fa-angle-left"></i>',
+        next_text: '<i class="fas fa-angle-right"></i>',
+        mid_size: 1
+      })
+    }}
   </nav>
   {% endif %}
 </section>

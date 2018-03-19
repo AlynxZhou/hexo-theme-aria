@@ -10,7 +10,12 @@
 
 {% block content %}
 <section id="page-content" class="page-content animate">
+  <div class="page-container">
   {{ page.content }}
+  </div>
+  {% if theme.comment.enable %}
+  {% include "comment.njk" %}
+  {% endif %}
 </section>
 {% endblock %}
 {% endif %}

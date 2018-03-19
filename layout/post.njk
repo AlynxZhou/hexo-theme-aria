@@ -22,34 +22,39 @@
        <span class="{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}">{{ post.title }}</span>
       </h3>
       <div class="post-meta">
-       {% if post.date %}
-       <span class="post-date">
-        <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }}</time>
-       </span>
-       {% endif %}
-       {% if post.categories and post.categories.toArray().length %}
-       <span class="post-meta-divider"> | </span>
-       <span class="post-categories">
-        <i class="far fa-folder-open"></i>
-        {% for cat in post.categories.toArray() %}
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
-        {% endfor %}
-       </span>
-       {% endif %}
-       {% if post.comments and theme.comment %}
-       <span class="post-meta-divider"> | </span>
-        {% if theme.disqus.enable and theme.disqus.count %}
-        <span class="post-comments-count">
-          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
+        {% if post.date %}
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }}</time>
         </span>
-        {% elif theme.hypercomments_id %}
+        {% endif %}
+        {% if post.categories and post.categories.toArray().length %}
+        <span class="post-meta-divider"> | </span>
+        <span class="post-categories">
+          <i class="far fa-folder-open"></i>
+          {% for cat in post.categories.toArray() %}
+            <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
+          {% endfor %}
+        </span>
+       {% endif %}
+       {% if post.comment and theme.comment.enable %}
+        <span class="post-meta-divider"> | </span>
+        {% if theme.comment.hypercomments_id %}
         <!--noindex-->
-        <span class="post-comments-count">
-          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
         </span>
         <!--/noindex-->
+        {% elif theme.disqus.enable and theme.disqus.count %}
+        <span class="post-comment-count">
+          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
+        </span>
         {% endif %}
-       {% endif %}
+        {% endif %}
+        {% if theme.busuanzi %}
+        <span class="post-meta-divider"> | </span>
+        <span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i> <span id="busuanzi_value_page_pv"></span></span>
+        </span>
+        {% endif %}
       </div>
     </header>
     <main class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
@@ -82,6 +87,9 @@
     </div>
     {% endif %}
   </div>
+  {% endif %}
+  {% if theme.comment.enable %}
+  {% include "comment.njk" %}
   {% endif %}
 </section>
 {% endblock %}

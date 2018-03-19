@@ -23,6 +23,12 @@ blogroll:
   Nunjucks: https://mozilla.github.io/nunjucks/
   Stylus: http://stylus-lang.com/
 
-comment: false
+comment:
+  enable: true
+  hypercomments_id:
 
 sidebar: left
+
+animate: true
+
+busuanzi: true

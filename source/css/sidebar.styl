@@ -24,20 +24,14 @@
   }
   &.fold {
     .sidebar-content {
-      opacity: 0;
-      width: 0;
-      height: 0;
-      padding: 0;
+      display: none;
     }
     flex-basis: 1%
     transition: 0.2s ease-in-out;
   }
   &.unfold {
     .sidebar-content {
-      opacity: 1;
-      width: auto;
-      height: auto;
-      padding: 15px;
+      display: block;
     }
     flex-basis: 20%
     transition: 0.2s ease-in-out;

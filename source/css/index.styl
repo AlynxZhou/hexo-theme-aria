@@ -98,9 +98,11 @@ code {
     color: $grey;
   }
 }
-.animate {
-  position: relative;
-  top: 5%;
-  opacity: 0;
+if (hexo-config("animate") != false) {
+  .animate {
+    position: relative;
+    top: 5%;
+    opacity: 0;
+  }
 }
 @import "custom";

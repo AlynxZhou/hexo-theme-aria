@@ -36,36 +36,27 @@
           {% endfor %}
         </span>
         {% endif %}
-        {% if post.comments and theme.comment %}
+        {% if post.comment and theme.comment.enable %}
         <span class="post-meta-divider"> | </span>
-          {% if theme.disqus.enable and theme.disqus.count %}
-          <span class="post-comments-count">
-            <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
-          </span>
-          {% elif theme.hypercomments_id %}
+          {% if theme.comment.hypercomments_id %}
           <!--noindex-->
-          <span class="post-comments-count">
-            <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comments-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
+          <span class="post-comment-count">
+            <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
           </span>
           <!--/noindex-->
+          {# {% elif theme.disqus.enable and theme.disqus.count %}
+          <span class="post-comment-count">
+            <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
+          </span> #}
           {% endif %}
         {% endif %}
-        {# {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-          <span class="post-meta-divider"> | </span>
-          <span class="post-meta-item-icon"
-          {% if not theme.post_meta.item_text %} title="{{ __('post.views') }}" {% endif %}>
-          <i class="fa fa-{{ theme.busuanzi_count.post_views_icon }}"></i>
-          {% if theme.post_meta.item_text %} {{__('post.views') + __('symbol.colon') }} {% endif %}
-          <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-          </span>
-        {% endif %} #}
       </div>
     </header>
-    <main class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
+    <main class="post-body{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
       {% if post.description %}
       {{ post.description }}
       <div class="post-button">
-        <a class="readmore" href="{{ url_for(post.path) }}">Read More &raquo;</a>
+        <a class="readmore" href="{{ url_for(post.path) }}">Read More &gt;&gt;</a>
       </div>
       {% elif post.excerpt  %}
       {{ post.excerpt }}
@@ -88,7 +79,7 @@
   </article>
   {% endfor %}
   {% if page.prev or page.next %}
-  <nav class="pagination">
+  <nav class="pagination animate">
   {{
     paginator({
       prev_text: '<i class="fas fa-angle-left"></i>',
@@ -97,6 +88,9 @@
     })
   }}
   </nav>
+  {% endif %}
+  {% if theme.comment.enable %}
+  {% include "comment.njk" %}
   {% endif %}
 </section>
 {% endblock %}

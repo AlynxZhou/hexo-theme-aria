@@ -8,10 +8,10 @@
     border-bottom-left-radius: $corner-radius;
     border-bottom-right-radius: $corner-radius;
     display: flex;
-    if (hexo-config("sidebar") == "right") {
+    if (hexo-config("sidebar") == "left") {
+            flex-direction: row-reverse;
+    } else {
       flex-direction: row;
-    } else if (hexo-config("sidebar") == "left") {
-      flex-direction: row-reverse;
     }
     justify-content: space-around;
     align-items: stretch;
@@ -46,6 +46,7 @@
         .post-header {
           padding: 5px 5px;
           .post-title-link {
+            font-size: 1.5em;
             display: inline-block;
             position: relative;
             text-decoration: none;
