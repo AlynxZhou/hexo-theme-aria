@@ -34,7 +34,7 @@
         if ($(window).width() > 768) {
           $("#menu").show();
         } else {
-          $("#menu").hide();
+          $("#menu").slideUp();
         }
     }
     autoHideMenus();
