@@ -11,14 +11,14 @@
     $("#sidebar-toggle").click(function () {
       if ($("#sidebar").hasClass("fold")) {
         $("#sidebar").removeClass("fold");
-        $("#sidebar-container").slideDown("fast", function () {
-          $("#sidebar").animate({ "flex-basis": "20%" }, "fast");
+        $("#sidebar").animate({ "flex-basis": "20%" }, "fast", function () {
+          $("#sidebar-container").show("fast");
         });
         $("#sidebar-toggle").empty().append("<i class=\"fas fa-angle-double-up\"></i>")
       } else {
         $("#sidebar").addClass("fold");
-        $("#sidebar").animate({ "flex-basis": "1%" }, "fast", function () {
-          $("#sidebar-container").slideUp("fast");
+        $("#sidebar-container").hide("fast", function () {
+          $("#sidebar").animate({ "flex-basis": "1%" }, "fast");
         });
         $("#sidebar-toggle").empty().append("<i class=\"fas fa-angle-double-down\"></i>")
       }
