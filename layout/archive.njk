@@ -18,7 +18,7 @@
     {% for post in page.posts.toArray() %}
     {% if date(post.date, "YYYY") != year %}
     {% set year = date(post.date, "YYYY") %}
-    <h3 class="archive-year animate">{{ year }}</h3>
+    <h3 class="archive-year">{{ year }}</h3>
     {% endif %}
     <article class="archive-post animate" itemscope itemtype="http://schema.org/Article">
       <h3 class="post-title" itemprop="name headline">

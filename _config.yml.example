@@ -32,3 +32,6 @@ sidebar: left
 animate: true
 
 busuanzi: true
+
+# atom-one-dark | atom-one-light | solarized-dark | solarized-light
+highlight: atom-one-dark

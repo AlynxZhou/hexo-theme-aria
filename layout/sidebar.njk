@@ -1,7 +1,7 @@
 {% block sidebar %}
 <aside class="sidebar" id="sidebar">
   <a class="sidebar-toggle" id="sidebar-toggle"><i class="fas fa-angle-double-up"></i></a>
-  <div class="sidebar-content unfold">
+  <div class="sidebar-container unfold" id="sidebar-container">
     {% include "author.njk" %}
     {% include "blogroll.njk" %}
     {% if page.content %}

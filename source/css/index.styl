@@ -49,12 +49,16 @@ hr {
 }
 code {
   margin: 0 2px;
-  color: #e96900;
+  color: $orange;
   padding: 3px 5px;
-  font-size: 0.8em;
-  border-radius: 2px;
+  font-size: 1em;
+  border-radius: $corner-radius;
   font-family: $font-mono;
   background-color: #f8f8f8;
+}
+figure {
+  font-size: 1em;
+  border-radius: $corner-radius
 }
 .rtl {
   p, a, h1, h2, h3, h4, h5, h6, li, ul, ol {
@@ -100,9 +104,23 @@ code {
 }
 if (hexo-config("animate") != false) {
   .animate {
+    animation: 1s flip forwards;
     position: relative;
+    transform-origin: 50%;
     top: 5%;
     opacity: 0;
+    transform: rotateX(180deg);
+    @keyframes flip {
+      0% {
+        top: 5%;
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        transform: rotateX(0);
+        top: 0;
+      }
+    }
   }
 }
 @import "custom";

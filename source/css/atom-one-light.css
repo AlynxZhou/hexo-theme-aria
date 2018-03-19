@@ -1,0 +1,96 @@
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #383a42;
+  background: #fafafa;
+}
+
+.comment,
+.quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.doctag,
+.keyword,
+.formula {
+  color: #a626a4;
+}
+
+.section,
+.name,
+.selector-tag,
+.deletion,
+.subst {
+  color: #e45649;
+}
+
+.literal {
+  color: #0184bb;
+}
+
+.string,
+.regexp,
+.addition,
+.attribute,
+.meta-string {
+  color: #50a14f;
+}
+
+.built_in,
+.class .title {
+  color: #c18401;
+}
+
+.attr,
+.variable,
+.template-variable,
+.type,
+.selector-class,
+.selector-attr,
+.selector-pseudo,
+.number {
+  color: #986801;
+}
+
+.symbol,
+.bullet,
+.link,
+.meta,
+.selector-id,
+.title {
+  color: #4078f2;
+}
+
+.emphasis {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: underline;
+}

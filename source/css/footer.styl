@@ -15,17 +15,18 @@
     }
   }
   .back-to-top {
+    display: block;
+    text-align: center;
     a {
-      text-align: center;
       background: $color-background;
       color: $color-link;
       overflow: hidden;
-      width: 60px;
-      height: 30px;
-      display: block;
+      display: inline-block;
       margin: 0 auto;
-      border-radius: 0 0 3px 3px;
-      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      padding: 0 1em;
+      border-bottom-left-radius: $corner-radius;
+      border-bottom-right-radius: $corner-radius;
+      font-size: 2em;
       &:hover {
         color: $color-link-hover;
       }

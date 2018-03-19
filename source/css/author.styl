@@ -8,9 +8,9 @@
     border: 2px solid $blue;
     border-radius: 50%;
     box-shadow: inset 0 -1px 0 #333;
-    transition: 3s ease-in-out;
+    transition: 1s ease-in-out;
     &:hover {
-      transform: rotateZ(360deg);
+      transform: rotateY(720deg);
     }
   }
   .author-name {
@@ -20,30 +20,5 @@
   .author-description {
     color: $color-author-description;
     font-size: 1.2em;
-  }
-}
-.social-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  a {
-    display: inline-block;
-    width: 40%;
-    text-decoration: none;
-    color: $color-link;
-    transition: 0.2s ease-in-out;
-    padding: 5px;
-    margin: 0 5px;
-    &:hover {
-      border-radius: 4px;
-      color: $color-light-link-hover;
-      background: $color-light-link-hover-background;
-    }
-    &:active {
-      top: 2px;
-    }
   }
 }

@@ -1,40 +1,20 @@
 @import "variables";
 .sidebar {
+  background: $color-sidebar-background;
   flex-grow: 1;
   flex-basis: 20%
   padding: 0;
-  transition: 0.2s ease-in-out;
   .sidebar-toggle {
     height: $sidebar-toggle-height;
     display: block;
     text-align: center;
     font-size: 2em;
-    background: $blue;
-    color: $color-light-link;
-    &:hover {
-      color: $color-light-link-hover;
-    }
-    &:active {
-      top: 2px;
-    }
+    background: $color-sidebar-toggle-background;
+    color: $color-sidebar-toggle;
   }
-  .sidebar-content {
+  .sidebar-container {
     display: block;
-    padding: 15px;
-  }
-  &.fold {
-    .sidebar-content {
-      display: none;
-    }
-    flex-basis: 1%
-    transition: 0.2s ease-in-out;
-  }
-  &.unfold {
-    .sidebar-content {
-      display: block;
-    }
-    flex-basis: 20%
-    transition: 0.2s ease-in-out;
+    padding: 1.5em;
   }
   hr {
     margin: 40px 0;

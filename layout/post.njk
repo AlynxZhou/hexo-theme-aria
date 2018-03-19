@@ -18,9 +18,9 @@
       </span>
     </div>
     <header class="post-header">
-      <h3 class="post-title" itemprop="name headline">
+      <h1 class="post-title" itemprop="name headline">
        <span class="{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}">{{ post.title }}</span>
-      </h3>
+      </h1>
       <div class="post-meta">
         {% if post.date %}
         <span class="post-date">
@@ -66,9 +66,15 @@
       {% endif %}
       {% if post.tags and post.tags.toArray().length %}
       <div class="post-tags">
-       {% for tag in post.tags.toArray() %}
-       <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
-       {% endfor %}
+        {% set i = 0 %}
+        {% set colors = ["#aaa", "#fc6423", "#a3bb54", "#87daef"] %}
+        {% for tag in post.tags.toArray() %}
+        {% if i >= colors.length %}
+        {% set i = 0 %}
+        {% endif %}
+        <a class="post-tag" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }}" rel="tag"># {{ tag.name }}</a>
+        {% set i = i + 1 %}
+        {% endfor %}
       </div>
       {% endif %}
     </footer>

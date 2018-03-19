@@ -3,8 +3,8 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<section class="categories" id="categories">
-  <div class="categories-container animate">
+<section class="categories animate" id="categories">
+  <div class="categories-container">
     <div class="categories-counter">
       {% set visibleCategories = 0 %}
       {% for cat in site.categories.toArray() %}

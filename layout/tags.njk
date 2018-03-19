@@ -3,8 +3,8 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<section class="tags" id="tags">
-  <div class="tags-container animate">
+<section class="tags animate" id="tags">
+  <div class="tags-container">
     <div class="tags-counter">
       {% set visibleTags = 0 %}
       {% for tag in site.tags.toArray() %}

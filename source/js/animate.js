@@ -12,7 +12,9 @@
       var length = els.length;
 
       els.each(function (index, el) {
-        $(el).delay(index * DELAY_STEP).animate(animationOptions);
+        $(el).delay(index * DELAY_STEP).addClass("active");
+        // $(el).delay(index * DELAY_STEP).animate(animationOptions);
+        // $(el).delay(index * DELAY_STEP).css("transform", "rotateX(360deg)");
         (length - 1 === index) && dfd.resolve();
       });
       return dfd.promise();
