@@ -20,6 +20,40 @@ html, body, .container {
   color: $color-selection-font;
   background: $color-selection;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: 0 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #535353;
+}
+
+::-webkit-scrollbar-resizer {
+  background-color: #FF6E00;
+}
+
+body ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+}
+
 body {
   color: $color-font;
   background: $color-background;
@@ -28,8 +62,12 @@ body {
 }
 a {
   color: $color-link;
+  text-decoration: none;
+  border-bottom: 1px dotted $color-link;
+  transition: 0.2s ease-in-out;
   &:hover {
     color: $color-link-hover;
+    border-bottom: 1px solid $color-link-hover;
   }
   &:active {
     top: 2px;

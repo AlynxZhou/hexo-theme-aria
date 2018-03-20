@@ -16,11 +16,13 @@
       width: 60%;
       height: 1.5em;
       border: 2px solid transparent;
-      border-bottom: 2px solid $color-search;
+      border-bottom: 2px dashed $color-search;
       background: $color-search-background;
       color: $color-search;
+      transition: 0.2s ease-in-out;
       &:focus {
         outline: none;
+        border-bottom: 2px solid $color-search;
       }
       &::placeholder {
         color: $color-search;
@@ -33,6 +35,7 @@
     box-sizing: border-box;
     box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
     word-warp: break-word;
+    transition: 0.2s ease-in-out;
     .search-result-list {
       margin-top: 0;
       padding: 1em 2em;
