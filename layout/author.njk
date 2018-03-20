@@ -1,7 +1,7 @@
 {% block author %}
 <div class="author sidebar-item" id="author">
   {% if theme.avatar %}
-  <img class="author-avatar" src="{{ theme.avatar }}" alt="{{ config.author }}">
+  <img class="author-avatar" src="{{ url_for(theme.avatar) }}" alt="{{ config.author }}">
   {% endif %}
   <p class="author-name">{{ config.author }}</p>
   <p class="author-description"> {{ config.description }}</p>

@@ -1,16 +1,46 @@
 menu:
   home: /
-  archives: /archives/
-  # categories: /categories/
-  # tags: /tags/
-  about: /about/
+  archives: archives/
+  # categories: categories/
+  # tags: tags/
+  about: about/
 
-avatar: /images/avatar.jpg
-logo: /images/ARIA_logo.png
+# Transform your image to those favicons in https://realfavicongenerator.net/.
+favicon:
+  small: favicons/favicon-16x16.png
+  medium: favicons/favicon-32x32.png
+  apple_touch_icon: favicons/apple-touch-icon.png
+  safari_pinned_tab: favicons/safari-pinned-tab.svg
+  android_manifest: favicons/manifest.json
+  ms_browserconfig: favicons/browserconfig.xml
+
+# Must be a string.
+keywords: "Life, ARIA, Hexo"
+
+# Custom info in footer.
+custom_info: 托管于 <a href="https://pages.github.com/">GitHub Pages</a>
+
+avatar: images/avatar.jpg
+
+logo: images/ARIA_logo.png
+
+# Need quote to prevent `#` from comment.
+android_chrome_color: "#26272b"
+
+google_site_verification:
 
 since:
 
 search: true
+
+sidebar: left
+
+animate: true
+
+busuanzi: true
+
+# Available: atom-one-dark | atom-one-light | solarized-dark | solarized-light
+highlight: atom-one-dark
 
 social:
   GitHub:
@@ -20,6 +50,7 @@ social:
     link: https://weibo.com/
     icon: fab fa-weibo
 
+# Title: Links
 blogroll:
   MDN: https://developer.mozilla.org/
   Nunjucks: https://mozilla.github.io/nunjucks/
@@ -30,18 +61,9 @@ comment:
   hypercomments_id:
   disqus_shortname:
 
-sidebar: left
-
-animate: true
-
-busuanzi: true
-
-# atom-one-dark | atom-one-light | solarized-dark | solarized-light
-highlight: atom-one-dark
-
 reward:
   enable: false
   comment: 坚持原创技术分享，您的鼓励将是我继续前进的动力！
-  wechatpay_qrcode:
-  alipay_qrcode:
+  wechatpay_qrcode: images/WeChatPay.png
+  alipay_qrcode: images/AliPay.png
   bitcoin_qrcode:
