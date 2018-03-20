@@ -1,6 +1,6 @@
 @import "variables";
 .main {
-  margin-top: - $sidebar-toggle-height;
+  margin-top: - $search-height;
   .main-body {
     background: $color-main-background;
     box-sizing: border-box;
@@ -9,7 +9,7 @@
     border-bottom-right-radius: $corner-radius;
     display: flex;
     if (hexo-config("sidebar") == "left") {
-            flex-direction: row-reverse;
+      flex-direction: row-reverse;
     } else {
       flex-direction: row;
     }
@@ -18,7 +18,7 @@
     flex-wrap: nowrap;
     padding: 0;
     .content {
-      flex-grow: 4;
+      flex-grow: 1;
       flex-basis: 75%;
       .index-post {
         background: white;

@@ -1,17 +1,17 @@
 {% extends "_layout.njk" %}
 
-{% block title %}Archives | {{ config.title }} - {{ config.subtitle }}{% endblock %}
+{% block title %}{{ __("archives") }} | {{ config.title }} - {{ config.subtitle }}{% endblock %}
 
 {% block content %}
 <section id="archive" class="archive">
   <div class="archive-container">
     <div class="archive-counter">
       {% if site.posts.length > 1 %}
-      <p>You have {{ site.posts.length }} posts. Keep on!</p>
+      <p>{{ _p("postcount.more", site.posts.length) }}</p>
       {% elif site.posts.length == 1 %}
-      <p>You have {{ site.posts.length }} post. Keep on!</p>
+      <p>{{ _p("postcount.one", site.posts.length) }}</p>
       {% else %}
-      <p>You have no post. Write now!</p>
+      <p>{{ __("postcount.none") }}</p>
       {% endif %}
     </div>
     {% set year = "1970" %}

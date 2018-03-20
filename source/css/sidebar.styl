@@ -1,20 +1,45 @@
 @import "variables";
 .sidebar {
   background: $color-sidebar-background;
-  flex-grow: 1;
-  flex-basis: 20%
+  flex-grow: 0;
+  width: 25%;
+  flex-basis: 25%
   padding: 0;
-  .sidebar-toggle {
-    height: $sidebar-toggle-height;
+  .search {
+    height: $search-height - $search-padding-top;
     display: block;
     text-align: center;
-    font-size: 2em;
-    background: $color-sidebar-toggle-background;
-    color: $color-sidebar-toggle;
+    background: $color-search-background;
+    color: $color-search;
+    padding-top: $search-padding-top;
+    input {
+      width: 60%;
+      height: 1.5em;
+      border: 2px solid transparent;
+      border-bottom: 2px solid $color-search;
+      background: $color-search-background;
+      color: $color-search;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: $color-search;
+        opacity: 0.7;
+      }
+    }
   }
-  .sidebar-container {
-    display: block;
-    padding: 1.5em;
+  .search-result-box {
+    background: white;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+    word-warp: break-word;
+    .search-result-list {
+      margin-top: 0;
+      padding: 1em 2em;
+    }
+  }
+  .sidebar-item {
+    margin: 2em;
   }
   hr {
     margin: 40px 0;
@@ -28,5 +53,10 @@
     box-sizing: content-box;
     background-color: #ddd;
     background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: auto;
   }
 }

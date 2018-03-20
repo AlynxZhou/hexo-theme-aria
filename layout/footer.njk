@@ -4,13 +4,15 @@
     <div class="back-to-top">
         <a id="back-to-top"><i class="fas fa-angle-up"></i></a>
     </div>
-    <div class="copyright">
-      <p><span class="author">{{ config.author }}</span> <i class="far fa-copyright"></i> <span class="year">{% if moment().format("YYYY") != theme.since %}{{ moment().format("YYYY") }} - {% endif %}{{ theme.since }}</span></p>
-      <p>由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/">ARIA</a></p>
+    <div class="footer-container">
+      <div class="copyright">
+        <p><span class="author">{{ config.author }}</span> <i class="far fa-copyright"></i> <span class="year">{{ theme.since }}{% if moment().format("YYYY") != theme.since %} - {{ moment().format("YYYY") }}{% endif %}</span></p>
+        <p>{{_p("poweredby", "<a href=\"https://hexo.io/\">Hexo</a>")}} | {{ _p("theme", "<a href=\"https://github.com/AlynxZhou/hexo-theme-aria/\">ARIA</a>") }}</p>
+      </div>
+      {% if theme.busuanzi %}
+      {% include "busuanzi.njk" %}
+      {% endif %}
     </div>
-    {% if theme.busuanzi %}
-    {% include "busuanzi.njk" %}
-    {% endif %}
   </div>
 </footer>
 {% endblock %}

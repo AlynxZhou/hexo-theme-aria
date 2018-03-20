@@ -6,24 +6,6 @@
       $("body, html").animate({ scrollTop: 0 }, 600);
     });
 
-
-    // Sidebar expend
-    $("#sidebar-toggle").click(function () {
-      if ($("#sidebar").hasClass("fold")) {
-        $("#sidebar").removeClass("fold");
-        $("#sidebar").animate({ "flex-basis": "20%" }, "fast", function () {
-          $("#sidebar-container").show("fast");
-        });
-        $("#sidebar-toggle").empty().append("<i class=\"fas fa-angle-double-up\"></i>")
-      } else {
-        $("#sidebar").addClass("fold");
-        $("#sidebar-container").hide("fast", function () {
-          $("#sidebar").animate({ "flex-basis": "1%" }, "fast");
-        });
-        $("#sidebar-toggle").empty().append("<i class=\"fas fa-angle-double-down\"></i>")
-      }
-    });
-
     // Nav bar toggle
     $("#nav-toggle").on("click", function () {
       $("#menu").slideToggle();

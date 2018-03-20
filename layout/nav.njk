@@ -2,8 +2,8 @@
 <nav id="nav" class="nav">
   <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
   <ul id="menu">
-    {% for k, v in theme.nav %}
-    <li class="menu-item"><a href="{{ url_for(v) }}" {% if (url_for(v) + "index.html") == ("/" + path) %}class="current"{% endif %}>{{ k }}</a></li>
+    {% for k, v in theme.menu %}
+    <li class="menu-item"><a href="{{ url_for(v) }}" {% if (url_for(v) + "index.html") == ("/" + path) %}class="current"{% endif %}>{{ __(k) }}</a></li>
     {% endfor %}
   </ul>
 </nav>

@@ -61,7 +61,7 @@
       {% elif post.excerpt  %}
       {{ post.excerpt }}
       <div class="post-button">
-        <a class="readmore" href="{{ url_for(post.path) }}#more">Read More &gt;&gt;</a>
+        <a class="readmore" href="{{ url_for(post.path) }}#more">{{ __("readmore") }} &gt;&gt;</a>
       </div>
       {% else %}
       {{ post.content }}
@@ -71,7 +71,7 @@
       {% if post.tags and post.tags.toArray().length %}
       <div class="post-tags">
         {% set i = 0 %}
-        {% set colors = ["#aaa", "#fc6423", "#a3bb54", "#87daef"] %}
+        {% set colors = ["#aaa", "#fc6423", "#a3bb54", "#87caff"] %}
         {% for tag in post.tags.toArray() %}
         {% if i >= colors.length %}
         {% set i = 0 %}

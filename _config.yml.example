@@ -1,14 +1,16 @@
-nav:
-  Index: /
-  Archives: /archives/
-  # Categories: /categories/
-  # Tags: /tags/
-  About: /about/
+menu:
+  home: /
+  archives: /archives/
+  # categories: /categories/
+  # tags: /tags/
+  about: /about/
 
 avatar: /images/avatar.jpg
 logo: /images/ARIA_logo.png
 
 since: 2016
+
+search: true
 
 social:
   GitHub:

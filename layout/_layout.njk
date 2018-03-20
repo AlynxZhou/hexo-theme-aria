@@ -14,7 +14,18 @@
     {% if theme.busuanzi %}
     <script async src="{{ url_for("js/busuanzi.pure.mini.js")}}"></script>
     {% endif %}
-    <script type="text/javascript" src="{{ url_for("js/index.js")}}"></script>
+    <script defer type="text/javascript" src="{{ url_for("js/index.js")}}"></script>
+    {% if theme.search %}
+    <script type="text/javascript" src="{{ url_for("js/search.js") }}"></script>
+    <script type="text/javascript">
+    var searchPath = "{{ config.search.path }}";
+    if (searchPath.length == 0) {
+	    searchPath = "search.xml";
+    }
+    var path = "{{ config.root }}" + searchPath;
+    searchFunc(path, "search-input", "search-result");
+    </script>
+    {% endif %}
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>

@@ -1,6 +1,6 @@
 {% extends "_layout.njk" %}
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+{% block title %}{{ __(page.title) }} | {{ config.title }}{% endblock %}
 
 {% block content %}
 <section class="categories animate" id="categories">
@@ -13,11 +13,11 @@
       {% endif %}
       {% endfor %}
       {% if visibleCategories > 1 %}
-      <p>You have {{ visibleCategories }} categories.</p>
+      <p>{{ _p("categorycount.more", visibleCategories) }}</p>
       {% elif visibleCategories == 1 %}
-      <p>You have {{ visibleCategories }} category.</p>
+      <p>{{ _p("categorycount.one", visibleCategories) }}</p>
       {% else %}
-      <p>You have no category.</p>
+      <p>{{ __("categorycount.none") }}</p>
       {% endif %}
     </div>
     <div class="categories-list">

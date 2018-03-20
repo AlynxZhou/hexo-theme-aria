@@ -1,0 +1,34 @@
+home: 首页
+archive: 归档
+archives: 归档
+category: 分类
+categories: 分类
+tag: 标签
+tags: 标签
+about: 关于
+
+search: 搜索
+
+toc: 文章目录
+sociallink: 社交链接
+blogroll: 友情链接
+
+readmore: 阅读全文
+
+postcount:
+  none: 你还没有文章，现在写一篇吧！
+  one: 你已经写了 %d 篇文章，积少成多，再接再厉！
+  more: 你已经写了 %d 篇文章！
+
+tagcount:
+  none: 你还没有标签，现在创建一个吧！
+  one: 你已经创建了 %d 个标签，积少成多，再接再厉！
+  more: 你已经创建了 %d 个标签！
+
+categorycount:
+  none: 你还没有分类，现在创建一个吧！
+  one: 你已经创建了 %d 个分类，积少成多，再接再厉！
+  more: 你已经创建了 %d 个分类！
+
+poweredby: 由 %s 强力驱动
+theme: 主题 %s

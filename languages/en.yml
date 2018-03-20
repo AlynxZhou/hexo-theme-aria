@@ -1,0 +1,34 @@
+home: Home
+archive: Archive
+archives: Archives
+category: Category
+categories: Categories
+tag: Tag
+tags: Tags
+about: About
+
+search: Search
+
+toc: Table of Contents
+sociallink: Social Links
+blogroll: Blogroll
+
+readmore: Read More
+
+postcount:
+  none: You have no post, write now!
+  one: You have %d post, keep on!
+  more: You have %d posts!
+
+tagcount:
+  none: You have no tag, create now！
+  one: You have %d tag, keep on!
+  more: You have %d tags!
+
+categorycount:
+  none: You have no category, create now!
+  one: You have %d category, keep on!
+  more: You have %d categories!
+
+poweredby: Proudly Powered by %s
+theme: Theme is %s

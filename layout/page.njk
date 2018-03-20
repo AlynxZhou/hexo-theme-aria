@@ -6,7 +6,7 @@
 {% include "tags.njk" %}
 {% else %}
 {% extends "_layout.njk" %}
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+{% block title %}{{ __(page.title) }} | {{ config.title }}{% endblock %}
 
 {% block content %}
 <section id="page-content" class="page-content animate">
