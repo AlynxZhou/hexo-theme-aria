@@ -8,6 +8,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 Feature:
   - Responsive double column layout with css animation
   - Comment system (currently only supprt [hypercomments](https://www.hypercomments.com/).
+  - Busuanzi counting.
   - Hexo local search support (needs to install `hexo-generator-search`).
   - Multi-languages support (currently zh_CN and en, PR welcome).
 
@@ -19,6 +20,5 @@ Usage:
 
 TODO:
   - More function
-  - Image display
   - Sticky toc
   - Docs

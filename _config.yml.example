@@ -37,3 +37,10 @@ busuanzi: true
 
 # atom-one-dark | atom-one-light | solarized-dark | solarized-light
 highlight: atom-one-dark
+
+reward:
+  enable: false
+  comment: 坚持原创技术分享，您的鼓励将是我继续前进的动力！
+  wechatpay_qrcode:
+  alipay_qrcode:
+  bitcoin_qrcode:

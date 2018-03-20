@@ -15,6 +15,12 @@ blogroll: 友情链接
 
 readmore: 阅读全文
 
+reward:
+  button: 打赏
+  wechatpay: 微信支付
+  alipay: 支付宝
+  bitcoin: 比特币
+
 postcount:
   none: 你还没有文章，现在写一篇吧！
   one: 你已经写了 %d 篇文章，积少成多，再接再厉！

@@ -1,0 +1,26 @@
+{% block reward %}
+<div class="reward" id="reward">
+  <p>{{ theme.reward.comment }}</p>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('qr'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>{{ __("reward.button") }}</span>
+  </button>
+  <div id="qr" class="qr" style="display: none;">
+    {% if theme.reward.wechatpay_qrcode %}
+    <div id="wechat">
+      <img id="wechat_qr" src="{{ url_for(theme.reward.wechatpay_qrcode) }}" alt="{{ __("reward.wechatpay") }}"/>
+    </div>
+    {% endif %}
+    {% if theme.reward.alipay_qrcode %}
+    <div id="alipay">
+      <img id="alipay_qr" src="{{ url_for(theme.reward.alipay_qrcode) }}" alt="{{ __("reward.alipay") }}"/>
+    </div>
+    {% endif %}
+    {% if theme.reward.bitcoin_qrcode %}
+    <div id="bitcoin">
+      <img id="bitcoin_qr" src="{{ url_for(theme.reward.bitcoin_qrcode) }}" alt="{{ __("reward.bitcoin") }}"/>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

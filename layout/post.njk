@@ -74,6 +74,9 @@
       {% endif %}
     </footer>
   </article>
+  {% if theme.reward %}
+  {% include "reward.njk" %}
+  {% endif %}
   {% if post.prev or post.next %}
   <div class="post-nav animate">
     {% if post.next %}

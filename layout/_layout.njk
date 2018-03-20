@@ -9,8 +9,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/index.css") }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/normalize.css") }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/" + theme.highlight + ".css") }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for("css/lightgallery.min.css") }}">
     <script type="text/javascript" src="{{ url_for("js/jquery.min.js")}}"></script>
     <script defer type="text/javascript" src="{{ url_for("js/fontawesome-all.min.js")}}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lightgallery.min.js") }}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lg-thumbnail.min.js") }}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lg-zoom.min.js") }}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lg-share.min.js") }}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lg-pager.min.js") }}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lg-hash.min.js") }}"></script>
+    <script async type="text/javascript" src="{{ url_for("js/lg-fullscreen.min.js") }}"></script>
     {% if theme.busuanzi %}
     <script async src="{{ url_for("js/busuanzi.pure.mini.js")}}"></script>
     {% endif %}

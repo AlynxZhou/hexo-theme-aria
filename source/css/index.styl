@@ -12,6 +12,7 @@
 @import "tags";
 @import "page";
 @import "post";
+@import "reward";
 html, body, .container {
   height: 100%;
 }
@@ -66,6 +67,11 @@ figure {
     font-family: UKIJ Ekran;
   }
 }
+.caption {
+  color: $grey-dark;
+  display: block;
+  text-align: center;
+}
 .container {
   position: relative;
   padding: 0;
@@ -73,6 +79,38 @@ figure {
   min-width: $container-min-width;
   width: 100%;
   margin: 0 auto;
+}
+.blockquote-center {
+  position: relative;
+  margin: 40px 0;
+  padding: 0;
+  border-left: none;
+  text-align: center;
+  &::before, &::after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 24px;
+    opacity: 0.2;
+    background-repeat: no-repeat;
+    background-position: 0 -6px;
+    background-size: 22px 22px;
+  }
+  &::before {
+    top: -20px;
+    background-image: url(../images/quote-l.svg);
+    border-top: 1px solid $grey-light;
+  }
+  &::after {
+    bottom: -20px;
+    background-image: url(../images/quote-r.svg);
+    border-bottom: 1px solid $grey-light;
+    background-position: 100% 8px;
+  }
+  p, div {
+    text-align: center;
+  }
 }
 .pagination {
   padding: 20px;

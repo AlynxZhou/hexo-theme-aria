@@ -15,6 +15,12 @@ blogroll: Blogroll
 
 readmore: Read More
 
+reward:
+  button: Reward
+  wechatpay: WechatPay
+  alipay: AliPay
+  bitcoin: BitCoin
+
 postcount:
   none: You have no post, write now!
   one: You have %d post, keep on!
