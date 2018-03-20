@@ -1,4 +1,8 @@
 @import "variables";
 .comments {
-  margin: 2em;
+  if (hexo-config("comment.disqus_shortname")) {
+    .disqus_thread {
+      margin: 2em;
+    }
+  }
 }

@@ -26,7 +26,7 @@
   {% elif theme.comment.disqus_shortname %}
   <script id="dsq-count-scr" src="//{{ theme.comment.disqus_shortname }}.disqus.com/count.js" async></script>
   {% if page.comment %}
-  <div id="disqus_thread"></div>
+  <div id="disqus_thread" class="disqus_thread"></div>
   <script>
   var disqus_config = function () {
     this.page.url = "{{ page.permalink }}";
