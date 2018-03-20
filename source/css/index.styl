@@ -13,6 +13,7 @@
 @import "page";
 @import "post";
 @import "reward";
+@import "comment";
 html, body, .container {
   height: 100%;
 }
@@ -24,36 +25,28 @@ html, body, .container {
   width: 10px;
   height: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: 0 0;
 }
-
 ::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background-color: #666;
 }
-
 ::-webkit-scrollbar-corner {
   background-color: #535353;
 }
-
 ::-webkit-scrollbar-resizer {
   background-color: #FF6E00;
 }
-
 body ::-webkit-scrollbar {
   width: 8px;
 }
-
 body ::-webkit-scrollbar-thumb {
   background-color: #ddd;
 }
-
 body {
   color: $color-font;
   background: $color-background;
@@ -71,6 +64,13 @@ a {
   }
   &:active {
     top: 2px;
+  }
+}
+a.gallery-item {
+  text-decoration: none;
+  border-bottom: none;
+  &:hover {
+    border-bottom: none;
   }
 }
 hr {

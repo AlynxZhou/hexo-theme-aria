@@ -8,7 +8,7 @@ menu:
 avatar: /images/avatar.jpg
 logo: /images/ARIA_logo.png
 
-since: 2016
+since:
 
 search: true
 
@@ -26,8 +26,9 @@ blogroll:
   Stylus: http://stylus-lang.com/
 
 comment:
-  enable: true
+  enable: false
   hypercomments_id:
+  disqus_shortname:
 
 sidebar: left
 

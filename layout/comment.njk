@@ -23,6 +23,23 @@
     s.parentNode.insertBefore(hcc, s.nextSibling);
   })();
   </script>
+  {% elif theme.comment.disqus_shortname %}
+  <script id="dsq-count-scr" src="//{{ theme.comment.disqus_shortname }}.disqus.com/count.js" async></script>
+  {% if page.comment %}
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+    this.page.url = "{{ page.permalink }}";
+    this.page.identifier = "{{ page.path }}";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "https://{{ theme.comment.disqus_shortname }}.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  {% endif %}
   {% endif %}
 </div>
 {% endblock %}

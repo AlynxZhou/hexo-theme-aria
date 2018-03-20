@@ -51,7 +51,8 @@
   align-items: stretch;
   flex-wrap: nowrap;
   .post-nav-divider {
-    width: 10%;
+    width: 30%;
+    flex-grow: 0;
     display: block;
     text-align: center;
   }
@@ -60,9 +61,13 @@
     font-size: 1.2em;
     a {
       position: relative;
-      display: block;
+      display: inline-block;
       line-height: 25px;
       text-decoration: none;
+      border-bottom: none;
+      &:hover {
+        border-bottom: none;
+      }
       &:active {
         top: 2px;
       }

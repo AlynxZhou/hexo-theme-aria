@@ -10,35 +10,37 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 Feature:
 
   - Responsive double column layout with css animation
-  - Comment system (currently only supprt [hypercomments](https://www.hypercomments.com/).
+  - Comment system (currently only supprt [HyperComments](https://www.hypercomments.com/) and [Disqus](https://disqus.com/)).
   - Busuanzi counting.
   - Hexo local search support (need to install `hexo-generator-search` and set config as its [README](https://github.com/PaicHyperionDev/hexo-generator-search)).
   - Multi-languages support (currently zh_CN and en, PR welcome).
   - Image display powered by [lightgallery](https://sachinchoolur.github.io/lightgallery.js/)
-  - RSS supported (need to install `hexo-generator-feed` and set config as its [README](https://github.com/hexojs/hexo-generator-feed))
+  - RSS supported (need to install `hexo-generator-feed` and set config as its [README](https://github.com/hexojs/hexo-generator-feed)).
 
 Usage:
 
   1. Run `npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed`.
   2. `git clone https://github.com/AlynxZhou/hexo-theme-aria.git themes/aria`.
   3. Change your Hexo site config `_config.yml`, like following:
-    ```yaml
-    # Replace theme to aria
-    theme: aria
-    # Hexo localsearch
-    search:
-      path: search.xml
-      field: all
-    # Hexo generator feed
-    feed:
-      type: atom
-      path: atom.xml
-      limit: 20
-      hub:
-      content:
-      content_limit: 140
-      content_limit_delim: ' '
-    ```
+
+  ```yaml
+  # Replace theme to aria
+  theme: aria
+  # Hexo localsearch
+  search:
+  path: search.xml
+  field: all
+  # Hexo generator feed
+  feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  ```
+
   4. Copy `themes/aria/_config.yml.example` to `themes/aria/_config.yml`, then edit `themes/aria/_config.yml` to what you want.
   5. If you want comment in one page, add `comment: true` to the page's source file. If you want Hexo add it automatically when creating a new page, add it to Hexo markdown templates in `scaffolds/` folder.
 
@@ -49,6 +51,7 @@ TODO:
   - Docs
 
 LICENSE:
+
   Apache-2.0
 
 **Note**:
@@ -59,4 +62,4 @@ LICENSE:
 
   And refuse something like *I added a config to make avatar a square instead a circle!*, what will help if we make avatar available from TRIANGLE to HEPTADECAON? Do we really need six or more schemes in one theme? If you like, you can fork your own, but I will keep them six themes. This makes developers easy to find where to add codes instead finding bug in some total unrelated scheme codes with `{% if schemeA %}{{ xxxxxxxxxblockxxxxxXXXXXxxxxx }}{% elif schemeB %}{{xxxxxxxspanxxxxximgxxxxx}}{%% endif %}` or `if (hexo-config(schemeA)) { .cls { a { &:hover { background: #333 } } } }`, I worked with those codes for many days and I know how they hurt your eyes while finding some code...
 
-  Plus, if you want add comment system, choose what people uses most like Disqus, no more Duoshuo or Changyan or Netease Cloud Comment because they are unstable and can make people confused. I want ARIA to be easy to use, not a mess of needless choice.
+  Plus, if you want add comment system, choose what people uses most like Gitment or Valine, no more Duoshuo or Changyan or Netease Cloud Comment because they are unstable and can make people confused. I want ARIA to be easy to use, not a mess of needless choice.

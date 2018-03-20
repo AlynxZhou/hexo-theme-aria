@@ -39,15 +39,13 @@
         {% if post.comment and theme.comment.enable %}
         <span class="post-meta-divider"> | </span>
           {% if theme.comment.hypercomments_id %}
-          <!--noindex-->
           <span class="post-comment-count">
             <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
           </span>
-          <!--/noindex-->
-          {# {% elif theme.disqus.enable and theme.disqus.count %}
+          {% elif theme.comment.disqus_shortname %}
           <span class="post-comment-count">
-            <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
-          </span> #}
+            <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
+          </span>
           {% endif %}
         {% endif %}
       </div>
