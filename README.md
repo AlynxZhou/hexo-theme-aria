@@ -3,7 +3,9 @@ hexo-theme-aria
 
 ![ARIA Screenshot](ARIA_Demo_Screenshot.png)
 
-![ARIA Screenshot Mobile](ARIA_Demo_Screenshot_Mobile.png)
+![ARIA Screenshot Tablet](ARIA_Demo_Screenshot_Tablet.png)
+
+![ARIA Screenshot Phone](ARIA_Demo_Screenshot_Phone.png)
 
 Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 

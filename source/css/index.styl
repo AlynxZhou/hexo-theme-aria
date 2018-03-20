@@ -90,14 +90,16 @@ code {
   margin: 0 2px;
   color: $orange;
   padding: 3px 5px;
+  overflow: auto;
   font-size: 1em;
   border-radius: $corner-radius;
   font-family: $font-mono;
   background-color: #f8f8f8;
 }
 figure {
+  overflow: auto;
   font-size: 1em;
-  border-radius: $corner-radius
+  border-radius: $corner-radius;
 }
 .rtl {
   p, a, h1, h2, h3, h4, h5, h6, li, ul, ol {
@@ -114,7 +116,6 @@ figure {
   position: relative;
   padding: 0;
   max-width: $container-max-width;
-  min-width: $container-min-width;
   width: 100%;
   margin: 0 auto;
 }
@@ -184,7 +185,7 @@ if (hexo-config("animate") != false) {
     position: relative;
     transform-origin: 50%;
     top: 5%;
-    opacity: 0;
+    // opacity: 0;
     transform: rotateX(180deg);
     @keyframes flip {
       0% {
@@ -192,7 +193,7 @@ if (hexo-config("animate") != false) {
         opacity: 0;
       }
       100% {
-        opacity: 1;
+        // opacity: 1;
         transform: rotateX(0);
         top: 0;
       }

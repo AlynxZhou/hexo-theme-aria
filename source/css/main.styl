@@ -2,6 +2,7 @@
 .main {
   margin-top: - $search-height;
   .main-body {
+    width: 100%;
     background: $color-main-background;
     box-sizing: border-box;
     box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
@@ -20,6 +21,8 @@
     .content {
       flex-grow: 1;
       flex-basis: 75%;
+      width: 75%;
+      flex-shrink: 1;
       .index-post {
         background: white;
         padding: 20px;
@@ -27,7 +30,8 @@
         box-sizing: border-box;
         box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
         img {
-          max-width: 100%;
+          width: 100%;
+          text-align: center;
           border: 3px solid $grey;
           box-sizing: border-box;
           box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
@@ -105,6 +109,9 @@
   @media (max-width: 768px) {
     .main-body {
       flex-direction: column;
+      .content {
+        width: 100%;
+      }
     }
   }
 }
