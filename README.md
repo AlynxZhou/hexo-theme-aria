@@ -11,6 +11,7 @@ Feature:
   - Busuanzi counting.
   - Hexo local search support (needs to install `hexo-generator-search`).
   - Multi-languages support (currently zh_CN and en, PR welcome).
+  - Image display powered by [lightgallery](https://sachinchoolur.github.io/lightgallery.js/)
 
 Usage:
   1. Run `npm install --save hexo-renderer-nunjucks`.
