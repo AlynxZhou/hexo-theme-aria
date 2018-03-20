@@ -18,7 +18,7 @@ favicon:
 keywords: "Life, ARIA, Hexo"
 
 # Custom info in footer.
-custom_info: 托管于 <a href="https://pages.github.com/">GitHub Pages</a>
+custom_info: 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
 
 avatar: images/avatar.jpg
 
