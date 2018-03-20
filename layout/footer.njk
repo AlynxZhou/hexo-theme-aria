@@ -7,7 +7,7 @@
     <div class="footer-container">
       <div class="copyright">
         <p><span class="author">{{ config.author }}</span> <i class="far fa-copyright"></i> <span class="year">{{ theme.since }}{% if moment().format("YYYY") != theme.since %} - {{ moment().format("YYYY") }}{% endif %}</span></p>
-        <p>{{_p("poweredby", "<a href=\"https://hexo.io/\">Hexo</a>")}} | {{ _p("theme", "<a href=\"https://github.com/AlynxZhou/hexo-theme-aria/\">ARIA</a>") }}</p>
+        <p>{{_p("poweredby", "<a href=\"https://hexo.io/\" target=\"_blank\">Hexo</a>")}} | {{ _p("theme", "<a href=\"https://github.com/AlynxZhou/hexo-theme-aria/\" target=\"_blank\">ARIA</a>") }}</p>
       </div>
       {% if theme.busuanzi %}
       {% include "busuanzi.njk" %}
