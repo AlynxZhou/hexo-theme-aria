@@ -38,7 +38,7 @@ var searchFunc = function (path, searchID, contentID) {
           var indexContent = -1;
           var firstOccur = -1;
           // only match artiles with not empty titles and contents
-          if (dataTitle != '' && dataContent != '') {
+          if (dataTitle != "" && dataContent != "") {
             keywords.forEach(function (keyword, i) {
               indexTitle = dataTitle.indexOf(keyword);
               indexContent = dataContent.indexOf(keyword);
@@ -72,7 +72,6 @@ var searchFunc = function (path, searchID, contentID) {
                 end = content.length;
               }
               var matchContent = content.substring(start, end);
-              console.log(matchContent)
               // highlight all keywords
               keywords.forEach(function (keyword) {
                 var regS = new RegExp(keyword, "gi");

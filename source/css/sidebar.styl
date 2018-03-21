@@ -16,17 +16,18 @@
     input {
       width: 60%;
       height: 1.5em;
-      border: 2px solid transparent;
-      border-bottom: 2px dashed $color-search;
+      border: 0.1em solid transparent;
+      border-bottom: 0.1em dashed $color-search;
       background: $color-search-background;
       color: $color-search;
       transition: 0.3s ease-in-out;
       &:focus {
         outline: none;
-        border-bottom: 2px solid $color-search;
+        border-bottom: 0.1em solid $color-search;
       }
       &::placeholder {
         color: $color-search;
+        padding-left: 0.5em;
         opacity: 0.7;
       }
     }
@@ -34,7 +35,7 @@
   .search-result-box {
     background: white;
     box-sizing: border-box;
-    box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
     word-warp: break-word;
     transition: 0.3s ease-in-out;
     .search-result-list {
@@ -46,8 +47,8 @@
     margin: 2em;
   }
   hr {
-    margin: 40px 0;
-    height: 3px;
+    margin: 2em 0;
+    height: 0.3em;
     border: none;
     margin-left:auto;
     margin-right:auto;
@@ -56,7 +57,7 @@
     display: block;
     box-sizing: content-box;
     background-color: #ddd;
-    background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 0.25em, transparent 0.25em, transparent 0.5em);
   }
 }
 @media (max-width: 768px) {

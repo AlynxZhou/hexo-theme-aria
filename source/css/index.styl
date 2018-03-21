@@ -23,15 +23,15 @@ html, body, .container {
   background: $color-selection;
 }
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 0.5em;
+  height: 0.5em;
 }
 ::-webkit-scrollbar-track {
   background: 0 0;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #999;
-  border-radius: 5px;
+  border-radius: 0.25em;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #666;
@@ -43,7 +43,7 @@ html, body, .container {
   background-color: #FF6E00;
 }
 body ::-webkit-scrollbar {
-  width: 8px;
+  width: 0.4em;
 }
 body ::-webkit-scrollbar-thumb {
   background-color: #ddd;
@@ -57,14 +57,14 @@ body {
 a {
   color: $color-link;
   text-decoration: none;
-  border-bottom: 1px dotted $color-link;
+  border-bottom: 0.05em dotted $color-link;
   transition: 0.3s ease-in-out;
   &:hover {
     color: $color-link-hover;
-    border-bottom: 1px solid $color-link-hover;
+    border-bottom: 0.05em solid $color-link-hover;
   }
   &:active {
-    top: 2px;
+    top: 0.01em;
   }
 }
 a.button {
@@ -73,13 +73,13 @@ a.button {
   transform-origin: 50%;
   border-bottom: none;
   box-sizing: border-box;
-  box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
   &:hover {
     transform: rotateX(360deg);
     border-bottom: none;
   }
   &:active {
-    top: 2px;
+    top: 0.01em;
   }
 }
 a.gallery-item {
@@ -92,8 +92,8 @@ a.gallery-item {
   }
 }
 hr {
-  margin: 40px 0;
-  height: 3px;
+  margin: 2em 0;
+  height: 0.3em;
   border: none;
   margin-left:auto;
   margin-right:auto;
@@ -102,12 +102,12 @@ hr {
   display: block;
   box-sizing: content-box;
   background-color: #ddd;
-  background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+  background-image: repeating-linear-gradient(-45deg, #fff, #fff 0.25em, transparent 0.25em, transparent 0.5em);
 }
 code {
-  margin: 0 2px;
+  margin: 0.05em 0.05em;
   color: $orange;
-  padding: 3px 5px;
+  padding: 0.125em 0.25em;
   overflow: auto;
   font-size: 1em;
   border-radius: $corner-radius;
@@ -139,61 +139,61 @@ figure {
 }
 .blockquote-center {
   position: relative;
-  margin: 40px 0;
+  margin: 2em 0;
   padding: 0;
   border-left: none;
   text-align: center;
   &::before, &::after {
     position: absolute;
-    content: ' ';
+    content: " ";
     display: block;
     width: 100%;
-    height: 24px;
+    height: 1.2em;
     opacity: 0.2;
     background-repeat: no-repeat;
-    background-position: 0 -6px;
-    background-size: 22px 22px;
+    background-position: 0 -0.4em;
+    background-size: 1.2em 1.2em;
   }
   &::before {
-    top: -20px;
+    top: -1em;
     background-image: url(../images/quote-l.svg);
-    border-top: 1px solid $grey-light;
+    border-top: 0.1em solid $grey-light;
   }
   &::after {
-    bottom: -20px;
+    bottom: -1em;
     background-image: url(../images/quote-r.svg);
-    border-bottom: 1px solid $grey-light;
-    background-position: 100% 8px;
+    border-bottom: 0.1em solid $grey-light;
+    background-position: 100% 0.4em;
   }
   p, div {
     text-align: center;
   }
 }
 .pagination {
-  padding: 20px;
+  padding: 1.5em;
   display: block;
   text-align: center;
   .page-number, .extend {
     position: relative;
     overflow: hidden;
-    font-size: 20px;
-    padding: 10px 10px;
+    font-size: 1.2em;
+    padding: 0.5em;
     display: inline;
-    margin: 0 10px;
+    margin: 0 0.5em;
     text-decoration: none;
-    border-bottom: 3px solid $grey;
+    border-bottom: 0.15em solid $grey;
     transition: 0.3s ease-in-out;
     &:hover {
-      border-bottom: 3px solid $color-link-hover;
+      border-bottom: 0.15em solid $color-link-hover;
     }
     &.current {
-      border-bottom: 3px solid $color-link-hover;
-      border-top: 1px solid $color-link-hover;
+      border-bottom: 0.15em solid $color-link-hover;
+      border-top: 0.05em solid $color-link-hover;
     }
   }
   .space {
-    font-size: 20px;
-    margin: 0 10px;
+    font-size: 1em;
+    margin: 0 0.5em;
     color: $grey;
   }
 }

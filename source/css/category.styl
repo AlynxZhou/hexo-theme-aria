@@ -1,24 +1,24 @@
 @import "variables";
 .category-container {
   // background: white;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  // margin: 10px;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 2em;
+  // margin: 0.5em;
   // box-sizing: border-box;
-  // box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
   .category-title {
     position: relative;
-    padding-left: 20px;
+    padding-left: 1em;
     font-size: 2em;
     &::before {
       content: " ";
       position: absolute;
-      top: 20px;
-      left: 0px;
-      margin-left: -2px;
-      width: 4px;
+      top: 50%;
+      left: 0;
+      margin-left: -0.125em;
+      width: 0.25em;
       height: 100%;
       background: $grey-light;
     }
@@ -27,10 +27,10 @@
       position: absolute;
       left: 0;
       top: 50%;
-      margin-left: -6px;
-      margin-top: -6px;
-      width: 12px;
-      height: 12px;
+      margin-left: -0.25em;
+      margin-top: -0.25em;
+      width: 0.5em;
+      height: 0.5em;
       background: $grey;
       border-radius: 50%;
     }
@@ -38,20 +38,20 @@
   .category-post {
     background: white;
     position: relative;
-    padding-left: 20px;
+    padding-left: 1em;
     font-size: 1.5em;
     box-sizing: border-box;
-    box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
     .post-title {
-      padding: 5px 0;
+      padding: 0.25em 0;
     }
     &::before {
       content: " ";
       position: absolute;
       top: -50%;
-      left: 0px;
-      margin-left: -2px;
-      width: 4px;
+      left: 0;
+      margin-left: -0.125em;
+      width: 0.25em;
       height: 200%;
       background: $grey-light;
     }
@@ -60,10 +60,10 @@
       position: absolute;
       left: 0;
       top: 50%;
-      margin-left: -4px;
-      margin-top: -4px;
-      width: 8px;
-      height: 8px;
+      margin-left: -0.25em;
+      margin-top: -0.25em;
+      width: 0.5em;
+      height: 0.5em;
       background: $grey;
       border-radius: 50%;
     }
@@ -76,12 +76,12 @@
       position: relative;
       text-decoration: none;
       color: $color-link;
-      border-bottom: 1px dashed $grey;
+      border-bottom: 0.05em dashed $grey;
       transition: 0.3s ease-in-out;
       &:hover {
         color: $color-link-hover;
-        border-bottom: 1px solid $color-link-hover;
+        border-bottom: 0.05em solid $color-link-hover;
       }
     }
   }
-  }
+}
