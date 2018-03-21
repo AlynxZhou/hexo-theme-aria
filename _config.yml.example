@@ -17,10 +17,17 @@ favicon:
 # Must be a string.
 keywords: "Life, ARIA, Hexo"
 
-# Custom info in footer.
-custom_info: 托管于 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+# https://creativecommons.org/licenses/
+# by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
+creative_commons:
 
-avatar: images/avatar.jpg
+# Available: atom-one-dark | atom-one-light | solarized-dark | solarized-light
+highlight: atom-one-dark
+
+# Custom info in footer.
+custom_info: 托管于 <i class="fab fa-github-alt"></i> <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+
+avatar: images/avatar.png
 
 logo: images/ARIA_logo.png
 
@@ -37,8 +44,14 @@ sidebar: left
 
 busuanzi: true
 
-# Available: atom-one-dark | atom-one-light | solarized-dark | solarized-light
-highlight: atom-one-dark
+# If you want to use MathJax, first fill a CDN link like
+# `cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML`.
+# And set front-matter `mathjax: true` to the page you want to use it.
+# You can also set `global: true` here to load MathJax in all pages.
+# But it's not recommended because MathJax sources are too large, that's why ARIA doesn't contain them and ask for CDN.
+mathjax:
+  cdn:
+  global:
 
 social:
   GitHub:

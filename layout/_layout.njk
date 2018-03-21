@@ -66,6 +66,28 @@
     searchFunc(path, "search-input", "search-result");
     </script>
     {% endif %}
+    {% if theme.mathjax.cdn %}
+    {% if theme.mathjax.global or page.mathjax %}
+    <script type="text/javascript" src="{{ theme.mathjax.cdn }}"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    </script>
+    {% endif %}
+    {% endif %}
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang or page.language or config.language }}"  data-spy="scroll" data-target=".list-group">

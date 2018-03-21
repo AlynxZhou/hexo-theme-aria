@@ -7,7 +7,7 @@
     <div class="footer-container">
       <div class="copyright">
         <p><span class="author">{{ config.author }}</span> <i class="far fa-copyright"></i> <span class="year">{% if theme.since %}{{ theme.since }}{% if moment().format("YYYY") != theme.since %} - {{ moment().format("YYYY") }}{% endif %}{% else %}
-        {{ moment().format("YYYY") }}{% endif %}</span></p>
+        {{ moment().format("YYYY") }}{% endif %}</span>{% if theme.creative_commons %} <i class="fab fa-creative-commons"></i> <span class="creative-commons"><a href="http://creativecommons.org/licenses/{{ theme.creative_commons }}/4.0/" target="_blank">{{ theme.creative_commons.toUpperCase() }} 4.0</a></span>{% endif %}</p>
         <p>{{_p("poweredby", "<a href=\"https://hexo.io/\" target=\"_blank\">Hexo</a>")}} | {{ _p("theme", "<a href=\"https://github.com/AlynxZhou/hexo-theme-aria/\" target=\"_blank\">ARIA</a>") }}</p>
         {% if theme.custom_info %}
         <p>{{ theme.custom_info }}</p>
