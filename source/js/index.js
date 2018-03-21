@@ -11,21 +11,28 @@
       $("#menu").slideToggle();
     });
 
-    // Toc scrollspy.
+    // Bootstrap toc scrollspy needs such classes.
     $(".toc").addClass("list-group");
     $(".toc-link").addClass("list-group-item");
 
-    // Auto hide main nav menus.
-    function autoHideMenus() {
-        if ($(window).width() > 768) {
-          $("#menu").show();
-        } else {
-          $("#menu").slideUp();
-        }
+    // Auto hide main nav menus in small screen.
+    if ($(window).width() < 768) {
+      $("#menu").hide();
     }
-    autoHideMenus();
+    var windowWidth = $(window).width();
+    // Show menu again when window becomes bigger.
     $(window).resize(function () {
-      autoHideMenus();
+      if ($(window).width() > 768) {
+        $("#menu").show();
+      } else {
+        // Android chrome fires resize when scroll down.
+        // Because it hides address bar to enlarge window height.
+        // To avoid it, check width.
+        if ($(window).width() != windowWidth) {
+          $("#menu").hide();
+          windowWidth = $(window).width();
+        }
+      }
     });
 
     $(".content").each(function (i) {

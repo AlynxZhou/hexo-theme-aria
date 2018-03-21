@@ -35,8 +35,6 @@ search: true
 
 sidebar: left
 
-animate: true
-
 busuanzi: true
 
 # Available: atom-one-dark | atom-one-light | solarized-dark | solarized-light

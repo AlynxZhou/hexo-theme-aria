@@ -195,24 +195,22 @@ figure {
     color: $grey;
   }
 }
-if (hexo-config("animate") != false) {
-  .animate {
-    animation: 1s flip forwards;
-    position: relative;
-    transform-origin: 50%;
-    top: 5%;
-    // opacity: 0;
-    transform: rotateX(180deg);
-    @keyframes flip {
-      0% {
-        top: 5%;
-        opacity: 0;
-      }
-      100% {
-        // opacity: 1;
-        transform: rotateX(0);
-        top: 0;
-      }
+.animate {
+  animation: 1s flip forwards;
+  position: relative;
+  transform-origin: 50%;
+  top: 5%;
+  // opacity: 0;
+  transform: rotateX(180deg);
+  @keyframes flip {
+    0% {
+      top: 5%;
+      opacity: 0;
+    }
+    100% {
+      // opacity: 1;
+      transform: rotateX(0);
+      top: 0;
     }
   }
 }
