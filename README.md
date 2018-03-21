@@ -49,7 +49,6 @@ Usage:
 TODO:
 
   - More functions
-  - Sticky toc
   - Docs
 
 LICENSE:

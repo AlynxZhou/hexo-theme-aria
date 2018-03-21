@@ -1,17 +1,21 @@
 "use strict";
 (function ($) {
   $(document).ready(function () {
-    // To top button
+    // To top button.
     $("#back-to-top").on("click", function () {
       $("body, html").animate({ scrollTop: 0 }, 600);
     });
 
-    // Nav bar toggle
+    // Nav bar toggle.
     $("#nav-toggle").on("click", function () {
       $("#menu").slideToggle();
     });
 
-    // Auto hide main nav menus
+    // Toc scrollspy.
+    $(".toc").addClass("list-group");
+    $(".toc-link").addClass("list-group-item");
+
+    // Auto hide main nav menus.
     function autoHideMenus() {
         if ($(window).width() > 768) {
           $("#menu").show();
@@ -30,7 +34,7 @@
         if (this.title) {
           $(this).after("<span class=\"caption\">" + this.title + "</span>");
         }
-        // 对于已经包含在链接内的图片不适用lightGallery
+        // If img is already a link, ignore it.
         if ($(this).parent().prop("tagName") !== "A") {
           $(this).wrap("<a href=\"" + this.src + "\" title=\"" + this.alt + "\" class=\"gallery-item\"></a>");
         }

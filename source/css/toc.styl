@@ -1,0 +1,11 @@
+@import "variables"
+.post-toc {
+  position: sticky;
+  top: 2em;
+  .toc-link {
+    &.active {
+      color: $color-link-hover;
+      border-bottom: 1px solid $color-link-hover;
+    }
+  }
+}

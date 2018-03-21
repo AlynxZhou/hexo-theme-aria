@@ -8,19 +8,21 @@
     {% if theme.reward.wechatpay_qrcode %}
     <div id="wechat">
       <img id="wechat_qr" src="{{ url_for(theme.reward.wechatpay_qrcode) }}" alt="{{ __("reward.wechatpay") }}"/>
+      <span>{{ __("reward.wechatpay") }}</span>
     </div>
     {% endif %}
     {% if theme.reward.alipay_qrcode %}
     <div id="alipay">
       <img id="alipay_qr" src="{{ url_for(theme.reward.alipay_qrcode) }}" alt="{{ __("reward.alipay") }}"/>
+      <span>{{ __("reward.alipay") }}</span>
     </div>
     {% endif %}
     {% if theme.reward.bitcoin_qrcode %}
     <div id="bitcoin">
       <img id="bitcoin_qr" src="{{ url_for(theme.reward.bitcoin_qrcode) }}" alt="{{ __("reward.bitcoin") }}"/>
+      <span>{{ __("reward.bitcoin") }}</span>
     </div>
     {% endif %}
   </div>
 </div>
-
 {% endblock %}

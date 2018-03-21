@@ -9,9 +9,10 @@
   <div class="search-result-box" id="search-result"></div>
   {% endif %}
   {% include "author.njk" %}
+  {% include "blogroll.njk" %}
+  {# Keep toc in the bottom for it's sticky! #}
   {% if page.content %}
   {% include "toc.njk" %}
   {% endif %}
-  {% include "blogroll.njk" %}
 </aside>
 {% endblock %}
