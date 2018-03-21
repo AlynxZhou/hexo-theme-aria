@@ -6,7 +6,10 @@
       $("body, html").animate({ scrollTop: 0 }, 600);
     });
 
-    // Nav bar toggle.
+    $("#reward-button").on("click", function () {
+      $("#qr").slideToggle();
+    });
+
     $("#nav-toggle").on("click", function () {
       $("#menu").slideToggle();
     });

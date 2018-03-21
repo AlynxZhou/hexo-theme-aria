@@ -1,7 +1,7 @@
 {% block reward %}
 <div class="reward" id="reward">
   <p>{{ theme.reward.comment }}</p>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(\"qr\"); if (qr.style.display === \"none\") { qr.style.display=\"block\"; } else { qr.style.display=\"none\" }">
+  <button id="reward-button" disable="enable">
     <span>{{ __("reward.button") }}</span>
   </button>
   <div id="qr" class="qr" style="display: none;">
