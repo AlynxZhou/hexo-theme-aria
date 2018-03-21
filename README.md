@@ -19,7 +19,7 @@ This theme makes full use of CSS3 features such as FlexBox and CSS Animation tha
   - Comment system (currently only supprt [HyperComments](https://www.hypercomments.com/) and [Disqus](https://disqus.com/)).
   - Busuanzi counting.
   - Hexo local search support (need to install `hexo-generator-search` and set config as its [README](https://github.com/PaicHyperionDev/hexo-generator-search)).
-  - Multi-languages support (currently zh_CN and en, PR welcome).
+  - Multi-languages support (currently zh_CN, zh_HK, zh_TW and en, PR welcome).
   - Image display powered by [lightgallery](https://sachinchoolur.github.io/lightgallery.js/)
   - RSS supported (need to install `hexo-generator-feed` and set config as its [README](https://github.com/hexojs/hexo-generator-feed)).
 
