@@ -11,7 +11,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 # HELP NEEDED!
 
-This theme makes full use of CSS3 features such as FlexBox and CSS Animation that may not work in some old broswers (like IE 6-11), however I am not a professional frontend developer, compared with CSS I am more familier with JavaScript and Node, and I am lazy and don't know how to add css prefix automatically and elegently. So if you can help with them please send PRs! Thanks!
+This theme makes full use of CSS3 features such as FlexBox and CSS Animation that may not work in some old broswers (like IE 6-11), however I am not a professional frontend developer, compared with CSS I am more familier with JavaScript and Node, I don't know how to make them work in old broswers and I am lazy and don't know how to add css prefix automatically and elegantly. So if you can help with them please send PRs! Thanks!
 
 # Feature:
 
