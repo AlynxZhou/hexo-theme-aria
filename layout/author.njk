@@ -6,7 +6,7 @@
   <p class="author-name">{{ config.author }}</p>
   <p class="author-description"> {{ config.description }}</p>
   {% if config.feed.path %}
-  <a class="rss" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
+  <a class="rss button" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
   {% endif %}
 </div>
 {% if theme.social %}
