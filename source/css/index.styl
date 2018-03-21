@@ -67,10 +67,19 @@ a {
     top: 2px;
   }
 }
-.button {
+a.button {
+  text-decoration: none;
+  border-radius: $corner-radius;
+  transform-origin: 50%;
   border-bottom: none;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 20px 0.5px rgba(0, 0, 0, 0.19);
   &:hover {
+    transform: rotateX(360deg);
     border-bottom: none;
+  }
+  &:active {
+    top: 2px;
   }
 }
 a.gallery-item {
