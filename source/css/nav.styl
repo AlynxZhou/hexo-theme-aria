@@ -16,6 +16,7 @@
     height: 100%;
     li {
       position: relative;
+      text-align: center;
       display: inline-block;
       a {
         color: $color-nav-font;
@@ -25,11 +26,14 @@
         padding: 15px 15px;
         font-size: 20px;
         transition: 0.2s ease-in;
+        border-bottom: none;
         &:hover {
+          border-bottom: none;
           color: $color-nav-link-hover;
           background: $color-nav-hover;
         }
         &.current {
+          border-bottom: none;
           color: $color-nav-link-hover;
           background: $color-nav-current;
         }
@@ -45,7 +49,9 @@
     display: none;
     width: 100%;
     text-align: center;
+    border-bottom: none;
     &:hover {
+      border-bottom: none;
       color: $color-light-link-hover;
     }
   }
@@ -53,11 +59,18 @@
     .nav-toggle {
       display: block;
     }
-    .menu-item {
-      display: block;
-    }
     ul {
       display: none;
+      li {
+        display: block;
+        text-align:center
+        a {
+          border-bottom: none;
+          &:hover {
+            border-bottom: none;
+          }
+        }
+      }
     }
   }
 }
