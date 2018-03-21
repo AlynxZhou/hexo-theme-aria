@@ -34,17 +34,17 @@ This theme makes full use of CSS3 features such as FlexBox and CSS Animation tha
   theme: aria
   # Hexo localsearch
   search:
-  path: search.xml
-  field: all
+    path: search.xml
+    field: all
   # Hexo generator feed
   feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-  content_limit: 140
-  content_limit_delim: ' '
+    type: atom
+    path: atom.xml
+    limit: 20
+    hub:
+    content:
+    content_limit: 140
+    content_limit_delim: ' '
   ```
 
   4. Copy `themes/aria/_config.yml.example` to `themes/aria/_config.yml`, then edit `themes/aria/_config.yml` to what you want.
