@@ -32,9 +32,9 @@ html, body, .container {
 ::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 0.25em;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #666;
+  &:hover {
+    background-color: #666;
+  }
 }
 ::-webkit-scrollbar-corner {
   background-color: #535353;
@@ -196,6 +196,7 @@ figure {
       border-bottom: 0.15em solid $color-link-hover;
     }
     &.current {
+      color: $color-link-hover;
       border-bottom: 0.15em solid $color-link-hover;
       border-top: 0.05em solid $color-link-hover;
     }
