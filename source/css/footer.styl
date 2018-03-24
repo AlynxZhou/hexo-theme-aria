@@ -1,9 +1,27 @@
 @import "variables";
+@import "nib";
 .footer {
   .footer-container {
     padding-right: 1em;
     padding-bottom: 1em;
     padding-left: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    .footer-left {
+      flex-grow: 1;
+      flex-basis: 50%;
+      flex-shrink: 1;
+      text-align: left;
+    }
+    .footer-right {
+      flex-grow: 1;
+      flex-basis: 50%;
+      flex-shrink: 1;
+      text-align: right;
+    }
   }
   margin-top: 1.5em;
   background: $color-footer-background;
@@ -36,8 +54,7 @@
       display: inline-block;
       margin: 0 auto;
       padding: 0 1em;
-      border-bottom-left-radius: $corner-radius;
-      border-bottom-right-radius: $corner-radius;
+      border-radius: bottom $corner-radius;
       font-size: 2em;
       &:hover {
         color: $color-link-hover;
@@ -45,6 +62,17 @@
       }
       &:active{
         border-bottom: none;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      .footer-left {
+        text-align: left;
+      }
+      .footer-right {
+        text-align: left;
       }
     }
   }

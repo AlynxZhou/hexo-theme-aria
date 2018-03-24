@@ -15,6 +15,7 @@
 @import "reward";
 @import "comment";
 @import "toc";
+@import "nib";
 html, body, .container {
   height: 100%;
 }
@@ -53,6 +54,12 @@ body {
   background: $color-background;
   font: $font-size $font-sans;
   -webkit-text-size-adjust: 100%;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
 }
 a {
   color: $color-link;
