@@ -4,9 +4,10 @@
   background: $color-sidebar-background;
   flex-grow: 0;
   flex-shrink: 0;
-  width: 25%;
   flex-basis: 25%
   padding: 0;
+  word-wrap: break-word;
+  word-break:break-all;
   .search {
     height: $search-height - $search-padding-top;
     display: block;
@@ -59,10 +60,5 @@
     box-sizing: content-box;
     background-color: #ddd;
     background-image: repeating-linear-gradient(-45deg, #fff, #fff 0.25em, transparent 0.25em, transparent 0.5em);
-  }
-}
-@media (max-width: 768px) {
-  .sidebar {
-    width: auto;
   }
 }
