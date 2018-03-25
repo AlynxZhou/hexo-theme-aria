@@ -24,7 +24,7 @@
   })();
   </script>
   {% elif theme.comment.disqus_shortname %}
-  <script id="dsq-count-scr" src="//{{ theme.comment.disqus_shortname }}.disqus.com/count.js" async></script>
+  <script defer id="dsq-count-scr" src="//{{ theme.comment.disqus_shortname }}.disqus.com/count.js" async></script>
   {% if page.comment %}
   <div id="disqus_thread" class="disqus_thread"></div>
   <script>
