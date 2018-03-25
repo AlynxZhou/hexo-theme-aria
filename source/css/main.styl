@@ -2,11 +2,11 @@
 @import "nib";
 .main {
   margin-top: - $search-height;
-  .main-body {
+  .main-container {
     width: 100%;
     background: $color-main-background;
     box-sizing: border-box;
-    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
     border-radius: bottom $corner-radius;
     display: flex;
     if (hexo-config("sidebar") == "left") {
@@ -24,63 +24,29 @@
       width: 75%;
       flex-shrink: 1;
       .index-post {
-        display: block;
-        background: white;
         padding: 1em;
         margin: 0.5em;
-        box-sizing: border-box;
-        box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
         img {
           width: 100%;
           text-align: center;
-          border: 0.15em solid $grey;
-          box-sizing: border-box;
-          box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
-          transition: 0.3s ease-in-out;
-          &:hover {
-            opacity: 0.9;
-          }
         }
-        .readmore {
-          display: inline-block;
-          padding: 0.25em 1em;
-          font-size: 1em;
-          color: $color-link-index-button;
-          text-decoration: none;
-          border-radius: $corner-radius;
-          transition: 1s ease-in-out;
-          transform-origin: 50%;
-          background: $color-link-index-button-background;
-          border-bottom: none;
+        .post-button {
           margin: 0.5em;
-          box-sizing: border-box;
-          box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
-          &:hover {
-            border-bottom: none;
-            transform: rotateX(360deg);
-          }
-          &:active {
-            top: 0.1em;
+          .readmore {
+            display: inline-block;
+            padding: 0.25em 1em;
+            font-size: 1em;
+            color: $color-link-index-button;
+            background: $color-link-index-button-background;
           }
         }
-        .post-tag {
-          display: inline-block;
-          text-decoration: none;
-          color: $color-link-index-button;
-          transition: 1s ease-in-out;
-          transform-origin: 50%;
-          border-radius: $corner-radius;
-          margin: 0.25em;
-          padding: 0.15em;
-          border-bottom: none;
-          box-sizing: border-box;
-          box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
-          &:hover {
-            border-bottom: none;
-            transform: rotateX(360deg);
-          }
-          &:active {
-            top: 0.1em;
+        .post-tags {
+          .post-tag {
+            margin: 0.5em;
+            display: inline-block;
+            text-decoration: none;
+            color: $color-link-index-button;
+            padding: 0.15em;
           }
         }
         .post-header {
@@ -89,6 +55,7 @@
             display: inline-block;
             position: relative;
             text-decoration: none;
+            border-bottom: none;
             color: $color-font;
             &::after {
               content: " ";
@@ -102,9 +69,12 @@
               transform: scaleX(0);
               transition: 0.3s ease-in-out;
             }
-            &:hover::after {
-              visibility: visible;
-              transform: scaleX(1);
+            &:hover {
+              border-bottom: none;
+              &::after {
+                visibility: visible;
+                transform: scaleX(1);
+              }
             }
           }
         }

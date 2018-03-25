@@ -9,9 +9,9 @@
 {% block title %}{{ __(page.title) }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<section id="page-content" class="page-content animate">
-  <div class="page-container">
-  {{ page.content }}
+<section id="page-content" class="page-content">
+  <div class="page-container card">
+    {{ page.content }}
   </div>
   {% if theme.comment.enable %}
   {% include "comment.njk" %}

@@ -20,7 +20,7 @@
     {% set year = date(post.date, "YYYY") %}
     <h3 class="archive-year">{{ year }}</h3>
     {% endif %}
-    <article class="archive-post animate" itemscope itemtype="http://schema.org/Article">
+    <article class="archive-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
       <h3 class="post-title" itemprop="name headline">
         <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
         {% if post.date %}
@@ -33,7 +33,7 @@
     {% endfor %}
   </div>
   {% if page.prev or page.next %}
-  <nav class="pagination animate">
+  <nav class="pagination">
     {{
       paginator({
         prev_text: "<i class=\"fas fa-angle-left\"></i>",

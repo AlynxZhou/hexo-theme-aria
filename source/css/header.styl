@@ -9,10 +9,10 @@
     color: $color-light-selection-font;
     background: $color-light-selection;
   }
-  .header-box {
+  .header-container {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-betweem;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
     width: 100%;
@@ -44,6 +44,14 @@
       img {
         max-width: 20em;
         width: 100%;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column-reverse;
+      .header-title {
+        text-align: center;
       }
     }
   }

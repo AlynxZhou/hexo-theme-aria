@@ -5,7 +5,7 @@
 {% block content %}
 <section id="index" class="index">
   {% for post in page.posts.toArray() %}
-  <article class="index-post animate" itemscope itemtype="http://schema.org/Article">
+  <article class="index-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -69,7 +69,11 @@
       {% if post.tags and post.tags.toArray().length %}
       <div class="post-tags">
         {% set i = 0 %}
-        {% set colors = ["#aaa", "#fc6423", "#a3bb54", "#87caff"] %}
+        {% if theme.tags_color %}
+        {% set colors = theme.tags_color %}
+        {% else %}
+        {% set colors = ["#fc6423", "#a3bb54", "#47aaff"] %}
+        {% endif %}
         {% for tag in post.tags.toArray() %}
         {% if i >= colors.length %}
         {% set i = 0 %}
@@ -83,14 +87,14 @@
   </article>
   {% endfor %}
   {% if page.prev or page.next %}
-  <nav class="pagination animate">
-  {{
-    paginator({
-      prev_text: "<i class=\"fas fa-angle-left\"></i>",
-      next_text: "<i class=\"fas fa-angle-right\"></i>",
-      mid_size: 1
-    })
-  }}
+  <nav class="pagination">
+    {{
+      paginator({
+        prev_text: "<i class=\"fas fa-angle-left\"></i>",
+        next_text: "<i class=\"fas fa-angle-right\"></i>",
+        mid_size: 1
+      })
+    }}
   </nav>
   {% endif %}
   {% if theme.comment.enable %}

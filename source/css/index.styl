@@ -61,6 +61,56 @@ body {
 main {
   flex-grow: 1;
 }
+blockquote {
+  display: block;
+  position: relative;
+  margin: 1em;
+  word-wrap: break-word;
+  p {
+    color: $color-quote;
+  }
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -1em;
+    width: 0.25em;
+    height: 100%;
+    background: $grey-light;
+  }
+}
+.blockquote-center {
+  position: relative;
+  margin: 2em;
+  padding: 0;
+  border-left: none;
+  text-align: center;
+  color: $color-quote;
+  &::before, &::after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1.2em;
+    opacity: 0.2;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 -0.4em;
+    background-size: 1.2em 1.2em;
+  }
+  &::before {
+    top: -1em;
+    border-top: 0.2em solid $grey-light;
+  }
+  &::after {
+    bottom: -1em;
+    border-bottom: 0.2em solid $grey-light;
+  }
+  p, div {
+    text-align: center;
+  }
+}
 a {
   color: $color-link;
   text-decoration: none;
@@ -75,15 +125,15 @@ a {
   }
 }
 a.button {
+  transition: 0.3s ease-in-out;
   text-decoration: none;
   border-radius: $corner-radius;
   transform-origin: 50%;
   border-bottom: none;
   box-sizing: border-box;
-  box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
   &:hover {
-    transform: rotateX(360deg);
-    border-bottom: none;
+    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
   }
   &:active {
     top: 0.1em;
@@ -92,10 +142,18 @@ a.button {
 a.gallery-item {
   text-decoration: none;
   border-bottom: none;
-  transition: 0.3s ease-in-out;
+  display: block;
+  padding: 1em;
+  img {
+    transition: 0.3s ease-in-out;
+    border: 0.15em solid $grey;
+    box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  }
   &:hover {
+    img {
+      box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+    }
     border-bottom: none;
-    opacity: 0.9;
   }
 }
 hr {
@@ -120,6 +178,16 @@ code {
   border-radius: $corner-radius;
   font-family: $font-mono;
   background-color: #f8f8f8;
+}
+.card {
+  display: block;
+  background: white;
+  transition: 0.2s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  &:hover {
+    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+  }
 }
 figure {
   overflow: auto;
@@ -153,38 +221,6 @@ figure {
   width: 100%;
   margin: 0 auto;
 }
-.blockquote-center {
-  position: relative;
-  margin: 2em 0;
-  padding: 0;
-  border-left: none;
-  text-align: center;
-  &::before, &::after {
-    position: absolute;
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 1.2em;
-    opacity: 0.2;
-    background-repeat: no-repeat;
-    background-position: 0 -0.4em;
-    background-size: 1.2em 1.2em;
-  }
-  &::before {
-    top: -1em;
-    background-image: url(../images/quote-l.svg);
-    border-top: 0.1em solid $grey-light;
-  }
-  &::after {
-    bottom: -1em;
-    background-image: url(../images/quote-r.svg);
-    border-bottom: 0.1em solid $grey-light;
-    background-position: 100% 0.4em;
-  }
-  p, div {
-    text-align: center;
-  }
-}
 .pagination {
   padding: 1.5em;
   display: block;
@@ -215,21 +251,19 @@ figure {
   }
 }
 .animate {
-  animation: 1s flip forwards;
+  animation: 0.3s flip forwards;
   position: relative;
+  opacity: 0;
   transform-origin: 50%;
-  top: 5%;
-  // opacity: 0;
   transform: rotateX(180deg);
   @keyframes flip {
     0% {
-      top: 5%;
       opacity: 0;
+      transform: rotateX(180deg);
     }
     100% {
-      // opacity: 1;
+      opacity: 1;
       transform: rotateX(0);
-      top: 0;
     }
   }
 }

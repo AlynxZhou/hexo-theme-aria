@@ -3,9 +3,9 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-<section id="post-content" class="post-content">
+<section id="post" class="post">
   {% set post = page %}
-  <article class="post animate" itemscope itemtype="http://schema.org/Article">
+  <article class="post-container card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -60,7 +60,11 @@
       {% if post.tags and post.tags.toArray().length %}
       <div class="post-tags">
         {% set i = 0 %}
-        {% set colors = ["#aaa", "#fc6423", "#a3bb54", "#87caff"] %}
+        {% if theme.tags_color %}
+        {% set colors = theme.tags_color %}
+        {% else %}
+        {% set colors = ["#fc6423", "#a3bb54", "#47aaff"] %}
+        {% endif %}
         {% for tag in post.tags.toArray() %}
         {% if i >= colors.length %}
         {% set i = 0 %}
@@ -76,7 +80,7 @@
   {% include "reward.njk" %}
   {% endif %}
   {% if post.prev or post.next %}
-  <div class="post-nav animate">
+  <div class="post-nav">
     {% if post.next %}
     <div class="post-nav-next post-nav-item">
       <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}"><i class="fas fa-angle-left"></i> {{ post.next.title }}</a>

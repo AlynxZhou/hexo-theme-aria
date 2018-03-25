@@ -7,7 +7,7 @@
     margin: 0 auto;
     border: 0.3em solid white;
     border-radius: 50%;
-    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
     transition: 1s ease-in-out;
     &:hover {
       transform: rotateY(720deg);
@@ -24,23 +24,9 @@
   .rss {
     display: block;
     font-size: 1.5em;
-    text-decoration: none;
-    border-bottom: none;
     color: $color-link-index-button;
     background: $orange;
-    transition: 1s ease-in-out;
-    transform-origin: 50%;
-    border-radius: $corner-radius;
     margin: 0.25em;
     padding: 0.15em;
-    box-sizing: border-box;
-    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
-    &:hover {
-      border-bottom: none;
-      transform: rotateX(360deg);
-    }
-    &:active {
-      top: 0.1em;
-    }
   }
 }

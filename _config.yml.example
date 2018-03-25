@@ -34,6 +34,12 @@ logo: images/ARIA_logo.png
 # Need quote to prevent `#` from comment.
 android_chrome_color: "#26272b"
 
+# Tags will use color here in a loop.
+tags_color:
+  - "#fc6423"
+  - "#a3bb54"
+  - "#47aaff"
+
 google_site_verification:
 
 since:
@@ -41,6 +47,9 @@ since:
 search: true
 
 sidebar: left
+
+# Animation in Home, Archive, Category and Tag.
+animate: false
 
 busuanzi: true
 

@@ -1,17 +1,11 @@
 @import "variables";
 @import "nib";
-.post {
+.post-container {
   padding: 1em;
-  background: white;
   margin: 0.5em;
-  box-sizing: border-box;
-  box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
   img {
     width: 100%;
     text-align: center;
-    border: 0.15em solid $grey;
-    box-sizing: border-box;
-    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
   }
   .post-title {
     text-align: center;
@@ -25,22 +19,13 @@
     display: block;
     position: relative;
   }
-  .post-tag {
-    display: inline-block;
-    text-decoration: none;
-    color: $color-link-index-button;
-    transition: 1s ease-in-out;
-    transform-origin: 50%;
-    border-radius: $corner-radius;
-    margin: 0.25em;
-    padding: 0.15em;
-    box-sizing: border-box;
-    box-shadow: 0 0.075em 1em 0.25em rgba(0, 0, 0, 0.19);
-    &:hover {
-      transform: rotateX(360deg);
-    }
-    &:active {
-      top: 0.1em;
+  .post-tags {
+    .post-tag {
+      margin: 0.5em;
+      display: inline-block;
+      text-decoration: none;
+      color: $color-link-index-button;
+      padding: 0.15em;
     }
   }
 }

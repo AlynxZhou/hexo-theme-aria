@@ -2,6 +2,7 @@
 @import "nib";
 .footer {
   .footer-container {
+    line-height: 2em;
     padding-right: 1em;
     padding-bottom: 1em;
     padding-left: 1em;
@@ -54,6 +55,7 @@
       display: inline-block;
       margin: 0 auto;
       padding: 0 1em;
+      cursor: pointer;
       border-radius: bottom $corner-radius;
       font-size: 2em;
       &:hover {
@@ -67,12 +69,12 @@
   }
   @media (max-width: 768px) {
     .footer-container {
-      flex-direction: column;
+      flex-direction: column-reverse;
       .footer-left {
-        text-align: left;
+        text-align: center;
       }
       .footer-right {
-        text-align: left;
+        text-align: center;
       }
     }
   }
