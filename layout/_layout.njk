@@ -36,39 +36,40 @@
     {% if config.feed.path %}
     <link rel="alternate" href="{{ url_for(config.feed.path) }}" title="{{ config.title }}" type="application/atom+xml" />
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for("css/index.css") }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for("css/normalize.css") }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for("css/" + theme.highlight + ".css") }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for("css/lightgallery.min.css") }}">
-    <script type="text/javascript" src="{{ url_for("js/jquery.min.js")}}"></script>
-    <script defer type="text/javascript" src="{{ url_for("js/util.js")}}"></script>
-    <script defer type="text/javascript" src="{{ url_for("js/scrollspy.js")}}"></script>
-    <script defer type="text/javascript" src="{{ url_for("js/fontawesome-all.min.js")}}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lightgallery.min.js") }}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lg-thumbnail.min.js") }}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lg-zoom.min.js") }}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lg-share.min.js") }}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lg-pager.min.js") }}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lg-hash.min.js") }}"></script>
-    <script async type="text/javascript" src="{{ url_for("js/lg-fullscreen.min.js") }}"></script>
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.index.css %}{{ theme.lib_cdn.index.css }}{% else %}{{ url_for("css/index.css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.normalize %}{{ theme.lib_cdn.normalize }}{% else %}{{ url_for("css/normalize.css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn[theme.highlight] %}{{ theme.lib_cdn[theme.highlight] }}{% else %}{{ url_for("css/" + theme.highlight + ".css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.lightgallery.css %}{{ theme.lib_cdn.lightgallery.css }}{% else %}{{ url_for("css/lightgallery.min.css") }}{% endif %}">
+    <script type="text/javascript" src="{% if theme.lib_cdn.jquery %}{{ theme.lib_cdn.jquery }}{% else %}{{ url_for("js/jquery.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.util %}{{ theme.lib_cdn.util }}{% else %}{{ url_for("js/util.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.scrollspy %}{{ theme.lib_cdn.scrollspy }}{% else %}{{ url_for("js/scrollspy.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.fontawesome %}{{ theme.lib_cdn.fontawesome }}{% else %}{{ url_for("js/fontawesome-all.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.lightgallery.js %}{{ theme.lib_cdn.lightgallery.js }}{% else %}{{ url_for("js/lightgallery.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_fullscreen %}{{ theme.lib_cdn.lg_fullscreen }}{% else %}{{ url_for("js/lg-fullscreen.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_hash %}{{ theme.lib_cdn.lg_hash }}{% else %}{{ url_for("js/lg-hash.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_pager %}{{ theme.lib_cdn.lg_pager }}{% else %}{{ url_for("js/lg-pager.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_thumbnail %}{{ theme.lib_cdn.lg_thumbnail }}{% else %}{{ url_for("js/lg-thumbnail.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_zoom %}{{ theme.lib_cdn.lg_zoom }}{% else %}{{ url_for("js/lg-zoom.min.js") }}{% endif %}"></script>
     {% if theme.busuanzi %}
-    <script async src="{{ url_for("js/busuanzi.pure.mini.js")}}"></script>
+    <script defer src="{% if theme.lib_cdn.busuanzi %}{{ theme.lib_cdn.busuanzi }}{% else %}{{ url_for("js/busuanzi.pure.mini.js") }}{% endif %}"></script>
     {% endif %}
-    <script defer type="text/javascript" src="{{ url_for("js/index.js")}}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.index.js %}{{ theme.lib_cdn.index.js }}{% else %}{{ url_for("js/index.js") }}{% endif %}"></script>
     {% if theme.search %}
-    <script type="text/javascript" src="{{ url_for("js/search.js") }}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.search %}{{ theme.lib_cdn.search }}{% else %}{{ url_for("js/search.js") }}{% endif %}"></script>
     <script type="text/javascript">
-    var searchPath = "{{ config.search.path }}";
-    if (searchPath.length == 0) {
-	    searchPath = "search.xml";
-    }
-    var path = "{{ config.root }}" + searchPath;
-    searchFunc(path, "search-input", "search-result");
+    $(document).ready(function () {
+      var searchPath = "{{ config.search.path }}";
+      if (searchPath.length == 0) {
+  	    searchPath = "search.xml";
+      }
+      var path = "{{ config.root }}" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
     </script>
     {% endif %}
     {% if theme.mathjax.cdn %}
     {% if theme.mathjax.global or page.mathjax %}
-    <script type="text/javascript" src="{{ theme.mathjax.cdn }}"></script>
+    <script defer type="text/javascript" src="{{ theme.mathjax.cdn }}"></script>
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {

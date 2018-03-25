@@ -62,6 +62,32 @@ mathjax:
   cdn:
   global:
 
+# Note: `fontawesom` is fontawesome-all, `scrollspy` and `util` are from bootstrap.
+# If you don't know what you are doing, don't change it.
+lib_cdn:
+  jquery:
+  fontawesome:
+  scrollspy:
+  util:
+  lightgallery:
+    js:
+    css:
+  lg_fullscreen:
+  lg_hash:
+  lg_pager:
+  lg_thumbnail:
+  lg_zoom:
+  busuanzi:
+  atom-one-dark:
+  atom-one-light:
+  solarized-dark:
+  solarized-light:
+  normalize:
+  search:
+  index:
+    js:
+    css:
+
 social:
   GitHub:
     link: https://github.com/
