@@ -2,7 +2,7 @@
 @import "nib";
 .sidebar {
   background: $color-sidebar-background;
-  flex-grow: 0;
+  flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 25%
   width: 25%;
@@ -61,5 +61,8 @@
     box-sizing: content-box;
     background-color: #ddd;
     background-image: repeating-linear-gradient(-45deg, #fff, #fff 0.25em, transparent 0.25em, transparent 0.5em);
+  }
+  @media (max-width: 768px) {
+    width: 100%
   }
 }
