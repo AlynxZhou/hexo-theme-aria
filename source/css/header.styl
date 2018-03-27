@@ -16,9 +16,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-wrap: nowrap;
+    width: auto;
     .header-title {
+      text-align: left;
+      width: 50%;
+      word-wrap: break-word;
       flex-grow: 2;
       color: $color-title;
       padding: 0.5em;
@@ -40,6 +43,8 @@
       }
     }
     .logo {
+      text-align: right;
+      width: 50%;
       flex-grow: 1;
       text-align: center;
       padding-top: 1em;
@@ -49,11 +54,16 @@
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 40em) {
     .header-container {
       flex-direction: column-reverse;
       .header-title {
         text-align: center;
+        width: auto;
+      }
+      .logo {
+        text-align: center;
+        width: auto;
       }
     }
   }

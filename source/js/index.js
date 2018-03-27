@@ -18,14 +18,16 @@
     $(".toc").addClass("list-group");
     $(".toc-link").addClass("list-group-item");
 
+    // 40em * 16px
+    var minWidth = 40 * 16;
     // Auto hide main nav menus in small screen.
-    if ($(window).width() < 768) {
+    if ($(window).width() < minWidth) {
       $("#menu").hide();
     }
     var windowWidth = $(window).width();
     // Show menu again when window becomes bigger.
     $(window).resize(function () {
-      if ($(window).width() > 768) {
+      if ($(window).width() > minWidth) {
         $("#menu").show();
       } else {
         // Android chrome fires resize when scroll down.

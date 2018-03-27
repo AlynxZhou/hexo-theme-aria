@@ -31,8 +31,10 @@
         <span class="post-meta-divider"> | </span>
         <span class="post-categories">
           <i class="far fa-folder-open"></i>
+          {% set i = 0 %}
           {% for cat in post.categories.toArray() %}
-            <span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
+          {% if i != 0 %}<i class="fas fa-angle-right"></i> {% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
+          {% set i = i + 1 %}
           {% endfor %}
         </span>
         {% endif %}
@@ -54,12 +56,12 @@
       {% if post.description %}
       {{ post.description }}
       <div class="post-button">
-        <a class="readmore" href="{{ url_for(post.path) }}">Read More &gt;&gt;</a>
+        <a class="readmore" href="{{ url_for(post.path) }}">{{ __("readmore") }} <i class="fas fa-angle-double-right"></i></a>
       </div>
       {% elif post.excerpt  %}
       {{ post.excerpt }}
       <div class="post-button">
-        <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }} &gt;&gt;</a>
+        <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }} <i class="fas fa-angle-double-right"></i></a>
       </div>
       {% else %}
       {{ post.content }}
@@ -78,7 +80,7 @@
         {% if i >= colors.length %}
         {% set i = 0 %}
         {% endif %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }}" rel="tag"># {{ tag.name }}</a>
+        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }}" rel="tag"><i class="fas fa-tags"></i> {{ tag.name }}</a>
         {% set i = i + 1 %}
         {% endfor %}
       </div>

@@ -3,7 +3,7 @@
 .main {
   margin-top: - $search-height;
   .main-container {
-    width: 100%;
+    width: auto;
     background: $color-main-background;
     box-sizing: border-box;
     box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
@@ -27,10 +27,6 @@
       .index-post {
         padding: 1em;
         margin: 0.5em;
-        img {
-          width: 100%;
-          text-align: center;
-        }
         .post-button {
           margin: 0.5em;
           .readmore {
@@ -82,7 +78,7 @@
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 48em) {
     .main-container {
       flex-direction: column;
       .content {
