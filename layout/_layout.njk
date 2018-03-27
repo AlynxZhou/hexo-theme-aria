@@ -54,6 +54,7 @@
     <script defer src="{% if theme.lib_cdn.busuanzi %}{{ theme.lib_cdn.busuanzi }}{% else %}{{ url_for("js/busuanzi.pure.mini.js") }}{% endif %}"></script>
     {% endif %}
     <script defer type="text/javascript" src="{% if theme.lib_cdn.index.js %}{{ theme.lib_cdn.index.js }}{% else %}{{ url_for("js/index.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.custom.js %}{{ theme.lib_cdn.custom.js }}{% else %}{{ url_for("js/custom.js") }}{% endif %}"></script>
     {% if theme.search %}
     <script defer type="text/javascript" src="{% if theme.lib_cdn.search %}{{ theme.lib_cdn.search }}{% else %}{{ url_for("js/search.js") }}{% endif %}"></script>
     <script type="text/javascript">

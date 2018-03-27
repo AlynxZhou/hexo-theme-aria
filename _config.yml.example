@@ -84,6 +84,8 @@ lib_cdn:
   solarized-light:
   normalize:
   search:
+  custom:
+    js:
   index:
     js:
     css:
