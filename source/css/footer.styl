@@ -1,8 +1,14 @@
 @import "variables";
 @import "nib";
 .footer {
+  ::selection {
+    color: $color-footer-background;
+    background: $color-footer-font;
+  }
   flex-shrink: 0;
   flex-grow: 0;
+  background: $color-footer-background;
+  color: $color-footer-font;
   .footer-container {
     width: auto;
     word-wrap: break-word;
@@ -30,16 +36,14 @@
     }
   }
   margin-top: 1.5em;
-  background: $color-footer-background;
-  color: $color-lighter-font;
   a {
-    color: $color-light-link;
+    color: $color-footer-link;
     text-decoration: none;
-    border-bottom: 0.05em dotted $color-light-link;
+    border-bottom: 0.05em dotted $color-footer-link;
     transition: 0.3s ease-in-out;
     &:hover {
-      color: $color-light-link-hover;
-      border-bottom: 0.05em solid $color-light-link-hover;
+      color: $color-footer-link-hover;
+      border-bottom: 0.05em solid $color-footer-link-hover;
     }
     &:active {
       top: 0.1em;

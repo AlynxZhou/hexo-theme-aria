@@ -1,10 +1,14 @@
 @import "variables";
 @import "nib";
 .header {
+  ::selection {
+    color: $color-header-background;
+    background: $color-header-font;
+  }
   padding-bottom: $search-height;
   margin-bottom: 0;
   background: $color-header-background;
-  position: relative;
+  color: $color-header-font;
   flex-shrink: 0;
   flex-grow: 0;
   .header-container {
