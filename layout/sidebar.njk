@@ -13,11 +13,14 @@
   <a class="rss button sidebar-item" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
   {% endif %}
   {% if theme.social %}
+  <hr>
   {% include "sociallink.njk" %}
   {% endif %}
+  <hr>
   {% include "blogroll.njk" %}
   {# Keep toc in the bottom for it's sticky! #}
   {% if page.content %}
+  <hr>
   {% include "toc.njk" %}
   {% endif %}
 </aside>

@@ -1,7 +1,6 @@
 {% block toc %}
 {% set toc = toc(page.content, { "list_number": false }) %}
 {% if toc.length > 1 %}
-<hr>
 <div class="post-toc sidebar-item" id="post-toc">
   <p><i class="fas fa-list-ol"></i> {{ __("toc") }}</p>
   <div class="post-toc-content">{{ toc }}</div>
