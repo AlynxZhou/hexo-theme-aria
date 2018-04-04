@@ -7,11 +7,12 @@ menu:
 
 # Transform your image to those favicons in https://realfavicongenerator.net/.
 favicon:
-  small: favicons/favicon-16x16.png
-  medium: favicons/favicon-32x32.png
   apple_touch_icon: favicons/apple-touch-icon.png
+  android_chrome_large: favicons/android-chrome-192x192.png
+  medium: favicons/favicon-32x32.png
+  small: favicons/favicon-16x16.png
   safari_pinned_tab: favicons/safari-pinned-tab.svg
-  android_manifest: favicons/manifest.json
+  android_manifest: favicons/site.webmanifest
   ms_browserconfig: favicons/browserconfig.xml
 
 # Must be a string.
@@ -32,7 +33,7 @@ avatar: images/avatar.png
 logo: images/ARIA_logo.png
 
 # Need quote to prevent `#` from comment.
-android_chrome_color: "#26272b"
+color: "#33363b"
 
 # Tags will use color here in a loop.
 tags_color:
