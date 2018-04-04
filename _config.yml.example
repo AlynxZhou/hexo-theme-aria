@@ -63,7 +63,7 @@ mathjax:
   cdn:
   global:
 
-# Note: `fontawesom` is fontawesome-all, `scrollspy` and `util` are from bootstrap.
+# Note: `fontawesome` is fontawesome-all. `scrollspy` and `util` are from bootstrap. `busuanzi` is `busuanzi.pure.mini.js`.
 # If you don't know what you are doing, don't change it.
 lib_cdn:
   jquery:
