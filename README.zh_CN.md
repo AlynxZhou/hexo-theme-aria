@@ -28,52 +28,52 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
   1. 进入你的 Hexo 站点目录，安装所需的插件：
 
-    ```
-    $ npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed
-    ```
+```
+$ npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed
+```
 
   2. 克隆此仓库到 Hexo 站点下的 `themes/aria` 目录，如下：
 
-    ```
-    $ git clone https://github.com/AlynxZhou/hexo-theme-aria themes/aria
-    ```
+```
+$ git clone https://github.com/AlynxZhou/hexo-theme-aria themes/aria
+```
 
   3. 修改你 Hexo 站点的 `_config.yml`：
 
     1. 把主题修改为 `aria`：
 
-      ```yaml
-      theme: aria
-      ```
+```yaml
+theme: aria
+```
 
     2. 添加 Hexo 搜索插件的配置：
 
-      ```yaml
-      # Hexo localsearch
-      search:
-        path: search.xml
-        field: all
-      ```
+```yaml
+# Hexo localsearch
+search:
+  path: search.xml
+  field: all
+```
 
     3. 添加 Hexo RSS 插件的配置：
 
-      ```yaml
-      # Hexo generator feed
-      feed:
-        type: atom
-        path: atom.xml
-        limit: 20
-        hub:
-        content:
-        content_limit: 140
-        content_limit_delim: ' '
-      ```
+```yaml
+# Hexo generator feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+```
 
   4. 复制 ARIA 目录中的 `_config.yml.example` 为 `_config.yml`：
 
-    ```
-    $ cp themes/aria/_config.yml.example themes/aria/_config.yml
-    ```
+```
+$ cp themes/aria/_config.yml.example themes/aria/_config.yml
+```
 
   5. 修改 ARIA 目录下的 `_config.yml`：
 
@@ -81,14 +81,14 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
       如果你想要启用“分类”和“标签”页面，取消注释 `categories` 和 `tags`：
 
-      ```yaml
-      menu:
-        home: /
-        archives: archives/
-        categories: categories/
-        tags: tags/
-        about: about/
-      ```
+```yaml
+menu:
+  home: /
+  archives: archives/
+  categories: categories/
+  tags: tags/
+  about: about/
+```
 
     2. 生成 Favicon：
 
@@ -158,12 +158,12 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
       在 `social` 下添加你的个人社交链接，格式如下：
 
-      ```yaml
-      social:
-        显示名称:
-          link: 链接地址
-          icon: 显示的 Font Awesome 图标 class 属性
-      ```
+```yaml
+social:
+  显示名称:
+    link: 链接地址
+    icon: 显示的 Font Awesome 图标 class 属性
+```
 
       前往 [Font Awesome](https://fontawesome.com/) 获取你想要的图标。
 
@@ -171,10 +171,10 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
       在 `blogroll` 下添加友情链接，格式如下：
 
-      ```yaml
-      blogroll:
-        显示名称: 链接地址
-      ```
+```yaml
+blogroll:
+  显示名称: 链接地址
+```
 
     20. 评论系统：
 

@@ -36,52 +36,52 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
   1. Change to your Hexo website dir and install plugins:
 
-    ```
-    $ npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed
-    ```
+```
+$ npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed
+```
 
   2. Clone this repo to `themes/aria`:
 
-    ```
-    $ git clone https://github.com/AlynxZhou/hexo-theme-aria themes/aria
-    ```
+```
+$ git clone https://github.com/AlynxZhou/hexo-theme-aria themes/aria
+```
 
   3. Edit your site's `_config.yml`:
 
     1. Change theme to `aria`:
 
-      ```yaml
-      theme: aria
-      ```
+```yaml
+theme: aria
+```
 
     2. Add config of Hexo search plugin:
 
-      ```yaml
-      # Hexo localsearch
-      search:
-        path: search.xml
-        field: all
-      ```
+```yaml
+# Hexo localsearch
+search:
+  path: search.xml
+  field: all
+```
 
     3. Add config of Hexo RSS plugin:
 
-      ```yaml
-      # Hexo generator feed
-      feed:
-        type: atom
-        path: atom.xml
-        limit: 20
-        hub:
-        content:
-        content_limit: 140
-        content_limit_delim: ' '
-      ```
+```yaml
+# Hexo generator feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+```
 
   4. Copy ARIA's `_config.yml.example` to `_config.yml`:
 
-    ```
-    $ cp themes/aria/_config.yml.example themes/aria/_config.yml
-    ```
+```
+$ cp themes/aria/_config.yml.example themes/aria/_config.yml
+```
 
   5. Edit `_config.yml` in ARIA's dir：
 
@@ -89,14 +89,14 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
       If you want to add "Categories" and "Tags" page, uncomment `categories` and `tags`：
 
-      ```yaml
-      menu:
-        home: /
-        archives: archives/
-        categories: categories/
-        tags: tags/
-        about: about/
-      ```
+```yaml
+menu:
+  home: /
+  archives: archives/
+  categories: categories/
+  tags: tags/
+  about: about/
+```
 
     2. Generating Favicon：
 
@@ -166,12 +166,12 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
       Add your social links under `social` like following:
 
-      ```yaml
-      social:
-        Display Name:
-          link: Link Address
-          icon: Class property of Font Awesome icon you want to use
-      ```
+```yaml
+social:
+  Display Name:
+    link: Link Address
+    icon: Class property of Font Awesome icon you want to use
+```
 
       Get icons in [Font Awesome](https://fontawesome.com/).
 
@@ -179,10 +179,10 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
       Add links under `blogroll` like following:
 
-      ```yaml
-      blogroll:
-        Display Name: Link Address
-      ```
+```yaml
+blogroll:
+  Display Name: Link Address
+```
 
     20. Comment Support:
 
