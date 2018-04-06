@@ -190,11 +190,11 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 		Set `reward` to `enable: true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Comment to disable a QRCode.
 
-	6. Custom CSS and JavaScript：
+6. Custom CSS and JavaScript：
 
-		If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last and won't influence CVS.
+	If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last and won't influence CVS.
 
-		If you need some custom JavaScript, just edit `themes/aria/source/js/custom.js` which will be added last and won't influence CVS.
+	If you need some custom JavaScript, just edit `themes/aria/source/js/custom.js` which will be added last and won't influence CVS.
 
 # LICENSE:
 
