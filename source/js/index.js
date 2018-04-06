@@ -49,6 +49,8 @@
         // If img is already a link, ignore it.
         if ($(this).parent().prop("tagName") !== "A") {
           $(this).wrap("<a href=\"" + this.src + "\" title=\"" + this.alt + "\" class=\"gallery-item\"></a>");
+        } else {
+          $(this).parent().addClass("img-link");
         }
       });
     });
