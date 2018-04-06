@@ -9,12 +9,12 @@
     <meta name="msapplication-TileColor" content="{{ theme.color }}">
     {% endif %}
     {% if theme.google_site_verification %}
-    <meta name="google-site-verification" content="{{ theme.google_site_verification }}">
+    <meta name="google-site-verification" content="{{ theme.google_verification }}">
     {% endif %}
     {% if page.keywords %}
-    <meta name="keywords" content="{{ page.keywords }}">
+    <meta name="keywords" content="{{ page.keywords.join(", ") }}">
     {% elif theme.keywords %}
-    <meta name="keywords" content="{{ theme.keywords }}">
+    <meta name="keywords" content="{{ theme.keywords.join(", ") }}">
     {% endif %}
     {% if theme.favicon.apple_touch_icon %}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}">
@@ -40,25 +40,25 @@
     {% if config.feed.path %}
     <link rel="alternate" href="{{ url_for(config.feed.path) }}" title="{{ config.title }}" type="application/atom+xml" />
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.index.css %}{{ theme.lib_cdn.index.css }}{% else %}{{ url_for("css/index.css") }}{% endif %}">
-    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.normalize %}{{ theme.lib_cdn.normalize }}{% else %}{{ url_for("css/normalize.css") }}{% endif %}">
-    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn[theme.highlight] %}{{ theme.lib_cdn[theme.highlight] }}{% else %}{{ url_for("css/" + theme.highlight + ".css") }}{% endif %}">
-    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.lightgallery.css %}{{ theme.lib_cdn.lightgallery.css }}{% else %}{{ url_for("css/lightgallery.min.css") }}{% endif %}">
-    <script type="text/javascript" src="{% if theme.lib_cdn.jquery %}{{ theme.lib_cdn.jquery }}{% else %}{{ url_for("js/jquery.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.util %}{{ theme.lib_cdn.util }}{% else %}{{ url_for("js/util.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.scrollspy %}{{ theme.lib_cdn.scrollspy }}{% else %}{{ url_for("js/scrollspy.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.fontawesome %}{{ theme.lib_cdn.fontawesome }}{% else %}{{ url_for("js/fontawesome-all.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.lightgallery.js %}{{ theme.lib_cdn.lightgallery.js }}{% else %}{{ url_for("js/lightgallery.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_fullscreen %}{{ theme.lib_cdn.lg_fullscreen }}{% else %}{{ url_for("js/lg-fullscreen.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_hash %}{{ theme.lib_cdn.lg_hash }}{% else %}{{ url_for("js/lg-hash.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_pager %}{{ theme.lib_cdn.lg_pager }}{% else %}{{ url_for("js/lg-pager.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_thumbnail %}{{ theme.lib_cdn.lg_thumbnail }}{% else %}{{ url_for("js/lg-thumbnail.min.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.lg_zoom %}{{ theme.lib_cdn.lg_zoom }}{% else %}{{ url_for("js/lg-zoom.min.js") }}{% endif %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.index.css %}{{ theme.lib_cdn.index.css }}{% else %}{{ url_for("css/index.css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.normalize %}{{ theme.lib_cdn.normalize }}{% else %}{{ url_for("css/normalize.css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn[theme.highlight] %}{{ theme.lib_cdn[theme.highlight] }}{% else %}{{ url_for("css/" + theme.highlight + ".css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.lightgallery.css %}{{ theme.lib_cdn.lightgallery.css }}{% else %}{{ url_for("css/lightgallery.min.css") }}{% endif %}">
+    <script type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.jquery %}{{ theme.lib_cdn.jquery }}{% else %}{{ url_for("js/jquery.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.util %}{{ theme.lib_cdn.util }}{% else %}{{ url_for("js/util.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.scrollspy %}{{ theme.lib_cdn.scrollspy }}{% else %}{{ url_for("js/scrollspy.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.fontawesome %}{{ theme.lib_cdn.fontawesome }}{% else %}{{ url_for("js/fontawesome-all.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lightgallery.js %}{{ theme.lib_cdn.lightgallery.js }}{% else %}{{ url_for("js/lightgallery.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lg_fullscreen %}{{ theme.lib_cdn.lg_fullscreen }}{% else %}{{ url_for("js/lg-fullscreen.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lg_hash %}{{ theme.lib_cdn.lg_hash }}{% else %}{{ url_for("js/lg-hash.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lg_pager %}{{ theme.lib_cdn.lg_pager }}{% else %}{{ url_for("js/lg-pager.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lg_thumbnail %}{{ theme.lib_cdn.lg_thumbnail }}{% else %}{{ url_for("js/lg-thumbnail.min.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lg_zoom %}{{ theme.lib_cdn.lg_zoom }}{% else %}{{ url_for("js/lg-zoom.min.js") }}{% endif %}"></script>
     {% if theme.busuanzi %}
-    <script defer src="{% if theme.lib_cdn.busuanzi %}{{ theme.lib_cdn.busuanzi }}{% else %}{{ url_for("js/busuanzi.pure.mini.js") }}{% endif %}"></script>
+    <script defer src="{% if theme.lib_cdn.enable and theme.lib_cdn.busuanzi %}{{ theme.lib_cdn.busuanzi }}{% else %}{{ url_for("js/busuanzi.pure.mini.js") }}{% endif %}"></script>
     {% endif %}
     {% if theme.search %}
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.search %}{{ theme.lib_cdn.search }}{% else %}{{ url_for("js/search.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.search %}{{ theme.lib_cdn.search }}{% else %}{{ url_for("js/search.js") }}{% endif %}"></script>
     <script type="text/javascript">
     $(document).ready(function () {
       var searchPath = "{{ config.search.path }}";
@@ -92,8 +92,8 @@
     </script>
     {% endif %}
     {% endif %}
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.index.js %}{{ theme.lib_cdn.index.js }}{% else %}{{ url_for("js/index.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.custom.js %}{{ theme.lib_cdn.custom.js }}{% else %}{{ url_for("js/custom.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.index.js %}{{ theme.lib_cdn.index.js }}{% else %}{{ url_for("js/index.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.custom.js %}{{ theme.lib_cdn.custom.js }}{% else %}{{ url_for("js/custom.js") }}{% endif %}"></script>
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang or page.language or config.language }}"  data-spy="scroll" data-target=".list-group">

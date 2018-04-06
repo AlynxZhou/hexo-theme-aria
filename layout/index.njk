@@ -3,6 +3,7 @@
 {% block title %}{{ config.title }} - {{ config.subtitle }}{% endblock %}
 
 {% block content %}
+{% set comment = false %}
 <section id="index" class="index">
   {% for post in page.posts.toArray() %}
   <article class="index-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
@@ -38,7 +39,7 @@
           {% endfor %}
         </span>
         {% endif %}
-        {% if post.comment and theme.comment.enable %}
+        {% if post.comment != false and theme.comment.enable %}
         <span class="post-meta-divider"> | </span>
           {% if theme.comment.hypercomments_id %}
           <span class="post-comment-count">

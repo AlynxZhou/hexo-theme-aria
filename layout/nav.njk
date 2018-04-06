@@ -3,7 +3,7 @@
   <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
   <ul id="menu">
     {% for k, v in theme.menu %}
-    <li><a href="{{ url_for(v) }}"{% if (url_for(v) + "index.html") == ("/" + path) %} class="current"{% endif %}>{{ __(k) }}</a></li>
+    <li><a href="{{ url_for(v) }}"{% if is_current(url_for(v), true) %} class="current"{% endif %}>{{ __(k) }}</a></li>
     {% endfor %}
   </ul>
 </nav>

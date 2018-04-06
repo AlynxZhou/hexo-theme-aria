@@ -1,9 +1,15 @@
-{% if page.layout == "index" or page.type == "index" %}
+{% if page.layout == "index" or page.type == "index" or is_home() %}
 {% include "index.njk" %}
+{% elif page.layout == "archive" or page.type == "archive" or is_archive() %}
+{% include "archive.njk" %}
 {% elif page.layout == "categories" or page.type == "categories" %}
 {% include "categories.njk" %}
+{% elif page.layout == "category" or page.type == "category" or is_category() %}
+{% include "category.njk" %}
 {% elif page.layout == "tags" or page.type == "tags" %}
 {% include "tags.njk" %}
+{% elif page.layout == "tag" or page.type == "tag" or is_tag() %}
+{% include "tag.njk" %}
 {% else %}
 {% extends "_layout.njk" %}
 {% block title %}{{ __(page.title) }} | {{ config.title }}{% endblock %}

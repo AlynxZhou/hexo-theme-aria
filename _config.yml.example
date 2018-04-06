@@ -16,7 +16,10 @@ favicon:
   ms_browserconfig: favicons/browserconfig.xml
 
 # Must be a string.
-keywords: "Life, ARIA, Hexo"
+keywords:
+  - Life
+  - ARIA
+  - Hexo
 
 # https://creativecommons.org/licenses/
 # by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
@@ -41,7 +44,7 @@ tags_color:
   - "#a3bb54"
   - "#47aaff"
 
-google_site_verification:
+google_verification:
 
 since:
 
@@ -66,6 +69,7 @@ mathjax:
 # Note: `fontawesome` is fontawesome-all. `scrollspy` and `util` are from bootstrap. `busuanzi` is `busuanzi.pure.mini.js`.
 # If you don't know what you are doing, don't change it.
 lib_cdn:
+  enable: false
   jquery:
   fontawesome:
   scrollspy:
