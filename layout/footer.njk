@@ -7,7 +7,11 @@
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author">{{ config.author }}</span> <i class="far fa-copyright"></i> <span class="year">{% if theme.since %}{{ theme.since }}{% if moment().format("YYYY") != theme.since %} - {{ moment().format("YYYY") }}{% endif %}{% else %}{{ moment().format("YYYY") }}{% endif %}</span>{% if theme.creative_commons %} <i class="fab fa-creative-commons"></i> <span class="creative-commons"><a href="http://creativecommons.org/licenses/{{ theme.creative_commons }}/4.0/" target="_blank">{{ theme.creative_commons.toUpperCase() }} 4.0</a></span>{% endif %}
+          <span class="author">{{ config.author }}</span>
+          <span class="year"><i class="far fa-copyright"></i> {% if theme.since %}{{ theme.since }}{% if moment().format("YYYY") != theme.since %} - {{ moment().format("YYYY") }}{% endif %}{% else %}{{ moment().format("YYYY") }}{% endif %}</span>
+          {% if theme.creative_commons %}
+          <span class="creative-commons"><i class="fab fa-creative-commons"></i> <a href="http://creativecommons.org/licenses/{{ theme.creative_commons }}/4.0/" target="_blank">{{ theme.creative_commons.toUpperCase() }} 4.0</a></span>
+          {% endif %}
         </div>
         {% if theme.busuanzi %}
         {% include "busuanzi.njk" %}
