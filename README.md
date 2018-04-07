@@ -104,11 +104,11 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	4. CreativeCommons Licenses：
 
-		To keep it simple ARIA will show a link in footer. You can choose one of `by`, `by-sa`, `by-nd`, `by-nc`, `by-nc-sa`, `by-nc-nd`. Go to <https://creativecommons.org/licenses/> to learn more.
+		Set it in `creative_commons`. To keep it simple ARIA will show a link in footer. You can choose one of `by`, `by-sa`, `by-nd`, `by-nc`, `by-nc-sa`, `by-nc-nd`. Go to <https://creativecommons.org/licenses/> to learn more.
 
 	5. Code Highlight:
 
-		ARIA has 4 highlight theme. You can choose one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`.
+		ARIA has 4 highlight theme. You can choose the value of `highlight` in one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`.
 
 	6. Custom Info:
 

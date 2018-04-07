@@ -104,11 +104,11 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	4. CreativeCommons 许可证：
 
-		为了保证美观，ARIA 会将链接显示在网站底部。可选的许可证有 `by`、`by-sa`、`by-nd`、`by-nc`、`by-nc-sa`、`by-nc-nd`，有关它们的区别参见 <https://creativecommons.org/licenses/>。
+		设置 `creative_commons` 项。为了保证美观，ARIA 会将链接显示在网站底部。可选的许可证有 `by`、`by-sa`、`by-nd`、`by-nc`、`by-nc-sa`、`by-nc-nd`，有关它们的区别参见 <https://creativecommons.org/licenses/>。
 
 	5. 代码高亮主题：
 
-		ARIA 内置了四种常见代码高亮主题，分别是 `atom-one-dark`、`atom-one-light`、`solarized-dark`、`solarized-light`。
+		ARIA 内置了四种常见代码高亮主题，设置 `highlight` 项为 `atom-one-dark`、`atom-one-light`、`solarized-dark`、`solarized-light` 中的一个。
 
 	6. 自定义信息：
 
