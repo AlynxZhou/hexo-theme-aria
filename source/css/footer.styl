@@ -27,12 +27,20 @@
       flex-basis: 50%;
       flex-shrink: 0;
       text-align: left;
+      max-width: 50%;
     }
     .footer-right {
       flex-grow: 1;
       flex-basis: 50%;
       flex-shrink: 0;
       text-align: right;
+      max-width: 50%;
+      .custom-info {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
   margin-top: 1.5em;
@@ -77,9 +85,11 @@
       flex-direction: column-reverse;
       .footer-left {
         text-align: center;
+	max-width: 100%;
       }
       .footer-right {
         text-align: center;
+	max-width: 100%;
       }
     }
   }
