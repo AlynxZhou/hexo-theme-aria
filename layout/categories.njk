@@ -4,25 +4,27 @@
 
 {% block content %}
 <section class="categories" id="categories">
-  <div class="categories-container card">
-    <div class="categories-counter">
-      {% set visibleCategories = 0 %}
-      {% for cat in site.categories.toArray() %}
-      {% if cat.length %}
-      {% set visibleCategories = visibleCategories + 1 %}
-      {% endif %}
-      {% endfor %}
-      {% if visibleCategories > 1 %}
-      <p>{{ _p("categorycount.more", visibleCategories) }}</p>
-      {% elif visibleCategories == 1 %}
-      <p>{{ _p("categorycount.one", visibleCategories) }}</p>
-      {% else %}
-      <p>{{ __("categorycount.none") }}</p>
-      {% endif %}
-    </div>
-    <div class="categories-list">
-      {{ list_categories() }}
-    </div>
-  </div>
+  <article class="page-article card{% if theme.animate %} animate{% endif %}">
+    <header class="page-header">
+      <h1 class="page-title" itemprop="name headline">{{ __(page.title) }}</h1>
+    </header>
+    <main class="page-main">
+      <div class="categories-container">
+        <div class="categories-counter">
+          {% if site.categories.length > 1 %}
+          <p>{{ _p("categorycount.more", site.categories.length) }}</p>
+          {% elif site.categories.length == 1 %}
+          <p>{{ _p("categorycount.one", site.categories.length) }}</p>
+          {% else %}
+          <p>{{ __("categorycount.none") }}</p>
+          {% endif %}
+        </div>
+        <div class="categories-list">
+          {{ list_categories() }}
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer"></footer>
+  </article>
 </section>
 {% endblock %}

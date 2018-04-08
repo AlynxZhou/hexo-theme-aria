@@ -1,0 +1,34 @@
+{% block author %}
+<div class="info sidebar-item" id="info">
+  {% if theme.avatar %}
+  <img class="author-avatar" src="{{ url_for(theme.avatar) }}" alt="{{ config.author }}">
+  {% endif %}
+  <p class="author-name">{{ config.author }}</p>
+  <p class="author-description"> {{ config.description }}</p>
+  <div class="site-count">
+    {% if theme.menu.archives %}
+    <div class="archives-count">
+      <p>{{ __("archives") }}</p>
+      <p><a href="{{ url_for(theme.menu.archives) }}">{{ site.posts.length }}</a></p>
+    </div>
+    {% endif %}
+    {% if theme.menu.categories %}
+    <div class="categories-count">
+      <p>{{ __("categories") }}</p>
+      <p><a href="{{ url_for(theme.menu.categories) }}">{{ site.categories.length }}</a></p>
+    </div>
+    {% endif %}
+    {% if theme.menu.tags %}
+    <div class="tags-count">
+      <p>{{ __("tags") }}</p>
+      <p><a href="{{ url_for(theme.menu.tags) }}">{{ site.tags.length }}</a></p>
+    </div>
+    {% endif %}
+  </div>
+  {% if config.feed.path %}
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

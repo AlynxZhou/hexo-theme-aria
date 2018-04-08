@@ -4,25 +4,27 @@
 
 {% block content %}
 <section class="tags" id="tags">
-  <div class="tags-container card">
-    <div class="tags-counter">
-      {% set visibleTags = 0 %}
-      {% for tag in site.tags.toArray() %}
-      {% if tag.length %}
-      {% set visibleTags = visibleTags + 1 %}
-      {% endif %}
-      {% endfor %}
-      {% if visibleTags > 1 %}
-      <p>{{ _p("tagcount.more", visibleTags) }}</p>
-      {% elif visibleTags == 1 %}
-      <p>{{ _p("tagcount.one", visibleTags) }}</p>
-      {% else %}
-      <p>{{ __("tagcount.none") }}</p>
-      {% endif %}
-    </div>
-    <div class="tags-cloud">
-      {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: "#777", end_color: "#111"}) }}
-    </div>
-  </div>
+  <article class="page-article card{% if theme.animate %} animate{% endif %}">
+    <header class="page-header">
+      <h1 class="page-title" itemprop="name headline">{{ __(page.title) }}</h1>
+    </header>
+    <main class="page-main">
+      <div class="tags-container">
+        <div class="tags-counter">
+          {% if site.tags.length > 1 %}
+          <p>{{ _p("tagcount.more", site.tags.length) }}</p>
+          {% elif site.tags.length == 1 %}
+          <p>{{ _p("tagcount.one", site.tags.length) }}</p>
+          {% else %}
+          <p>{{ __("tagcount.none") }}</p>
+          {% endif %}
+        </div>
+        <div class="tags-cloud">
+          {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: "#777", end_color: "#111"}) }}
+        </div>
+      </div>
+    </main>
+    <footer class="page-footer"></footer>
+  </article>
 </section>
 {% endblock %}

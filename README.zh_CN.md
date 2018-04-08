@@ -196,6 +196,14 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	如果你需要使用自定义的 JavaScript，可以编辑 `themes/aria/source/js/custom.js`，这个文件会被最后加载。
 
+7. 更新主题：
+
+	如果你使用了自定义的 CSS 或 JavaScript，更新之前请先用 Git 把它们提交。只有工作区干净的时候才能进行拉取
+
+	然后使用 `git pull` 拉取最新的更新，如果有冲突请手动合并提交。
+
+	每次更新完了不要忘记对比 `_config.yml` 和 `_config.yml.example`，并手动将 example 中的更改应用到你自己的配置中。
+
 # 开源许可证：
 
 Apache-2.0

@@ -5,7 +5,7 @@
 {% block content %}
 <section id="post" class="post">
   {% set post = page %}
-  <article class="post-container card" itemscope itemtype="http://schema.org/Article">
+  <article class="post-container card {% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">

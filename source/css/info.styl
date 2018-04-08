@@ -1,0 +1,53 @@
+@import "variables";
+.info {
+  text-align: center;
+  .author-avatar {
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+    border: 0.3em solid white;
+    border-radius: 50%;
+    transition: 1s ease-in-out;
+    &:hover {
+      box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+      transform: rotateY(720deg);
+    }
+  }
+  .author-name {
+    color: $color-author-name;
+    font-size: 2em;
+    margin: 0.5em;
+  }
+  .author-description {
+    color: $color-author-description;
+    font-size: 1.2em;
+    margin: 0.5em;
+  }
+  .site-count {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0.5em 0em;
+    text-align: center;
+    p {
+      margin: 0;
+      font-size: 1.2em;
+    }
+  }
+  .rss {
+    padding: 0.5em;
+    .rss-link {
+      display: block;
+      text-align: center;
+      font-size: 1.5em;
+      color: $color-button-font;
+      background: $orange;
+      // margin: 1em;
+      padding: 0.2em;
+      line-height: 1.25em;
+    }
+  }
+}

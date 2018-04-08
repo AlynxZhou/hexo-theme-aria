@@ -196,6 +196,14 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	If you need some custom JavaScript, just edit `themes/aria/source/js/custom.js` which will be added last.
 
+7. Update Theme:
+
+	If you use custom CSS or JavaScript, please use Git to commit them first. You can only pull when your workspace is clean.
+
+	Then use `git pull` to get the newest commit, if there is a conflict, merge it manually.
+
+	Don't forget to compare `_config.yml` and `_config.yml.example`, then apply changes in example to your own config manually.
+
 # LICENSE:
 
 Apache-2.0

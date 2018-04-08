@@ -6,18 +6,18 @@
 <section id="tag" class="tag">
   <div class="tag-container">
     <div class="tag-title">
-      <h3>{{ page.tag }}</h3>
+      <h1>{{ page.tag }}</h1>
     </div>
     {% for post in page.posts.toArray() %}
     <article class="tag-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
-      <h3 class="post-title" itemprop="name headline">
+      <h2 class="post-title" itemprop="name headline">
         <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
         {% if post.date %}
         <span class="post-date">
           <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
         </span>
         {% endif %}
-      </h3>
+      </h2>
     </article>
     {% endfor %}
   </div>
