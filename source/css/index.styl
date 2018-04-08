@@ -47,12 +47,6 @@ html, body, .container {
 ::-webkit-scrollbar-resizer {
   background-color: #FF6E00;
 }
-// body ::-webkit-scrollbar {
-//   width: 0.4em;
-// }
-// body ::-webkit-scrollbar-thumb {
-//   background-color: #ddd;
-// }
 body {
   color: $color-font;
   background: $color-background;
@@ -145,7 +139,7 @@ a.img-link {
   img {
     transition: 0.3s ease-in-out;
     border: 0.15em solid $grey;
-    box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+    // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
   }
   &:hover {
     img {
@@ -154,14 +148,32 @@ a.img-link {
     border-bottom: none;
   }
 }
-a.button {
+a.gallery-item {
+  text-decoration: none;
+  border-bottom: none;
+  display: block;
+  padding: 1em;
+  text-align: center;
+  img {
+    transition: 0.3s ease-in-out;
+    border: 0.15em solid $grey;
+    // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  }
+  &:hover {
+    img {
+      box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+    }
+    border-bottom: none;
+  }
+}
+a.button, button.button {
   transition: 0.3s ease-in-out;
   text-decoration: none;
   border-radius: $corner-radius;
   transform-origin: 50%;
   border-bottom: none;
   box-sizing: border-box;
-  box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
   color: $color-button-font;
   &:hover {
     box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
@@ -173,24 +185,6 @@ a.button {
 img {
   width: 100%;
   text-align: center;
-}
-a.gallery-item {
-  text-decoration: none;
-  border-bottom: none;
-  display: block;
-  padding: 1em;
-  text-align: center;
-  img {
-    transition: 0.3s ease-in-out;
-    border: 0.15em solid $grey;
-    box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
-  }
-  &:hover {
-    img {
-      box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
-    }
-    border-bottom: none;
-  }
 }
 hr {
   margin: 2em 0;
@@ -220,7 +214,7 @@ code {
   background: $color-content-card-background;
   transition: 0.2s ease-in-out;
   box-sizing: border-box;
-  box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
   &:hover {
     box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
   }
@@ -287,7 +281,7 @@ figure {
     &.current {
       color: $color-link-hover;
       border-bottom: 0.15em solid $color-link-hover;
-      border-top: 0.05em solid $color-link-hover;
+      border-top: 0.07em solid $color-link-hover;
     }
   }
   .space {

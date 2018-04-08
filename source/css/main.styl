@@ -11,7 +11,7 @@
     display: flex;
     if (hexo-config("sidebar") == "left") {
       flex-direction: row-reverse;
-    } else {
+    } else if (hexo-config("sidebar") == "right") {
       flex-direction: row;
     }
     justify-content: space-between;

@@ -34,18 +34,15 @@
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: nowrap;
-  .post-nav-divider {
-    width: 30%;
-    flex-grow: 0;
-    display: block;
-    text-align: center;
-  }
   .post-nav-item {
     flex-grow: 1;
     font-size: 1.2em;
     a {
       position: relative;
-      display: inline-block;
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
       line-height: 1.25em;
       text-decoration: none;
       border-bottom: none;
@@ -60,9 +57,15 @@
   .post-nav-next {
     max-width: 50%;
     text-align: left;
+    a {
+      justify-content: flex-start;
+    }
   }
   .post-nav-prev {
     max-width: 50%;
     text-align: right;
+    a {
+      justify-content: flex-end;
+    }
   }
 }

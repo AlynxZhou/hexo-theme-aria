@@ -85,13 +85,18 @@
   <div class="post-nav">
     {% if post.next %}
     <div class="post-nav-next post-nav-item">
-      <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}"><i class="fas fa-angle-left"></i> {{ post.next.title }}</a>
+      <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">{{ post.next.title }}</span>
+      </a>
     </div>
     {% endif %}
-    <span class="post-nav-divider"></span>
     {% if post.prev %}
     <div class="post-nav-prev post-nav-item">
-      <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">{{ post.prev.title }} <i class="fas fa-angle-right"></i></a>
+      <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
+        <span class="nav-title">{{ post.prev.title }}</span>
+        <i class="fas fa-angle-right"></i>
+      </a>
     </div>
     {% endif %}
   </div>

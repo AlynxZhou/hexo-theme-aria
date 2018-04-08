@@ -43,6 +43,9 @@
       margin-top: 0;
       padding: 1em 2em;
     }
+    &:hover {
+      box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+    }
   }
   .sidebar-item {
     margin: 2em;
@@ -72,19 +75,22 @@
   }
   @media (max-width: 48em) {
     width: 100%;
-    .sidebar-item {
+    .social-link, .blogroll {
       text-align: center;
-    }
-    ul {
-      padding: 0;
-      li {
-        display: inline-block;
-        margin: 0.5em 1em;
+      ul {
+        padding: 0;
+        li {
+          display: inline-block;
+          margin: 0.5em 1em;
+        }
       }
     }
     .post-toc {
+      text-align: center;
       ol {
-        text-align: left;
+        li {
+          text-align: left;
+        }
       }
     }
   }
