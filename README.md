@@ -28,7 +28,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 # Usage:
 
-Note: Using a static website generator needs some basic knowledge, if you know nothing, Hexo and ARIA are not your best choice. Please be sure you know Hexo, YAML, Markdown and Web before continuing.
+Note: Using a static website generator needs some basic knowledge, if you know nothing, Hexo and ARIA are not your best choice. Please be sure you know Hexo, YAML, git, Markdown and Web before continuing.
 
 1. Change to your Hexo website dir and install plugins:
 
@@ -192,9 +192,9 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 6. Custom CSS and JavaScript：
 
-	If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last and won't influence CVS.
+	If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last.
 
-	If you need some custom JavaScript, just edit `themes/aria/source/js/custom.js` which will be added last and won't influence CVS.
+	If you need some custom JavaScript, just edit `themes/aria/source/js/custom.js` which will be added last.
 
 # LICENSE:
 

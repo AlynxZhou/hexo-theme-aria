@@ -28,7 +28,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 # 使用说明：
 
-注意：使用静态网站生成器需要有一定的相关知识，如果您对这方面毫无了解，不建议使用 Hexo 和 ARIA 建站。请您确定您有基础的 Hexo、YAML、Markdown 和 Web 知识再向下进行。
+注意：使用静态网站生成器需要有一定的相关知识，如果您对这方面毫无了解，不建议使用 Hexo 和 ARIA 建站。请您确定您有基础的 Hexo、YAML、git、Markdown 和 Web 知识再向下进行。
 
 1. 进入你的 Hexo 站点目录，安装所需的插件：
 
@@ -192,9 +192,9 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 6. 自定义 CSS 和 JavaScript：
 
-	如果你需要用自定义的 CSS 覆盖 ARIA 内置的 CSS 样式，可以编辑 `themes/aria/source/css/custom.styl`，这个文件会被最后加载，同时不会影响版本控制。
+	如果你需要用自定义的 CSS 覆盖 ARIA 内置的 CSS 样式，可以编辑 `themes/aria/source/css/custom.styl`，这个文件会被最后加载。
 
-	如果你需要使用自定义的 JavaScript，可以编辑 `themes/aria/source/js/custom.js`，这个文件会被最后加载，同时不会影响版本控制。
+	如果你需要使用自定义的 JavaScript，可以编辑 `themes/aria/source/js/custom.js`，这个文件会被最后加载。
 
 # 开源许可证：
 
