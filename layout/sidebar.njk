@@ -12,15 +12,16 @@
   {% if config.feed.path %}
   <a class="rss button sidebar-item" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
   {% endif %}
-  {% if theme.social %}
-  {% include "sociallink.njk" %}
-  {% endif %}
-  {% if theme.blogroll %}
-  {% include "blogroll.njk" %}
-  {% endif %}
-  {# Keep toc in the bottom because it's sticky! #}
-  {% if page.content %}
-  {% include "toc.njk" %}
-  {% endif %}
+  <div class="sidebar-sticky">
+    {% if page.content %}
+    {% include "toc.njk" %}
+    {% endif %}
+    {% if theme.social %}
+    {% include "sociallink.njk" %}
+    {% endif %}
+    {% if theme.blogroll %}
+    {% include "blogroll.njk" %}
+    {% endif %}
+  </div>
 </aside>
 {% endblock %}
