@@ -5,5 +5,8 @@
   {% endif %}
   <p class="author-name">{{ config.author }}</p>
   <p class="author-description"> {{ config.description }}</p>
+  {% if config.feed.path %}
+  <a class="rss button sidebar-item" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
+  {% endif %}
 </div>
 {% endblock %}

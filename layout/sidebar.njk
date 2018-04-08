@@ -9,9 +9,6 @@
   <div class="search-result-box" id="search-result"></div>
   {% endif %}
   {% include "author.njk" %}
-  {% if config.feed.path %}
-  <a class="rss button sidebar-item" href="{{ url_for(config.feed.path) }}"><i class="fas fa-rss"></i> RSS</a>
-  {% endif %}
   <div class="sidebar-sticky">
     {% if page.content %}
     {% include "toc.njk" %}
