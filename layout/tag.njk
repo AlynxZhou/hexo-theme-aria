@@ -1,6 +1,6 @@
 {% extends "_layout.njk" %}
 
-{% block title %}{{ __("tag") }}: {{ page.tag }} | {{ config.title }}{% endblock %}
+{% block title %}{{ __("tag") }}: {{ page.tag }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
 <section id="tag" class="tag">

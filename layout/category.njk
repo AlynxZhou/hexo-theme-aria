@@ -1,6 +1,6 @@
 {% extends "_layout.njk" %}
 
-{% block title %}{{ __("category") }}: {{ page.category }} | {{ config.title }}{% endblock %}
+{% block title %}{{ __("category") }}: {{ page.category }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
 <section id="category" class="category">
