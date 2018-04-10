@@ -83,7 +83,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	1. 菜单设置：
 
-		如果你想要启用“分类”和“标签”页面，取消注释 `categories` 和 `tags`：
+		如果你想要启用“分类”和“标签”页面，取消注释 `categories` 和 `tags`，然后运行 `hexo new page categories` 和 `hexo new page tags` 生成这两个页面，最后分别把 `layout: categories` 和 `layout: tags` 添加到对应文件的文件头里：
 
 		```yaml
 		menu:

@@ -83,7 +83,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	1. Menu Settings:
 
-		If you want to add "Categories" and "Tags" page, uncomment `categories` and `tags`：
+		If you want to add "Categories" and "Tags" page, uncomment `categories` and `tags`, then run `hexo new page categories` and `hexo new page tags`, then add `layout: categories` and `layout: tags` to those pages' front-matter:
 
 		```yaml
 		menu:
