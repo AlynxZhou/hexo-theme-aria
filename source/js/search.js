@@ -1,12 +1,18 @@
-// A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
-// Copyright (C) 2015
-// Joseph Pan <http://github.com/wzpan>
-// Shuhao Mao <http://github.com/maoshuhao>
-// Edited by MOxFIVE <http://github.com/MOxFIVE>
-// Cleaned and bug fixed by AlynxZhou <https://alynx.xyz/>
+/*
+ * A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
+ * Copyright (C) 2015
+ * Joseph Pan <http://github.com/wzpan>
+ * Shuhao Mao <http://github.com/maoshuhao>
+ * Edited by MOxFIVE <http://github.com/MOxFIVE>
+ * Rewrited by AlynxZhou <https://alynx.xyz/>
+ *   Cleaned: Use native JavaScript instead of jQuert. Split functions.
+ *   Fixed: Mark all keywords found in content and title.
+ */
 
 "use strict";
+
 var SUBSTRING_OFFSET = 15;
+var MAX_KEYWORDS = 30;
 
 // Calculate how many keywords a page contains.
 function findKeywords(keywords, prop) {
@@ -60,6 +66,7 @@ function buildSortedSliceArray(prop) {
   prop["matchedContentKeywords"].sort(function (a, b) {
     return a["index"] - b["index"]
   });
+  // Get content slice position.
   for (var i = 0; i < prop["matchedContentKeywords"].length; ++i) {
     var start = prop["matchedContentKeywords"][i]["index"] - SUBSTRING_OFFSET;
     var end = prop["matchedContentKeywords"][i]["index"] + prop["matchedContentKeywords"][i]["keyword"].length + SUBSTRING_OFFSET;
@@ -129,49 +136,84 @@ function buildHighlightedContent(prop, mergedSliceArray) {
   return matchedContentArray.join("...");
 }
 
+function onInput(input, resultContent, datas) {
+  resultContent.innerHTML = "";
+  if (input.value.trim().length <= 0) {
+    return;
+  }
+  var keywords = input.value.trim().split(/[\s-\+]+/);
+  var li = [];
+  if (keywords.length > MAX_KEYWORDS) {
+    keywords = keywords.slice(0, MAX_KEYWORDS);
+    // li.push("<span>Keywords more than ");
+    // li.push(MAX_KEYWORDS);
+    // li.push(" are sliced.</span>");
+  }
+  var matchedDataProps = buildSortedMatchedDataProps(datas, keywords);
+  if (matchedDataProps.length === 0) {
+    return;
+  }
+  li.push("<ul class=\"search-result-list\">");
+  for (var i = 0; i < matchedDataProps.length; ++i) {
+    // Show search results
+    li.push("<li><a href=\"")
+    li.push(matchedDataProps[i]["dataLink"]);
+    li.push("\" class=\"search-result-title\">&gt; ");
+    li.push(buildHighlightedTitle(matchedDataProps[i]));
+    li.push("</a>");
+    li.push("<p class=\"search-result-content\">...");
+    var sliceArray = buildSortedSliceArray(matchedDataProps[i])
+    var mergedSliceArray = mergeSliceArray(sliceArray);
+    // Highlight keyword.
+    li.push(buildHighlightedContent(matchedDataProps[i], mergedSliceArray));
+    li.push("...</p>");
+  }
+  li.push("</ul>");
+  resultContent.innerHTML = li.join("");
+}
+
+function ajax(url, callback) {
+  var xhr = null;
+  if (window.XMLHttpRequest) {
+    xhr = new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  if (xhr == null) {
+    alert("Your broswer does not support XMLHttpRequest!");
+    return;
+  }
+  xhr.onreadystatechange = function () {
+    // 4 is ready.
+    if (xhr.readyState !== 4) {
+      return;
+    }
+    if (xhr.status !== 200) {
+      alert("XMLHttpRequest failed!");
+      return;
+    }
+    callback(xhr);
+  };
+  xhr.open("GET", url, true);
+  xhr.send(null);
+}
+
 var searchFunc = function (path, searchID, contentID) {
-  $.ajax({
-    "url": path,
-    "dataType": "xml",
-    "success": function (xmlResponse) {
-      // Get contents from search xml file.
-      var datas = $("entry", xmlResponse).map(function () {
-        return {
-          "title": $("title", this).text(),
-          "content": $("content", this).text(),
-          "link": $("link", this).attr("href")
-        };
-      }).get();
-      var input = document.getElementById(searchID);
-      var resultContent = document.getElementById(contentID);
-      input.addEventListener("input", function () {
-        resultContent.innerHTML = "";
-        if (this.value.trim().length <= 0) {
-          return;
-        }
-        var keywords = this.value.trim().split(/[\s-\+]+/);
-        var matchedDataProps = buildSortedMatchedDataProps(datas, keywords);
-        if (matchedDataProps.length === 0) {
-          return;
-        }
-        var li = [ "<ul class=\"search-result-list\">" ];
-        for (var i = 0; i < matchedDataProps.length; ++i) {
-          // Show search results
-          li.push("<li><a href=\"")
-          li.push(matchedDataProps[i]["dataLink"]);
-          li.push("\" class=\"search-result-title\">&gt; ");
-          li.push(buildHighlightedTitle(matchedDataProps[i]));
-          li.push("</a>");
-          li.push("<p class=\"search-result-content\">");
-          var sliceArray = buildSortedSliceArray(matchedDataProps[i])
-          var mergedSliceArray = mergeSliceArray(sliceArray);
-          // Highlight keyword.
-          li.push(buildHighlightedContent(matchedDataProps[i], mergedSliceArray));
-          li.push("...</p>");
-        }
-        li.push("</ul>");
-        resultContent.innerHTML = li.join("");
+  ajax(path, function (xhr) {
+    var xmlDoc = xhr.responseXML;
+    var entrys = xmlDoc.getElementsByTagName("entry");
+    var datas = [];
+    for (var i = 0; i < entrys.length; i++) {
+      datas.push({
+        "title": entrys[i].getElementsByTagName("title")[0].innerHTML,
+        "content": entrys[i].getElementsByTagName("content")[0].innerHTML,
+        "link": entrys[i].getElementsByTagName("link")[0].getAttribute("href")
       });
     }
+    var input = document.getElementById(searchID);
+    var resultContent = document.getElementById(contentID);
+    input.addEventListener("input", function () {
+      onInput(input, resultContent, datas);
+    });
   });
 }
