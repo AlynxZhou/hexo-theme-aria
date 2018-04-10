@@ -290,20 +290,22 @@ figure {
     color: $grey;
   }
 }
-.animate {
-  animation: 0.3s flip forwards;
-  position: relative;
-  opacity: 0;
-  transform-origin: 50%;
-  transform: rotateX(180deg);
-  @keyframes flip {
-    0% {
-      opacity: 0;
-      transform: rotateX(180deg);
-    }
-    100% {
-      opacity: 1;
-      transform: rotateX(0);
+if (hexo-config("animate")) {
+  .animate {
+    animation: 0.3s flip forwards;
+    position: relative;
+    opacity: 0;
+    transform-origin: 50%;
+    transform: rotateX(180deg);
+    @keyframes flip {
+      0% {
+        opacity: 0;
+        transform: rotateX(180deg);
+      }
+      100% {
+        opacity: 1;
+        transform: rotateX(0);
+      }
     }
   }
 }

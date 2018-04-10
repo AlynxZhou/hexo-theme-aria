@@ -33,7 +33,7 @@
         // Android chrome fires resize when scroll down.
         // Because it hides address bar to enlarge window height.
         // To avoid it, check width.
-        if ($(window).width() != windowWidth) {
+        if ($(window).width() !== windowWidth) {
           $("#menu").hide();
           windowWidth = $(window).width();
         }

@@ -62,8 +62,8 @@
     <script type="text/javascript">
     $(document).ready(function () {
       var searchPath = "{{ config.search.path }}";
-      if (searchPath.length == 0) {
-  	    searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
       }
       var path = "{{ config.root }}" + searchPath;
       searchFunc(path, "search-input", "search-result");
