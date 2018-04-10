@@ -42,13 +42,12 @@ function findKeywords(keywords, prop) {
 function buildSortedMatchedDataProps(datas, keywords) {
   var matchedDataProps = [];
   for (var i = 0; i < datas.length; ++i) {
-    var data = datas[i];
     var prop = {
       "matchedContentKeywords": [],
       "matchedTitleKeywords": [],
-      "dataTitle": data.title.trim(),
-      "dataContent": data.content.trim().replace(/<[^>]+>/g, ""),
-      "dataLink": data.link
+      "dataTitle": datas[i]["title"].trim(),
+      "dataContent": datas[i]["content"].trim().replace(/<[^>]+>/g, ""),
+      "dataURL": datas[i]["url"]
     };
     // Only match articles with valid titles and contents.
     if (prop["dataTitle"].length + prop["dataContent"].length > 0) {
@@ -162,7 +161,7 @@ function onInput(input, resultContent, datas) {
   for (var i = 0; i < matchedDataProps.length; ++i) {
     // Show search results
     li.push("<li><a href=\"")
-    li.push(matchedDataProps[i]["dataLink"]);
+    li.push(matchedDataProps[i]["dataURL"]);
     li.push("\" class=\"search-result-title\">&gt; ");
     li.push(buildHighlightedTitle(matchedDataProps[i]));
     li.push("</a>");
@@ -205,15 +204,26 @@ function ajax(url, callback) {
 
 var searchFunc = function (path, searchID, contentID) {
   ajax(path, function (xhr) {
-    var xmlDoc = xhr.responseXML;
-    var entrys = xmlDoc.getElementsByTagName("entry");
     var datas = [];
-    for (var i = 0; i < entrys.length; i++) {
-      datas.push({
-        "title": entrys[i].getElementsByTagName("title")[0].innerHTML,
-        "content": entrys[i].getElementsByTagName("content")[0].innerHTML,
-        "link": entrys[i].getElementsByTagName("link")[0].getAttribute("href")
-      });
+    if (xhr.responseXML) {
+      var xmlDoc = xhr.responseXML;
+      var entries = xmlDoc.getElementsByTagName("entry");
+      for (var i = 0; i < entries.length; i++) {
+        datas.push({
+          "title": entries[i].getElementsByTagName("title")[0].innerHTML || "",
+          "content": entries[i].getElementsByTagName("content")[0].innerHTML || "",
+          "url": entries[i].getElementsByTagName("url")[0].innerHTML || ""
+        });
+      }
+    } else {
+      var xhrJSON = JSON.parse(xhr.response);
+      for (var i = 0; i < xhrJSON.length; i++) {
+        datas.push({
+          "title": xhrJSON[i]["title"] || "",
+          "content": xhrJSON[i]["content"] || "", // Hexo Generator Search does not fill a key when a page is blank.
+          "url": xhrJSON[i]["url"] || ""
+        });
+      }
     }
     var input = document.getElementById(searchID);
     var resultContent = document.getElementById(contentID);
