@@ -1,5 +1,9 @@
 {% block toc %}
+{% if post.encrypt %}
+{% set toc = toc(page.origin, { "list_number": false }) %}
+{% else %}
 {% set toc = toc(page.content, { "list_number": false }) %}
+{% endif %}
 {% if toc.length > 0 %}
 <hr>
 <div class="post-toc sidebar-item" id="post-toc">
