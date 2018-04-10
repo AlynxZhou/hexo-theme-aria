@@ -7,29 +7,34 @@
  * Rewrited by AlynxZhou <https://alynx.xyz/>
  *   Cleaned: Use native JavaScript instead of jQuert. Split functions.
  *   Fixed: Mark all keywords found in content and title.
+ *   Optimized: Sort result by the number of keyword found.
  */
 
 "use strict";
 
 var SUBSTRING_OFFSET = 15;
 var MAX_KEYWORDS = 30;
+var MAX_DISPLAY_SLICES = 5;
 
 // Calculate how many keywords a page contains.
 function findKeywords(keywords, prop) {
   for (var i = 0; i < keywords.length; ++i) {
-    var indexTitle = prop["dataTitle"].toLowerCase().indexOf(keywords[i].toLowerCase());
     var indexContent = prop["dataContent"].toLowerCase().indexOf(keywords[i].toLowerCase());
-    if (indexContent >= 0) {
+    // Find all keyword indices.
+    while (indexContent >= 0) {
       prop["matchedContentKeywords"].push({
         "keyword": prop["dataContent"].substring(indexContent, indexContent + keywords[i].length),
         "index": indexContent
       });
+      indexContent = prop["dataContent"].toLowerCase().indexOf(keywords[i].toLowerCase(), indexContent + keywords[i].length);
     }
-    if (indexTitle >= 0) {
+    var indexTitle = prop["dataTitle"].toLowerCase().indexOf(keywords[i].toLowerCase());
+    while (indexTitle >= 0) {
       prop["matchedTitleKeywords"].push({
         "keyword": prop["dataTitle"].substring(indexTitle, indexTitle + keywords[i].length),
         "index": indexTitle
       });
+      indexTitle = prop["dataTitle"].toLowerCase().indexOf(keywords[i].toLowerCase(), indexTitle + keywords[i].length);
     }
   }
 }
@@ -67,7 +72,7 @@ function buildSortedSliceArray(prop) {
     return a["index"] - b["index"]
   });
   // Get content slice position.
-  for (var i = 0; i < prop["matchedContentKeywords"].length; ++i) {
+  for (var i = 0; i < prop["matchedContentKeywords"].length && i < MAX_DISPLAY_SLICES; ++i) {
     var start = prop["matchedContentKeywords"][i]["index"] - SUBSTRING_OFFSET;
     var end = prop["matchedContentKeywords"][i]["index"] + prop["matchedContentKeywords"][i]["keyword"].length + SUBSTRING_OFFSET;
     if (start < 0) {
