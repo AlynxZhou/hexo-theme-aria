@@ -6,7 +6,7 @@
 {% endif %}
 {% if toc.length > 0 %}
 <hr>
-<div class="post-toc sidebar-item" id="post-toc">
+<div class="post-toc sidebar-item" id="toc-div"{% if post.encrypt %}style="display: none;"{% endif %}>
   <p><i class="fas fa-list-ol"></i> {{ __("toc") }}</p>
   <div class="post-toc-content">{{ toc }}</div>
 </div>
