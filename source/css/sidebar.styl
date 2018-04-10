@@ -13,22 +13,22 @@
     display: block;
     text-align: center;
     background: $color-search-background;
-    color: $color-search;
+    color: $color-search-font;
     padding-top: $search-padding-top;
     input {
       width: 60%;
       height: 1.5em;
       border: 0.1em solid transparent;
-      border-bottom: 0.1em dashed $color-search;
+      border-bottom: 0.1em dashed $color-search-font;
       background: $color-search-background;
-      color: $color-search;
+      color: $color-search-font;
       transition: 0.3s ease-in-out;
       &:focus {
         outline: none;
-        border-bottom: 0.1em solid $color-search;
+        border-bottom: 0.1em solid $color-search-font;
       }
       &::placeholder {
-        color: $color-search;
+        color: $color-search-font;
         padding-left: 0.5em;
         opacity: 0.7;
       }
