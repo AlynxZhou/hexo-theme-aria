@@ -1,5 +1,10 @@
 {% extends "_layout.njk" %}
 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for("css/category.css") }}">
+{% endblock %}
+
 {% block title %}{{ __("category") }}: {{ page.category }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}

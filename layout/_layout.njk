@@ -40,7 +40,12 @@
     {% if config.feed.path %}
     <link rel="alternate" href="{{ url_for(config.feed.path) }}" title="{{ config.title }}" type="application/atom+xml" />
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.index.css %}{{ theme.lib_cdn.index.css }}{% else %}{{ url_for("css/index.css") }}{% endif %}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for("css/index.css") }}">
+    {% if theme.sidebar != false %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for("css/sidebar.css") }}">
+    {% endif %}
+    {% block css %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for("css/custom.css") }}">
     <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.normalize %}{{ theme.lib_cdn.normalize }}{% else %}{{ url_for("css/normalize.css") }}{% endif %}">
     <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn[theme.highlight] %}{{ theme.lib_cdn[theme.highlight] }}{% else %}{{ url_for("css/" + theme.highlight + ".css") }}{% endif %}">
     <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.lightgallery.css %}{{ theme.lib_cdn.lightgallery.css }}{% else %}{{ url_for("css/lightgallery.min.css") }}{% endif %}">
@@ -92,8 +97,9 @@
     </script>
     {% endif %}
     {% endif %}
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.index.js %}{{ theme.lib_cdn.index.js }}{% else %}{{ url_for("js/index.js") }}{% endif %}"></script>
-    <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.custom.js %}{{ theme.lib_cdn.custom.js }}{% else %}{{ url_for("js/custom.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{{ url_for("js/index.js") }}"></script>
+    {% block js %}{% endblock %}
+    <script defer type="text/javascript" src="{{ url_for("js/custom.js") }}"></script>
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang or page.language or config.language }}"  data-spy="scroll" data-target=".list-group">
