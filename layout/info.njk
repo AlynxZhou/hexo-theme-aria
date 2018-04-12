@@ -13,12 +13,18 @@
     </div>
     {% endif %}
     {% if theme.menu.categories %}
+    {% if theme.menu.archives %}
+    <span class="site-count-divider"> | </span>
+    {% endif %}
     <div class="categories-count">
       <p>{{ __("categories") }}</p>
       <p><a href="{{ url_for(theme.menu.categories) }}">{{ site.categories.length }}</a></p>
     </div>
     {% endif %}
     {% if theme.menu.tags %}
+    {% if theme.menu.categories %}
+    <span class="site-count-divider"> | </span>
+    {% endif %}
     <div class="tags-count">
       <p>{{ __("tags") }}</p>
       <p><a href="{{ url_for(theme.menu.tags) }}">{{ site.tags.length }}</a></p>

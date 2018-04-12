@@ -33,7 +33,9 @@
         </span>
         {% endif %}
         {% if post.categories and post.categories.toArray().length %}
+        {% if post.date %}
         <span class="post-meta-divider"> | </span>
+        {% endif %}
         <span class="post-categories">
           <i class="far fa-folder-open"></i>
           {% set i = 0 %}
@@ -44,7 +46,9 @@
         </span>
         {% endif %}
         {% if post.comment != false and theme.comment.enable %}
+        {% if post.categories %}
         <span class="post-meta-divider"> | </span>
+        {% endif %}
         {% if theme.comment.hypercomments_id %}
         <span class="post-comment-count">
           <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
