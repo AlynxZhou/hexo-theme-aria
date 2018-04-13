@@ -3,7 +3,7 @@
   $(document).ready(function () {
     // To top button.
     $("#back-to-top").on("click", function () {
-      $("body, html").animate({ scrollTop: 0 }, 600);
+      $("body, html").animate({ "scrollTop": 0 }, 600);
     });
 
     $("#reward-button").on("click", function () {
@@ -18,8 +18,10 @@
     $(".toc").addClass("list-group");
     $(".toc-link").addClass("list-group-item");
 
-    // 40em * 16px
-    var minWidth = 40 * 16;
+    // (40em - 0.6em) * 16px
+    // 40 is total size and 0.4 is scroll bar size.
+    // jQuery won't calculate scroll bar size. But CSS will.
+    var minWidth = Math.round((40 - 0.4) * 16);
     // Auto hide main nav menus in small screen.
     if ($(window).width() < minWidth) {
       $("#menu").hide();
@@ -29,6 +31,7 @@
     $(window).resize(function () {
       if ($(window).width() > minWidth) {
         $("#menu").show();
+        console.log(minWidth, $(window).width());
       } else {
         // Android chrome fires resize when scroll down.
         // Because it hides address bar to enlarge window height.
