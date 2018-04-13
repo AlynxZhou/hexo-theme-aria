@@ -60,12 +60,12 @@
     <main class="post-body{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
       {% if post.description %}
       {{ post.description }}
-      <div class="post-button">
-        <a class="readmore" href="{{ url_for(post.path) }}">{{ __("readmore") }} <i class="fas fa-angle-double-right"></i></a>
+      <div class="post-readmore">
+        <a class="readmore button" href="{{ url_for(post.path) }}">{{ __("readmore") }} <i class="fas fa-angle-double-right"></i></a>
       </div>
       {% elif post.excerpt  %}
       {{ post.excerpt }}
-      <div class="post-button">
+      <div class="post-readmore">
         <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }} <i class="fas fa-angle-double-right"></i></a>
       </div>
       {% else %}
