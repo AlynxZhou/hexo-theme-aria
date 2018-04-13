@@ -8,7 +8,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 主题预览：[喵's StackHarbor](https://sh.alynx.xyz/)
 
-![ARIA Screenshot](ARIA_Screenshot.png)
+![屏幕截图](ARIA.png)
 
 # 主题特色：
 
