@@ -31,7 +31,6 @@
     $(window).resize(function () {
       if ($(window).width() > minWidth) {
         $("#menu").show();
-        console.log(minWidth, $(window).width());
       } else {
         // Android chrome fires resize when scroll down.
         // Because it hides address bar to enlarge window height.

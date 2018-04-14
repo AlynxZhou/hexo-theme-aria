@@ -1,4 +1,4 @@
- {% extends "_layout.njk" %}
+{% extends "_layout.njk" %}
 
 {% block title %}{{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
@@ -20,7 +20,7 @@
     </div>
     <header class="post-header">
       <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
       </h2>
       <div class="post-meta">
         {% if post.date %}
@@ -57,7 +57,7 @@
         {% endif %}
       </div>
     </header>
-    <main class="post-body{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
+    <main class="post-body{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
       {% if post.description %}
       {{ post.description }}
       <div class="post-readmore">

@@ -13,7 +13,7 @@
     <div class="archive-counter">
       {% if site.posts.length > 1 %}
       <p>{{ _p("postcount.more", site.posts.length) }}</p>
-      {% elif site.posts.length == 1 %}
+      {% elif site.posts.length === 1 %}
       <p>{{ _p("postcount.one", site.posts.length) }}</p>
       {% else %}
       <p>{{ __("postcount.none") }}</p>
@@ -27,7 +27,7 @@
     {% endif %}
     <article class="archive-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
       <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
         {% if post.date %}
         <span class="post-date">
           <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>

@@ -32,8 +32,10 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 1. Change to your Hexo website dir and install plugins:
 
+	Use `hexo-renderer-njucks` instead of `hexo-renderer-nunjucks` or `hexo-renderer-njk` or `hexo-renderer-njks`, those three plugin are unmaintained and cannot support Nunjucks 3.
+
 	```
-	$ npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed
+	$ npm install --save hexo-renderer-njucks hexo-renderer-stylus hexo-generator-search hexo-generator-feed
 	```
 
 2. Clone this repo to `themes/aria`:

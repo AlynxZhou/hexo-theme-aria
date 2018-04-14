@@ -1,14 +1,14 @@
-{% if page.layout == "index" or page.type == "index" or page.title == "index" or is_home() %}
+{% if page.layout === "index" or page.type === "index" or page.title === "index" or is_home() %}
 {% include "index.njk" %}
-{% elif page.layout == "archive" or page.type == "archive" or page.title == "archive" or is_archive() %}
+{% elif page.layout === "archive" or page.type === "archive" or page.title === "archive" or is_archive() %}
 {% include "archive.njk" %}
-{% elif page.layout == "categories" or page.type == "categories" or page.title == "categories" %}
+{% elif page.layout === "categories" or page.type === "categories" or page.title === "categories" %}
 {% include "categories.njk" %}
-{% elif page.layout == "category" or page.type == "category" or page.title == "category" or is_category() %}
+{% elif page.layout === "category" or page.type === "category" or page.title === "category" or is_category() %}
 {% include "category.njk" %}
-{% elif page.layout == "tags" or page.type == "tags" or page.title == "tags" %}
+{% elif page.layout === "tags" or page.type === "tags" or page.title === "tags" %}
 {% include "tags.njk" %}
-{% elif page.layout == "tag" or page.type == "tag" or page.title == "tag" or is_tag() %}
+{% elif page.layout === "tag" or page.type === "tag" or page.title === "tag" or is_tag() %}
 {% include "tag.njk" %}
 {% else %}
 {% extends "_layout.njk" %}
@@ -24,7 +24,7 @@
   <article class="page-article card{% if theme.animate %} animate{% endif %}">
     <header class="page-header">
       <h1 class="page-title" itemprop="name headline">
-        <span class="{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}">{{ __(page.title) }}</span>
+        <span class="{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}">{{ __(page.title) }}</span>
       </h1>
     </header>
     <main class="page-main">

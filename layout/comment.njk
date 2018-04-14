@@ -19,7 +19,7 @@
     var hcc = document.createElement("script");
     hcc.type = "text/javascript";
     hcc.async = true;
-    hcc.src = ("https:" == document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/{{ theme.comment.hypercomments_id }}/"+lang+"/widget.js";
+    hcc.src = ("https:" === document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/{{ theme.comment.hypercomments_id }}/"+lang+"/widget.js";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hcc, s.nextSibling);
   })();

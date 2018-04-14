@@ -18,7 +18,7 @@
         <div class="tags-counter">
           {% if site.tags.length > 1 %}
           <p>{{ _p("tagcount.more", site.tags.length) }}</p>
-          {% elif site.tags.length == 1 %}
+          {% elif site.tags.length === 1 %}
           <p>{{ _p("tagcount.one", site.tags.length) }}</p>
           {% else %}
           <p>{{ __("tagcount.none") }}</p>

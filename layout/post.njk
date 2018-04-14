@@ -24,7 +24,7 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-       <span class="{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}">{{ post.title }}</span>
+       <span class="{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}">{{ post.title }}</span>
       </h1>
       <div class="post-meta">
         {% if post.date %}
@@ -61,7 +61,7 @@
         {% endif %}
       </div>
     </header>
-    <main class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction and post.direction.toLowerCase() == \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
+    <main class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
       {{ post.content }}
     </main>
     <footer class="post-footer">

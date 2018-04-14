@@ -32,8 +32,10 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 1. 进入你的 Hexo 站点目录，安装所需的插件：
 
+	使用 `hexo-renderer-njucks` 而不是 `hexo-renderer-nunjucks`、`hexo-renderer-njk`、`hexo-renderer-njks`，后面三个已经无人维护，并且也不支持 Nunjucks 3。
+
 	```
-	$ npm install --save hexo-renderer-nunjucks hexo-generator-search hexo-generator-feed
+	$ npm install --save hexo-renderer-njucks hexo-renderer-stylus hexo-generator-search hexo-generator-feed
 	```
 
 2. 克隆此仓库到 Hexo 站点下的 `themes/aria` 目录，如下：
