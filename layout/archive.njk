@@ -21,7 +21,7 @@
     </div>
     {% set year = "1970" %}
     {% for post in page.posts.toArray() %}
-    {% if date(post.date, "YYYY") != year %}
+    {% if date(post.date, "YYYY") !== year %}
     {% set year = date(post.date, "YYYY") %}
     <h1 class="archive-title">{{ year }}</h1>
     {% endif %}

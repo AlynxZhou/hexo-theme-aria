@@ -36,13 +36,13 @@
           <i class="far fa-folder-open"></i>
           {% set i = 0 %}
           {% for cat in post.categories.toArray() %}
-          {% if i != 0 %}<i class="fas fa-angle-right"></i> {% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
+          {% if i !== 0 %}<i class="fas fa-angle-right"></i> {% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
           {% set i = i + 1 %}
           {% endfor %}
         </span>
         {% endif %}
-        {% if post.comment != false and theme.comment.enable %}
-        {% if post.categories %}
+        {% if post.comment !== false and theme.comment.enable %}
+        {% if post.categories or post.date %}
         <span class="post-meta-divider"> | </span>
         {% endif %}
           {% if theme.comment.hypercomments_id %}

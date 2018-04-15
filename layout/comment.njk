@@ -1,5 +1,5 @@
 {% block comment %}
-{% if page.comment != false %}
+{% if page.comment !== false %}
 <div class="comments" id="comments">
   {% if theme.comment.hypercomments_id %}
   {% if not is_home() %}
@@ -7,28 +7,29 @@
   {% endif %}
   <script type="text/javascript">
   _hcwp = window._hcwp || [];
-  _hcwp.push({ widget: "Bloggerstream", widget_id: {{ theme.comment.hypercomments_id }}, selector: ".hc-comment-count", label: "{\%COUNT%\}" });
+  _hcwp.push({ "widget": "Bloggerstream", "widget_id": "{{ theme.comment.hypercomments_id }}", "selector": ".hc-comment-count", "label": "{\%COUNT%\}" });
   {% if not is_home() %}
-  _hcwp.push({ widget:"Stream", widget_id: {{ theme.comment.hypercomments_id }}, xid: "{{ page.path }}" });
+  _hcwp.push({ "widget": "Stream", "widget_id": "{{ theme.comment.hypercomments_id }}", "xid": "{{ page.path }}" });
   {% endif %}
   (function() {
-    if ("HC_LOAD_INIT" in window)
+    if ("HC_LOAD_INIT" in window) {
       return;
+    }
     HC_LOAD_INIT = true;
     var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
     var hcc = document.createElement("script");
     hcc.type = "text/javascript";
-    hcc.async = true;
-    hcc.src = ("https:" === document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/{{ theme.comment.hypercomments_id }}/"+lang+"/widget.js";
+    hcc.defer = true;
+    hcc.src = ("https:" === document.location.protocol ? "https" : "http") + "://w.hypercomments.com/widget/hc/{{ theme.comment.hypercomments_id }}/" + lang + "/widget.js";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hcc, s.nextSibling);
   })();
   </script>
   {% elif theme.comment.disqus_shortname %}
-  <script defer id="dsq-count-scr" src="//{{ theme.comment.disqus_shortname }}.disqus.com/count.js" async></script>
+  <script defer id="dsq-count-scr" src="//{{ theme.comment.disqus_shortname }}.disqus.com/count.js"></script>
   {% if not is_home() %}
   <div id="disqus_thread" class="disqus_thread"></div>
-  <script>
+  <script type="text/javascript">
   var disqus_config = function () {
     this.page.url = "{{ page.permalink }}";
     this.page.identifier = "{{ page.path }}";
@@ -45,12 +46,12 @@
   {% if not is_home() %}
   <div class="commentjs" id="comment-thread"></div>
   <link rel="stylesheet" href="{{ url_for("css/comment.css") }}">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.min.js"></script>
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.min.js"></script>
   <!-- syntax highlighting(optional) -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script defer type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script type="text/javascript">
   marked.setOptions({
     highlight: function (code, lang) {
@@ -59,28 +60,28 @@
   });
   function Highlighting(){
     var markdowns = document.getElementsByClassName("markdown");
-    for (var i=0; i<markdowns.length; i++){
+    for (var i = 0; i < markdowns.length; ++i){
       if (markdowns[i].innerHTML) {
         markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
       }
     }
   }
-  window.addEventListener('DOMContentLoaded', Highlighting, false);
-  window.addEventListener('load', Highlighting, false);
+  window.addEventListener("DOMContentLoaded", Highlighting, false);
+  window.addEventListener("load", Highlighting, false);
   </script>
-  <script type="text/javascript" src="{{ url_for("js/comment.js") }}"></script>
+  <script defer type="text/javascript" src="{{ url_for("js/comment.js") }}"></script>
   <script type="text/javascript">
   getComments({
-    type: "{{ theme.comment.commentjs.type }}",
-    user: "{{ theme.comment.commentjs.user }}",
-    repo: "{{ theme.comment.commentjs.repo }}",
-    client_id: "{{ theme.comment.commentjs.client_id }}",
-    client_secret: "{{ theme.comment.commentjs.client_secret }}",
-    no_comment: "{{ __("commentjs.none") }}",
-    go_to_comment: "{{ __("commentjs.comment") }}",
-    issue_title: "{{ page.title }}",
-    btn_class: "button",
-    comments_target: "#comment-thread"
+    "type": "{{ theme.comment.commentjs.type }}",
+    "user": "{{ theme.comment.commentjs.user }}",
+    "repo": "{{ theme.comment.commentjs.repo }}",
+    "client_id": "{{ theme.comment.commentjs.client_id }}",
+    "client_secret": "{{ theme.comment.commentjs.client_secret }}",
+    "no_comment": "{{ __("commentjs.none") }}",
+    "go_to_comment": "{{ __("commentjs.comment") }}",
+    "issue_title": "{{ __("page.title") }}",
+    "btn_class": "button",
+    "comments_target": "#comment-thread"
   });
   </script>
   {% endif %}

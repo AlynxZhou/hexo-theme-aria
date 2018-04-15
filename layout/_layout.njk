@@ -41,7 +41,7 @@
     <link rel="alternate" href="{{ url_for(config.feed.path) }}" title="{{ config.title }}" type="application/atom+xml" />
     {% endif %}
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/index.css") }}">
-    {% if theme.sidebar != false %}
+    {% if theme.sidebar !== false %}
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/sidebar.css") }}">
     {% endif %}
     {% block css %}{% endblock %}
@@ -111,7 +111,7 @@
             {% block content %}{% endblock %}
           </div>
           {# Sidebar can be `left`, `right` or `false`. #}
-          {% if theme.sidebar != false %}
+          {% if theme.sidebar !== false %}
           {% include "sidebar.njk" %}
           {% endif %}
         </div>
