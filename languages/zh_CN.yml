@@ -36,5 +36,9 @@ categorycount:
   one: 你已经创建了 %d 个分类，积少成多，再接再厉！
   more: 你已经创建了 %d 个分类！
 
+commentjs:
+  none: 这个页面还没有评论，现在就去评论吧！
+  comment: 去评论！
+
 poweredby: 由 %s 强力驱动
 theme: 主题 %s

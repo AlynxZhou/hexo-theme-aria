@@ -36,5 +36,9 @@ categorycount:
   one: You have %d category, keep on!
   more: You have %d categories!
 
+commentjs:
+  none: This page has no comment, go to comment now!
+  comment: Go to comment!
+
 poweredby: Proudly Powered by %s
 theme: Theme is %s

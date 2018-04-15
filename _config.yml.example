@@ -104,10 +104,18 @@ blogroll:
   Nunjucks: https://mozilla.github.io/nunjucks/
   Stylus: http://stylus-lang.com/
 
+# `comment.commentjs.type`: Choose between `github` and `oschina`.
 comment:
   enable: false
   hypercomments_id:
   disqus_shortname:
+  commentjs:
+    enable: false
+    type:
+    user:
+    repo:
+    client_id:
+    client_secret:
 
 reward:
   enable: false

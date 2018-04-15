@@ -36,5 +36,9 @@ categorycount:
   one: 你已經創建了 %d 個分類，積少成多，再接再厲！
   more: 你已經創建了 %d 個分類！
 
+commentjs:
+  none: 這個頁面還沒有評論，現在就驅評論吧！
+  comment: 去評論！
+
 poweredby: 由 %s 強力驅動
 theme: 主題 %s
