@@ -18,80 +18,79 @@ hue-6-2: #e6c07b
 
 */
 
-.highlight {
+.hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
   color: #abb2bf;
-  /* #fafafa is too light so changed it. */
   background: #282c34;
 }
 
-.comment,
-.quote {
+.hljs-comment,
+.hljs-quote {
   color: #5c6370;
   font-style: italic;
 }
 
-.doctag,
-.keyword,
-.formula {
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
   color: #c678dd;
 }
 
-.section,
-.name,
-.selector-tag,
-.deletion,
-.subst {
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
   color: #e06c75;
 }
 
-.literal {
+.hljs-literal {
   color: #56b6c2;
 }
 
-.string,
-.regexp,
-.addition,
-.attribute,
-.meta-string {
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
   color: #98c379;
 }
 
-.built_in,
-.class .title {
+.hljs-built_in,
+.hljs-class .hljs-title {
   color: #e6c07b;
 }
 
-.attr,
-.variable,
-.template-variable,
-.type,
-.selector-class,
-.selector-attr,
-.selector-pseudo,
-.number {
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
   color: #d19a66;
 }
 
-.symbol,
-.bullet,
-.link,
-.meta,
-.selector-id,
-.title {
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
   color: #61aeee;
 }
 
-.emphasis {
+.hljs-emphasis {
   font-style: italic;
 }
 
-.strong {
+.hljs-strong {
   font-weight: bold;
 }
 
-.link {
+.hljs-link {
   text-decoration: underline;
 }

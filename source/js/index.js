@@ -74,5 +74,9 @@
     //   $(".justified-gallery").justifiedGallery(options);
     // }
 
+    // Hexo-util generates <figure> tag with `highlight` class, but hljs uses `hljs` class.
+    $(".highlight").each(function (i) {
+      $(this).addClass("hljs");
+    });
   });
 })(jQuery);

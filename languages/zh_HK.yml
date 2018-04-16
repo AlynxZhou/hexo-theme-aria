@@ -38,7 +38,7 @@ categorycount:
 
 commentjs:
   none: 這個頁面還沒有評論，現在就驅評論吧！
-  comment: 去評論！
+  comment: 去評論
 
 poweredby: 由 %s 強力驅動
 theme: 主題 %s

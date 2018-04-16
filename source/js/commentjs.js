@@ -373,7 +373,7 @@ var getComments = function getComments(params) {
 
     comments_target = comments_target ? comments_target : '#comment-thread';
     username = user;
-    var spinner = new Spinner(spinOpts);
+    if (loading_target) var spinner = new Spinner(spinOpts);
     var timeagoInstance = timeago();
     var comments_url;
     var comments = new Array();

@@ -9,8 +9,20 @@
   if (hexo-config("comment.commentjs.enable")) {
     .commentjs {
       padding: 2em;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .comment-body {
+        width: 95%;
+        pre {
+          background: #f6f8fa;
+          padding: 1em;
+          border-radius: $corner-radius;
+        }
+      }
       .button {
-        padding: 1em 0.3em;
+        padding: 0.3em 1em;
         background: red;
       }
     }
