@@ -59,18 +59,10 @@ blockquote {
   position: relative;
   margin: 1em;
   word-wrap: break-word;
+  padding: 0 1em;
+  border-left: 0.25em solid $grey-light;
   p {
     color: $color-quote;
-  }
-  &::before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: -1em;
-    width: 0.25em;
-    height: 100%;
-    background: $grey-light;
   }
 }
 .centerquote {
