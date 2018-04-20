@@ -14,11 +14,11 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 - Elegant responsive double column layout with css animation.
 
-- Comment system (currently supprt [HyperComments](https://www.hypercomments.com/) and [Disqus](https://disqus.com/)).
+- Comment system (currently supprt [HyperComments](https://www.hypercomments.com/), [Disqus](https://disqus.com/) and [commentjs](https://github.com/wzpan/comment.js)).
 
 - Busuanzi counting.
 
-- Hexo local search support (need to install `hexo-generator-search` and set config as its [README](https://github.com/PaicHyperionDev/hexo-generator-search)).
+- Hexo local search support (need to install `hexo-generator-search` and set config as its [README](https://github.com/wzpan/hexo-generator-search)).
 
 - Multi-languages support (currently zh_CN, zh_HK, zh_TW and en, PR welcome).
 
@@ -81,7 +81,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 	$ cp themes/aria/_config.yml.example themes/aria/_config.yml
 	```
 
-5. Edit `_config.yml` in ARIA's dir：
+5. Edit `_config.yml` in ARIA's dir, not all config needs customization, you just change what you need：
 
 	1. Menu Settings:
 
@@ -186,6 +186,10 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 		First set `comment` to `enable: true` to enable comment in all pages (except Home, Archives, Categories, Tags), then fill your HyperComments ID or Disqus Shortname. If you want to disable comment in some pages, add front-matter `comment: false` (`comment` NOT `comments`!).
 
+		If you use commentjs, first set `enable` to `true`, then set `type` according to your host service between `github` and `oschina`, `user` is your user name of the host, `repo` is your repo name, `client_id` and `client_secret` needs you go to [github](https://github.com/settings/applications/new) or [oschina](https://git.oschina.net/oauth/applications/new) to create an application, and copy your token.
+
+		If you enable more than one comment services, only the one shows in front of the queue will be shown (queue: HyperComments, Disqus, commentjs).
+
 		Tips：If you want to edit all new pages' front-matter, just edit files in your website's `scaffolds` dir, Hexo uses them as template when create new page or post.
 
 	21. Reward:
@@ -206,7 +210,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	Don't forget to compare `_config.yml` and `_config.yml.example`, then apply changes in example to your own config manually.
 
-# LICENSE:
+# License:
 
 Apache-2.0
 

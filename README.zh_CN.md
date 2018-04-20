@@ -14,11 +14,11 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 - 优雅的响应式双栏设计和 CSS 动画。
 
-- 内置评论系统（目前支持 [HyperComments](https://www.hypercomments.com/) 和 [Disqus](https://disqus.com/)）。
+- 内置评论系统（目前支持 [HyperComments](https://www.hypercomments.com/) 和 [Disqus](https://disqus.com/) 以及 [commenjs](https://github.com/wzpan/comment.js)）。
 
 - 不蒜子访问量计数。
 
-- Hexo 搜索支持（通过安装 `hexo-generator-search` 并参照其 [说明文件](https://github.com/PaicHyperionDev/hexo-generator-search) 进行配置来生成搜索索引）。
+- Hexo 搜索支持（通过安装 `hexo-generator-search` 并参照其 [说明文件](https://github.com/wzpan/hexo-generator-search) 进行配置来生成搜索索引）。
 
 - 多语言支持（目前支持简体中文，繁体中文和英文，欢迎添加翻译）。
 
@@ -81,7 +81,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 	$ cp themes/aria/_config.yml.example themes/aria/_config.yml
 	```
 
-5. 修改 ARIA 目录下的 `_config.yml`：
+5. 修改 ARIA 目录下的 `_config.yml`，不需要修改所有的配置项，只要修改你需要的部分就可以了：
 
 	1. 菜单设置：
 
@@ -185,6 +185,10 @@ A Hexo theme inspired by Kalafina's song ARIA.
 	20. 评论系统：
 
 		首先将 `comment` 下 `enable` 设成 `true` 以全局启用评论（首页、归档、分类、标签页面除外），然后填入你的 HyperComments ID 或者 Disqus Shortname。如果你有哪个页面想单独关闭评论，添加文件头 `comment: false` （`comment` 不是 `comments`！）。
+
+		如果你使用 commentjs，首先将它的 `enable` 设置成 `true`，然后根据你的网站页面存放位置设置 `type`，支持 `github` 和 `oschina`，`user` 是你在这些网站的用户名，`repo` 是你这个仓库的名字，`client_id` 和 `client_secret` 需要你去 [github](https://github.com/settings/applications/new) 或者 [oschina](https://git.oschina.net/oauth/applications/new) 生成一个应用，然后复制 Token。
+
+		如果启用多个评论系统，默认只会显示顺序靠前的（顺序：HyperComments，Disqus，commentjs）。
 
 		Tips：如果想批量更改新生成的文件的文件头，编辑站点目录下 `scaffolds` 目录里的文件，Hexo 会把这个目录内的文件作为生成新文件时的模板。
 
