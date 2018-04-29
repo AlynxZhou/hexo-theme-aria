@@ -191,6 +191,11 @@ code {
   border-radius: $corner-radius;
   font-family: $font-mono;
   background-color: #f8f8f8;
+  -webkit-font-feature-settings: "liga" 0; /* No variation */
+  -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
+  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
+  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
+  font-feature-settings: "liga" 0; /* No variation */
 }
 .card {
   display: block;
@@ -208,7 +213,12 @@ figure {
   border-radius: $corner-radius;
   line-height: 1.2em;
   padding: 0.5em;
-  margin: 1em;
+  margin: 1em
+  -webkit-font-feature-settings: "liga" 0; /* No variation */
+  -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
+  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
+  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
+  font-feature-settings: "liga" 0; /* No variation */
   .gutter {
     pre {
       padding: 0;
