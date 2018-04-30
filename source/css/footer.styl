@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: flex-end;
     flex-wrap: nowrap;
     .footer-left {
       flex-grow: 1;
@@ -31,9 +31,10 @@
       max-width: 50%;
       .custom-info {
         width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        word-warp: break-word;
       }
     }
   }
