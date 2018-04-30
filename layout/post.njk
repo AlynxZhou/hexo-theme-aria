@@ -95,22 +95,22 @@
   {% endif %}
   {% if post.prev or post.next %}
   <div class="post-nav">
-    {% if post.next %}
     <div class="post-nav-next post-nav-item">
+      {% if post.next %}
       <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
         <i class="fas fa-angle-left"></i>
         <span class="nav-title">{{ post.next.title }}</span>
       </a>
+      {% endif %}
     </div>
-    {% endif %}
-    {% if post.prev %}
     <div class="post-nav-prev post-nav-item">
+      {% if post.prev %}
       <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
         <span class="nav-title">{{ post.prev.title }}</span>
         <i class="fas fa-angle-right"></i>
       </a>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
   {% endif %}
   {% if theme.comment.enable %}
