@@ -126,7 +126,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	9. Custom Theme Color And Tags Color:
 
-		Theme color `color` will be used in some browsers' title bar like Android Chrome, by default it's theme's dark. Tags Color `tags_color` is a list and post tags will use it in a loop. Because color starts with `#`, you need to use double quote to prevent YAML from making it a comment. If you are not sure, don't change here.
+		Theme color `color` will be used in header and footer background, and also in some browsers' title bar like Android Chrome, by default it's theme's dark. Tags Color `tags_color` is a list and post tags will use it in a loop. Because color starts with `#`, you need to use double quote to prevent YAML from making it a comment. If you are not sure, don't change here.
 
 	10. Google Site Verification:
 

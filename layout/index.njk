@@ -88,7 +88,7 @@
         {% if i >= colors.length %}
         {% set i = 0 %}
         {% endif %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }}" rel="tag"><i class="fas fa-tags"></i> {{ tag.name }}</a>
+        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }};" rel="tag"><i class="fas fa-tags"></i> {{ tag.name }}</a>
         {% set i = i + 1 %}
         {% endfor %}
       </div>
