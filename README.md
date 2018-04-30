@@ -134,7 +134,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	11. Website start year:
 
-		Set `since` to your start year，if blank or the same as current year, it will only show current year, else it will show `current - start`.
+		Set `since` to your start year，if blank or the same as current year, it will only show current year, else it will show `start - current`.
 
 	12. Searching Settings:
 

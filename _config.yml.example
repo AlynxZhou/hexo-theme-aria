@@ -15,7 +15,7 @@ favicon:
   android_manifest: favicons/site.webmanifest
   ms_browserconfig: favicons/browserconfig.xml
 
-# Must be a string.
+# Must be an array.
 keywords:
   - Life
   - ARIA
