@@ -85,7 +85,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	1. Menu Settings:
 
-		If you want to add "Categories" and "Tags" page, uncomment `categories` and `tags`, then run `hexo new page categories` and `hexo new page tags`, then add `layout: categories` and `layout: tags` to those pages' front-matter:
+		If you want to add "Categories" and "Tags" page, uncomment `categories` and `tags`, then run `hexo new page categories` and `hexo new page tags`, then add `layout: categories` and `layout: tags` to those pages' front-matter. If you want a about page, just `hexo new page about` and uncomment it:
 
 		```yaml
 		menu:
@@ -154,7 +154,7 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 
 	16. MathJax:
 
-		[MathJax](https://www.mathjax.org/) is a library of displaying math formula in webpage, because it is large, ARIA does not contain it. If you need it, first set `cdn` of `mathjax` to your MathJax CDNand add `mathjax: true` to the page's front-matter in which you has formula. Set `global` to `true` can enable MathJax in all pages but it will let other pages slow.
+		[MathJax](https://www.mathjax.org/) is a library of displaying math formula in webpage, because it is large, ARIA does not contain it. If you need it, first **set `cdn` of `mathjax` to your MathJax CDN** and **add `mathjax: true` to the page's front-matter in which you has formula**. Set `global` to `true` can enable MathJax in all pages but it will let other pages slow.
 
 	17. Library CDN:
 
@@ -195,6 +195,10 @@ Note: Using a static website generator needs some basic knowledge, if you know n
 	21. Reward:
 
 		Set `reward` to `enable: true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Comment to disable a QRCode.
+
+	22. Auto Excerpt:
+
+		If you want to generate post excerpt at homepage automatically, you can use this. For example, `auto_excerpt: 200` will use first 200 chars (HTML doc) as excerpt. However, if you want to get a better look, it is recommended to **place a `<!--more-->` tag to where you want, words before this tag will be used as except**.
 
 6. Custom CSS and JavaScript：
 

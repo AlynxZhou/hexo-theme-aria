@@ -34,10 +34,8 @@
         {% endif %}
         <span class="post-categories">
           {# About `-`: https://mozilla.github.io/nunjucks/cn/templating.html#part-861ece9d8e5ce60c #}
-          {% set i = 0 %}
           {% for cat in post.categories.toArray() -%}
-          {% if i !== 0 %}<i class="fas fa-angle-right"></i>{% else %}<i class="far fa-folder-open"></i>{% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
-          {%- set i = i + 1 %}
+          {% if loop.first %}<i class="far fa-folder-open"></i>{% else %}<i class="fas fa-angle-right"></i>{% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
           {%- endfor %}
         </span>
         {% endif %}
@@ -71,6 +69,11 @@
       <div class="post-readmore">
         <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }}<i class="fas fa-angle-double-right"></i></a>
       </div>
+      {% elif theme.auto_excerpt %}
+      {{ post.content.substring(0, theme.auto_excerpt) }}
+      <div class="post-readmore">
+        <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }}<i class="fas fa-angle-double-right"></i></a>
+      </div>
       {% else %}
       {{ post.content }}
       {% endif %}
@@ -78,17 +81,13 @@
     <footer class="post-footer">
       {% if post.tags and post.tags.toArray().length %}
       <div class="post-tags">
-        {% set i = 0 %}
         {% if theme.tags_color %}
         {% set colors = theme.tags_color %}
         {% else %}
         {% set colors = ["#fc6423", "#a3bb54", "#47aaff"] %}
         {% endif %}
         {% for tag in post.tags.toArray() %}
-        {% if i >= colors.length %}
-        {% set i = 0 %}
-        {% endif %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }};" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
+        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[loop.index0 % colors.length] }};" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
         {% set i = i + 1 %}
         {% endfor %}
       </div>

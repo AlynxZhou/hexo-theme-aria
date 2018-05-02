@@ -40,6 +40,9 @@
     {% if config.feed.path %}
     <link rel="alternate" href="{{ url_for(config.feed.path) }}" title="{{ config.title }}" type="application/atom+xml" />
     {% endif %}
+    {% if theme.favicon.fallback %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for(theme.favicon.fallback) }}">
+    {% endif %}
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/index.css") }}">
     {% if theme.sidebar !== false %}
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/sidebar.css") }}">

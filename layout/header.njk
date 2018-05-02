@@ -1,5 +1,5 @@
 {% block header %}
-<header id="header" class="header" style="background: {{ theme.color }};">
+<header id="header" class="header"{% if theme.color %} style="background: {{ theme.color }};"{% endif %}>
   <div class="container">
     <div class="header-container">
       <div class="header-title">

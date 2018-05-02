@@ -3,7 +3,7 @@ menu:
   archives: archives/
   # categories: categories/
   # tags: tags/
-  about: about/
+  # about: about/
 
 # Transform your image to those favicons in https://realfavicongenerator.net/.
 favicon:
@@ -14,6 +14,7 @@ favicon:
   safari_pinned_tab: favicons/safari-pinned-tab.svg
   android_manifest: favicons/site.webmanifest
   ms_browserconfig: favicons/browserconfig.xml
+  fallback: favicon.ico
 
 # Must be an array.
 keywords:
@@ -57,6 +58,11 @@ sidebar: left
 animate: false
 
 busuanzi: true
+
+# If you want ARIA generate excerpt, set it to the length you want. If you don't, leave it blank.
+# Recomend to place `<!--more-->` to where you want to stop excerpt in content instead of use this option.
+# Example: `auto_excerpt: 200`, use first 200 chars in post content as excerpt.
+auto_excerpt:
 
 # If you want to use MathJax, first fill a CDN link like
 # `cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML`.

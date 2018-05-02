@@ -85,7 +85,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	1. 菜单设置：
 
-		如果你想要启用“分类”和“标签”页面，取消注释 `categories` 和 `tags`，然后运行 `hexo new page categories` 和 `hexo new page tags` 生成这两个页面，最后分别把 `layout: categories` 和 `layout: tags` 添加到对应文件的文件头里：
+		如果你想要启用“分类”和“标签”页面，取消注释 `categories` 和 `tags`，然后运行 `hexo new page categories` 和 `hexo new page tags` 生成这两个页面，最后分别把 `layout: categories` 和 `layout: tags` 添加到对应文件的文件头里。如果你想要启用“关于”页面，运行 `hexo new page about` 并取消注释即可：
 
 		```yaml
 		menu:
@@ -195,6 +195,10 @@ A Hexo theme inspired by Kalafina's song ARIA.
 	21. 打赏：
 
 		将 `reward` 下 `enable` 设置为 `true` 启用打赏，然后在 `comment` 项设置你的打赏提示语，然后按需设置三种打赏方式的二维码（微信支付，支付宝，比特币），设置方式同头像，如果想关闭某一项注释即可。
+
+	22. 自动截断摘要：
+
+		如果你想自动生成首页的文章摘要，你可以使用这个选项。例如设置 `auto_excerpt: 200` 就会让主题截取文章的前 200 个字符（HTML 文档）作为摘要。但是如果你想要更好的显示效果，建议你 **在想要的地方放置一个 `<!--more-->` 标签，在这个标签之前的文章内容会被作为文章的摘要**。
 
 6. 自定义 CSS 和 JavaScript：
 
