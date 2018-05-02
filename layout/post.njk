@@ -10,7 +10,7 @@
 {% block content %}
 <section id="post" class="post">
   {% set post = page %}
-  <article class="post-container card {% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
+  <article class="post-container card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -29,36 +29,36 @@
       <div class="post-meta">
         {% if post.date %}
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }}</time>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, config.date_format) }}</time></span>
         </span>
         {% endif %}
         {% if post.categories and post.categories.toArray().length %}
         {% if post.date %}
-        <span class="post-meta-divider"> | </span>
+        <span class="post-meta-divider divider">|</span>
         {% endif %}
         <span class="post-categories">
-          <i class="far fa-folder-open"></i>
+          {# About `-`: https://mozilla.github.io/nunjucks/cn/templating.html#part-861ece9d8e5ce60c #}
           {% set i = 0 %}
-          {% for cat in post.categories.toArray() %}
-          {% if i !== 0 %}<i class="fas fa-angle-right"></i> {% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"> <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
-          {% set i = i + 1 %}
-          {% endfor %}
+          {% for cat in post.categories.toArray() -%}
+          {% if i !== 0 %}<i class="fas fa-angle-right"></i>{% else %}<i class="far fa-folder-open"></i>{% endif %}<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="{{ url_for(cat.path) }}" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a></span>
+          {%- set i = i + 1 %}
+          {%- endfor %}
         </span>
         {% endif %}
         {% if post.comment !== false and theme.comment.enable %}
         {% if theme.comment.hypercomments_id %}
         {% if post.categories or post.date %}
-        <span class="post-meta-divider"> | </span>
+        <span class="post-meta-divider divider">|</span>
         {% endif %}
         <span class="post-comment-count">
-          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a>
+          <i class="far fa-comments"></i><span><a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ post.path }}" itemprop="commentsCount"></span></a></span>
         </span>
         {% elif theme.comment.disqus_shortname %}
         {% if post.categories or post.date %}
-        <span class="post-meta-divider"> | </span>
+        <span class="post-meta-divider divider">|</span>
         {% endif %}
         <span class="post-comment-count">
-          <i class="far fa-comments"></i> <a href="{{ url_for(post.path) }}#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a>
+          <i class="far fa-comments"></i><span><a href="{{ url_for(post.path) }}#disqus_thread" itemprop="discussionUrl"><span class="post-comment-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span></a></span>
         </span>
         {% endif %}
         {% endif %}
@@ -83,7 +83,7 @@
         {% if i >= colors.length %}
         {% set i = 0 %}
         {% endif %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }};" rel="tag"><i class="fas fa-tags"></i> {{ tag.name }}</a>
+        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[i] }};" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
         {% set i = i + 1 %}
         {% endfor %}
       </div>
@@ -97,18 +97,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       {% if post.next %}
-      <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-        <i class="fas fa-angle-left"></i>
-        <span class="nav-title">{{ post.next.title }}</span>
-      </a>
+      <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}"><i class="fas fa-angle-left"></i><span class="nav-title">{{ post.next.title }}</span></a>
       {% endif %}
     </div>
     <div class="post-nav-prev post-nav-item">
       {% if post.prev %}
-      <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-        <span class="nav-title">{{ post.prev.title }}</span>
-        <i class="fas fa-angle-right"></i>
-      </a>
+      <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}"><span class="nav-title">{{ post.prev.title }}</span><i class="fas fa-angle-right"></i></a>
       {% endif %}
     </div>
   </div>

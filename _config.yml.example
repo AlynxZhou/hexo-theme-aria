@@ -29,7 +29,7 @@ creative_commons:
 highlight: atom-one-dark
 
 # Custom info in footer.
-custom_info: 托管于 <i class="fab fa-github-alt"></i> <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+custom_info: 托管于 <i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
 
 avatar: images/avatar.png
 
