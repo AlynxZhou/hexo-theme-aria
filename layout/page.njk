@@ -24,7 +24,7 @@
   <article class="page-article card{% if theme.animate %} animate{% endif %}">
     <header class="page-header">
       <h1 class="page-title" itemprop="name headline">
-        <span class="{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}">{{ __(page.title) }}</span>
+        <span{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} class="rtl{% endif %}">{{ __(page.title) }}</span>
       </h1>
     </header>
     <main class="page-main">
