@@ -28,11 +28,15 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 # Usage:
 
-Note: Using a static website generator needs some basic knowledge, if you know nothing, Hexo and ARIA are not your best choice. Please be sure you know Hexo, YAML, git, Markdown and Web before continuing.
+## Before Using:
+
+1. Using a static website generator needs some basic knowledge, if you know nothing, Hexo and ARIA are not your best choice. Please be sure you know Hexo, YAML, git, Markdown and Web before continuing.
+
+2. ARIA uses [FlexBox layout](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) to place elements, and Internet Explorer before version 9 has no way to support it. So if you use IE, upgrade to IE 11 or later, or use a modern browser like [Google Chrome](https://www.google.com/chrome/) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/). Or if you know how to fallback FlexBox in elder IE, please send PRs, thanks.
 
 1. Change to your Hexo website dir and install plugins:
 
-	Use `hexo-renderer-njucks` instead of `hexo-renderer-nunjucks` or `hexo-renderer-njk` or `hexo-renderer-njks`, those three plugin are unmaintained and cannot support Nunjucks 3.
+	Use `hexo-renderer-njucks` instead of `hexo-renderer-nunjucks` or `hexo-renderer-njk` or `hexo-renderer-njks`, those three plugins are unmaintained and cannot support Nunjucks 3.
 
 	```
 	$ npm install --save hexo-renderer-njucks hexo-renderer-stylus hexo-generator-search hexo-generator-feed

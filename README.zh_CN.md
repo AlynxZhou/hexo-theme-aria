@@ -28,7 +28,11 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 # 使用说明：
 
-注意：使用静态网站生成器需要有一定的相关知识，如果您对这方面毫无了解，不建议使用 Hexo 和 ARIA 建站。请您确定您有基础的 Hexo、YAML、git、Markdown 和 Web 知识再向下进行。
+## 使用前须知：
+
+1. 使用静态网站生成器需要有一定的相关知识，如果您对这方面毫无了解，不建议使用 Hexo 和 ARIA 建站。请您确定您有基础的 Hexo、YAML、git、Markdown 和 Web 知识再向下进行。
+
+2. ARIA 使用了 [FlexBox 布局](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex) 来放置页面上的元素，但是 Internet Explorer 9 和更低的版本没有办法支持这个布局。所以如果你用 IE，请升级到 IE 11 或者更高的版本，或者使用诸如 [Google Chrome](https://www.google.com/intl/zh-CN_ALL/chrome/) 或者 [Mozilla Firefox](https://www.mozilla.org/zh-CN/firefox/) 这样的现代浏览器。如果你知道怎么在旧版 IE 里面回退 FlexBox 到替代的其它布局，请提交 PR，十分感谢。
 
 1. 进入你的 Hexo 站点目录，安装所需的插件：
 
