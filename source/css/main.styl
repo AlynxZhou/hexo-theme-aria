@@ -2,7 +2,7 @@
 @import "nib";
 .main {
   font: 1em $font-main;
-  margin-top: - $search-height;
+  margin-top: 0 - $search-height;
   .main-container {
     width: auto;
     background: $color-main-background;
@@ -28,29 +28,9 @@
       .index-post {
         padding: 1em;
         margin: 0.5em;
-        // .post-readmore {
-        //   margin: 0.5em;
-        //   .readmore {
-        //     display: inline-block;
-        //     padding: 0.25em 1em;
-        //     font-size: 1em;
-        //     color: $color-button-font;
-        //     background: $color-button-background;
-        //     line-height: 1.5em;
-        //   }
-        // }
-        .post-tags {
-          .post-tag {
-            margin: 0.5em;
-            display: inline-block;
-            text-decoration: none;
-            color: $color-link-index-button;
-            padding: 0.15em;
-            line-height: 1.2em;
-          }
-        }
         .post-header {
           padding: 0.25em 0.25em;
+          text-align: center;
           .post-title-link {
             display: inline-block;
             position: relative;
@@ -75,6 +55,19 @@
                 visibility: visible;
                 transform: scaleX(1);
               }
+            }
+          }
+        }
+        .post-footer {
+          text-align: center;
+          .post-tags {
+            .post-tag {
+              margin: 0.5em;
+              display: inline-block;
+              text-decoration: none;
+              color: $color-link-index-button;
+              padding: 0.15em;
+              line-height: 1.2em;
             }
           }
         }

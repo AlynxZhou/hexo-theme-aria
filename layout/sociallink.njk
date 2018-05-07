@@ -1,7 +1,7 @@
 {% block sociallink %}
 <hr>
 <div class="social-link sidebar-item">
-  <p><i class="far fa-address-card"></i>{{ __("sociallink") }}</p>
+  <div><i class="far fa-address-card"></i>{{ __("sociallink") }}</p></div>
   <ul>
     {% for e in theme.social.links %}
     <li>{% if e.icon %}<i class="{{ e.icon }}"></i>{% endif %}<a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>

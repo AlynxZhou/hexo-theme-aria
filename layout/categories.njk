@@ -15,15 +15,15 @@
     </header>
     <main class="page-main">
       <div class="categories-container">
-        <div class="categories-counter">
+        <h2 class="categories-counter">
           {% if site.categories.length > 1 %}
-          <p>{{ _p("categorycount.more", site.categories.length) }}</p>
+          {{ _p("categorycount.more", site.categories.length) }}
           {% elif site.categories.length === 1 %}
-          <p>{{ _p("categorycount.one", site.categories.length) }}</p>
+          {{ _p("categorycount.one", site.categories.length) }}
           {% else %}
-          <p>{{ __("categorycount.none") }}</p>
+          {{ __("categorycount.none") }}
           {% endif %}
-        </div>
+        </h2>
         <div class="categories-list">
           {{ list_categories() }}
         </div>

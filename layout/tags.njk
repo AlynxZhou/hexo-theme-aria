@@ -15,15 +15,15 @@
     </header>
     <main class="page-main">
       <div class="tags-container">
-        <div class="tags-counter">
+        <h2 class="tags-counter">
           {% if site.tags.length > 1 %}
-          <p>{{ _p("tagcount.more", site.tags.length) }}</p>
+          {{ _p("tagcount.more", site.tags.length) }}
           {% elif site.tags.length === 1 %}
-          <p>{{ _p("tagcount.one", site.tags.length) }}</p>
+          {{ _p("tagcount.one", site.tags.length) }}
           {% else %}
-          <p>{{ __("tagcount.none") }}</p>
+          {{ __("tagcount.none") }}
           {% endif %}
-        </div>
+        </h2>
         <div class="tags-cloud">
           {{ tagcloud({min_font: 16, max_font: 32, amount: 300, color: true, start_color: "#777", end_color: "#111"}) }}
         </div>

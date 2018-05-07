@@ -12,16 +12,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     flex-wrap: nowrap;
     width: auto;
+    padding: 1em;
     .header-title {
       text-align: left;
       width: 50%;
       word-wrap: break-word;
-      flex-grow: 2;
+      flex-grow: 1;
+      flex-shrink: 0;
       color: $color-title;
-      padding: 0.5em;
       a {
         color: $color-title;
         text-decoration: none;
@@ -33,17 +34,19 @@
       }
       .title {
         font: bold 2em $font-title;
+        margin: 0 0 0.5em 0;
       }
       .subtitle {
         font: italic 1.5em $font-subtitle;
         text-shadow: 0 0.05em rgba(0, 0, 0, 0.2);
+        margin: 0.5em 0 0 0;
       }
     }
     .logo {
       text-align: right;
       width: 50%;
       flex-grow: 1;
-      padding-top: 1em;
+      flex-shrink: 0;
       img {
         display: inline-block;
         max-width: 20em;

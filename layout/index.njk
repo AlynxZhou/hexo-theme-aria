@@ -19,9 +19,9 @@
       </span>
     </div>
     <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
-      </h2>
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+      </h1>
       <div class="post-meta">
         {% if post.date %}
         <span class="post-date">
@@ -58,22 +58,13 @@
         {% endif %}
       </div>
     </header>
-    <main class="post-body{% if post.direction and post.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
+    <main class="post-body" itemprop="articleBody">
       {% if post.excerpt  %}
       {{ post.excerpt }}
-      {# <div class="post-readmore">
-        <a class="readmore button" href="{{ url_for(post.path) }}">{{ __("readmore") }}<i class="fas fa-angle-double-right"></i></a>
-      </div> #}
       {% elif post.description %}
       {{ post.description }}
-      {# <div class="post-readmore">
-        <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }}<i class="fas fa-angle-double-right"></i></a>
-      </div> #}
       {% elif theme.auto_excerpt %}
       {{ post.content.substring(0, theme.auto_excerpt) }}
-      {# <div class="post-readmore">
-        <a class="readmore button" href="{{ url_for(post.path) }}#more">{{ __("readmore") }}<i class="fas fa-angle-double-right"></i></a>
-      </div> #}
       {% else %}
       {{ post.content }}
       {% endif %}
@@ -88,7 +79,6 @@
         {% endif %}
         {% for tag in post.tags.toArray() %}
         <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[loop.index0 % colors.length] }};" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
-        {% set i = i + 1 %}
         {% endfor %}
       </div>
       {% endif %}
