@@ -124,13 +124,13 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 		设置 `avatar` 项为你头像的链接，例如设置 `avatar: images/myavatar.png`，则你需要把自己的头像放置到站点根目录下的 `source/images/myavatar.png`。
 
-	- 自定义 Logo：
+	8. 自定义 Logo：
 
 		设置方法类似于头像，`logo` 项的值将会被显示在默认顶部 `ARIA` 的位置。
 
-	- 自定义主题色和标签色：
+	9. 自定义主题色和标签色：
 
-		主题色 `color` 会被用于 header 和 footer 的背景上，一些浏览器也会使用它来辅助变色，例如 Android 版 Chrome 的标题栏颜色，默认为网站的深色。标签色 `tags_color` 为一个列表，文章的标签会循环使用这个列表的颜色，由于颜色以 `#` 开头，需要加双引号以防止被作为 YAML 的注释。如果你没有特殊需求，最好不要修改这里的颜色。
+		主题色 `color` 会被用于页眉和页脚的背景上，一些浏览器也会使用它来辅助变色，例如 Android 版 Chrome 的标题栏颜色，默认为网站的深色。标签色 `tags_color` 为一个列表，文章的标签会循环使用这个列表的颜色，由于颜色以 `#` 开头，需要加双引号以防止被作为 YAML 的注释。如果你没有特殊需求，最好不要修改这里的颜色。
 
 	10. Google 页面验证：
 
@@ -158,7 +158,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	16. MathJax 设置：
 
-		[MathJax](https://www.mathjax.org/) 是一套用于在网页上显示数学公式和符号的 JavaScript 排版库，由于其体积较大，ARIA 没有内置，如果你有数学写作需要，首先建议将 `mathjax` 下的 `cdn` 项设置为你要使用的 MathJax CDN，然后在需要使用的页面添加文件头 `mathjax: true`。设置 `global` 为 `true` 可以在全部页面启用 MathJax，但可能会拖慢非数学页面的显示速度。
+		[MathJax](https://www.mathjax.org/) 是一套用于在网页上显示数学公式和符号的 JavaScript 排版库，由于其体积较大，ARIA 没有内置，如果你有数学写作需要，首先设置 `mathjax` 下的 `enable` 为 `true`，然后将 `cdn` 项设置为你要使用的 MathJax CDN，然后在需要使用的页面添加文件头 `mathjax: true`。设置 `global` 为 `true` 可以在全部页面启用 MathJax，但可能会拖慢非数学页面的显示速度。
 
 	17. 常用库 CDN：
 
@@ -166,24 +166,34 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	18. 社交链接：
 
-		在 `social` 下添加你的个人社交链接，格式如下：
+		先将 `social` 下面 `enable` 设置为 `true`，然后在 `links` 下添加你的个人社交链接，格式如下：
 
 		```yaml
 		social:
-		  显示名称:
-		    link: 链接地址
-		    icon: 显示的 Font Awesome 图标 class 属性
+		  enable: true
+		  links:
+		    - name: 显示名称
+		      link: 网页地址
+		      icon: 你所使用的 Font Awesome 图标的 class 属性
+		    - name: 显示名称
+  		      link: 网页地址
+  		      icon: 你所使用的 Font Awesome 图标的 class 属性
 		```
 
 		前往 [Font Awesome](https://fontawesome.com/) 获取你想要的图标。
 
 	19. 友情链接：
 
-		在 `blogroll` 下添加友情链接，格式如下：
+		先将 `blogroll` 下面的 `enable` 设置为 `true`，然后在 `links` 下添加友情链接，格式如下：
 
 		```yaml
 		blogroll:
-		  显示名称: 链接地址
+		  enable: true
+		  links:
+		    - name: 显示名称
+        	      link: 网页地址
+		    - name: 显示名称
+    		      link: 网页地址
 		```
 
 	20. 评论系统：
@@ -203,6 +213,23 @@ A Hexo theme inspired by Kalafina's song ARIA.
 	22. 自动截断摘要：
 
 		如果你想自动生成首页的文章摘要，你可以使用这个选项。例如设置 `auto_excerpt: 200` 就会让主题截取文章的前 200 个字符（HTML 文档）作为摘要。但是如果你想要更好的显示效果，建议你 **在想要的地方放置一个 `<!--more-->` 标签，在这个标签之前的文章内容会被作为文章的摘要**。
+
+	23. 自定义字体：
+
+		首先将 `custom_font` 下面的 `enable` 为 `true`，然后去提供网页字体服务的网站比如 [Google Fonts](https://fonts.google.com/)（如果你不能访问，找个替代品），然后选择所有你需要的字体，把生成的 `<link>` 标签里面的 `href` 属性网址复制出来粘贴到 `link` 选项下面。然后给不同的部分设置不同的字体。
+
+		示例如下：
+
+		```yaml
+		custom_font:
+		  enable: true
+		  link: //fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono
+		  all: Ubuntu # <body> 的字体。
+		  title: Roboto Condensed # 标题字体。
+		  subtitle: Roboto Condensed # 副标题字体。
+		  main: Ubuntu # 主要部份字体（菜单以下页脚以上）。
+		  code: Ubuntu Mono # 代码字体。
+		```
 
 6. 自定义 CSS 和 JavaScript：
 

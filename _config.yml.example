@@ -1,3 +1,5 @@
+# If a option has many sub-options, and it's optional, then give it a `enable` sub-option. If not optional, don't use `enable`.
+
 menu:
   home: /
   archives: archives/
@@ -32,6 +34,17 @@ highlight: atom-one-dark
 # Custom info in footer.
 custom_info: 托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
 
+# Select all your webfont in a CDN like Google Fonts, and then copy `href` property in the `<link>` tag, like `link: //fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono`.
+# Then set different fonts to different parts here.
+custom_font:
+  enable: false
+  link:
+  all:
+  title:
+  subtitle:
+  main:
+  code:
+
 avatar: images/avatar.png
 
 logo: images/ARIA_logo.png
@@ -52,6 +65,7 @@ since:
 
 search: true
 
+# `left`, `right`, `false`
 sidebar: left
 
 # Animation in Home, Archive, Category and Tag.
@@ -64,14 +78,14 @@ busuanzi: true
 # Example: `auto_excerpt: 200`, use first 200 chars in post content as excerpt.
 auto_excerpt:
 
-# If you want to use MathJax, first fill a CDN link like
-# `cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML`.
+# If you want to use MathJax, first fill a CDN link like `cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML`, then set `enable: true`.
 # And set front-matter `mathjax: true` to the page you want to use it.
 # You can also set `global: true` here to load MathJax in all pages.
 # But it's not recommended because MathJax sources are too large, that's why ARIA doesn't contain them and ask for CDN.
 mathjax:
-  cdn:
+  enable: false
   global:
+  cdn:
 
 # Note: `fontawesome` is fontawesome-all. `scrollspy` and `util` are from bootstrap. `busuanzi` is `busuanzi.pure.mini.js`.
 # If you don't know what you are doing, don't change it.
@@ -103,18 +117,27 @@ lib_cdn:
     css:
 
 social:
-  GitHub:
-    link: https://github.com/
-    icon: fab fa-github
-  Weibo:
-    link: https://weibo.com/
-    icon: fab fa-weibo
+  enable: true
+  links:
+    - name: E-Mail
+      link: mailto:youremail@youremailhost
+      icon: fas fa-envelope
+    - name: GitHub
+      link: https://github.com/
+      icon: fab fa-github
+    - name: Weibo
+      link: https://weibo.com/
+      icon: fab fa-weibo
 
-# Title: Links
 blogroll:
-  MDN: https://developer.mozilla.org/
-  Nunjucks: https://mozilla.github.io/nunjucks/
-  Stylus: http://stylus-lang.com/
+  enable: true
+  links:
+    - name: GitHub
+      link: https://github.com/
+    - name: MDN
+      link: https://developer.mozilla.org/
+    - name: Nunjucks
+      link: https://mozilla.github.io/nunjucks/
 
 # `comment.commentjs.type`: Choose between `github` and `oschina`.
 comment:
@@ -131,7 +154,7 @@ comment:
 
 reward:
   enable: false
-  comment: 坚持原创技术分享，您的鼓励将是我继续前进的动力！
-  wechatpay_qrcode: images/WeChatPay.png
-  alipay_qrcode: images/AliPay.png
-  bitcoin_qrcode:
+  comment: 坚持原创技术分享，您的支持是我前进的动力！
+  # wechatpay_qrcode: images/WeChatPay.png
+  # alipay_qrcode: images/AliPay.png
+  # bitcoin_qrcode: images/BitCoin.png

@@ -43,13 +43,16 @@
     {% if theme.favicon.fallback %}
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for(theme.favicon.fallback) }}">
     {% endif %}
+    {% if theme.custom_font.enable and theme.custom_font.link %}
+    <link rel="stylesheet" type="text/css" href="{{ theme.custom_font.link }}">
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.normalize %}{{ theme.lib_cdn.normalize }}{% else %}{{ url_for("css/normalize.css") }}{% endif %}">
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/index.css") }}">
     {% if theme.sidebar !== false %}
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/sidebar.css") }}">
     {% endif %}
     {% block css %}{% endblock %}
     <link rel="stylesheet" type="text/css" href="{{ url_for("css/custom.css") }}">
-    <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.normalize %}{{ theme.lib_cdn.normalize }}{% else %}{{ url_for("css/normalize.css") }}{% endif %}">
     <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn[theme.highlight] %}{{ theme.lib_cdn[theme.highlight] }}{% else %}{{ url_for("css/" + theme.highlight + ".css") }}{% endif %}">
     <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.lightgallery.css %}{{ theme.lib_cdn.lightgallery.css }}{% else %}{{ url_for("css/lightgallery.min.css") }}{% endif %}">
     <script type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.jquery %}{{ theme.lib_cdn.jquery }}{% else %}{{ url_for("js/jquery.min.js") }}{% endif %}"></script>
@@ -78,7 +81,7 @@
     });
     </script>
     {% endif %}
-    {% if theme.mathjax.cdn %}
+    {% if theme.mathjax.cdn and theme.mathjax.enable %}
     {% if theme.mathjax.global or page.mathjax %}
     <script defer type="text/javascript" src="{{ theme.mathjax.cdn }}"></script>
     <script type="text/x-mathjax-config">

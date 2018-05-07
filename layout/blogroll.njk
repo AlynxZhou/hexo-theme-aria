@@ -3,8 +3,8 @@
 <div class="blogroll sidebar-item">
   <p><i class="fas fa-link"></i>{{ __("blogroll")}}</p>
   <ul>
-    {% for k, v in theme.blogroll %}
-    <li><a href="{{ v }}" target="_blank">{{ k }}</a></li>
+    {% for e in theme.blogroll.links %}
+    <li><a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
     {% endfor %}
   </ul>
 </div>

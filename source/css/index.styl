@@ -25,22 +25,22 @@ html, body, .container {
   background: 0 0;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #999;
+  background: #999;
   border-radius: 0.25em;
   &:hover {
-    background-color: #666;
+    background: #666;
   }
 }
 ::-webkit-scrollbar-corner {
-  background-color: #535353;
+  background: #535353;
 }
 ::-webkit-scrollbar-resizer {
-  background-color: #FF6E00;
+  background: #FF6E00;
 }
 body {
   color: $color-font;
   background: $color-background;
-  font: $font-size $font-sans;
+  font: $font-size $font-all
   -webkit-text-size-adjust: 100%;
   display: flex;
   min-height: 100%;
@@ -155,8 +155,8 @@ a.button, button.button {
   }
 }
 img {
-  max-width: 90%;
-  max-height: 90%;
+  width: 90%;
+  height: 90%;
   text-align: center;
 }
 hr {
@@ -177,16 +177,40 @@ code {
   color: $orange;
   padding: 0.125em 0.25em;
   overflow: auto;
-  word-warp: break-word;
-  font-size: 1em;
+  word-wrap: break-word;
   border-radius: $corner-radius;
-  font-family: $font-mono;
+  font: 1em $font-code;
   background: $color-code-background;
   -webkit-font-feature-settings: "liga" 0; /* No variation */
   -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
   font-feature-settings: "liga" 0; /* No variation */
+}
+figure {
+  overflow: auto;
+  border-radius: $corner-radius;
+  padding: 0.5em;
+  margin: 1em
+  -webkit-font-feature-settings: "liga" 0; /* No variation */
+  -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
+  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
+  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
+  font-feature-settings: "liga" 0; /* No variation */
+  pre {
+    font: 1em $font-code;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+  }
+  .gutter {
+    text-align: right;
+    padding-right: 0.5em;
+    border-right: 0.1em dashed $color-background;
+  }
+  .text {
+    padding-left: 0.5em;
+  }
 }
 .card {
   display: block;
@@ -196,35 +220,6 @@ code {
   // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
   &:hover {
     box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
-  }
-}
-figure {
-  overflow: auto;
-  font-size: 1em;
-  border-radius: $corner-radius;
-  line-height: 1.2em;
-  padding: 0.5em;
-  margin: 1em
-  -webkit-font-feature-settings: "liga" 0; /* No variation */
-  -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
-  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
-  -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
-  font-feature-settings: "liga" 0; /* No variation */
-  .gutter {
-    pre {
-      padding: 0;
-      margin: 0;
-    }
-    text-align: right;
-    padding-right: 0.5em;
-    border-right: 0.1em dashed $color-background;
-  }
-  .code {
-    pre {
-      padding: 0;
-      margin: 0;
-    }
-    padding-left: 0.5em;
   }
 }
 .rtl {

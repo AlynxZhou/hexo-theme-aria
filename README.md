@@ -158,7 +158,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 	16. MathJax:
 
-		[MathJax](https://www.mathjax.org/) is a library of displaying math formula in webpage, because it is large, ARIA does not contain it. If you need it, first **set `cdn` of `mathjax` to your MathJax CDN** and **add `mathjax: true` to the page's front-matter in which you has formula**. Set `global` to `true` can enable MathJax in all pages but it will let other pages slow.
+		[MathJax](https://www.mathjax.org/) is a library of displaying math formula in webpage, because it is large, ARIA does not contain it. If you need it, first set `enable` of `mathjax` to `true` and **set `cdn` to your MathJax CDN**, then **add `mathjax: true` to the page's front-matter in which you has formula**. Set `global` to `true` can enable MathJax in all pages but it will let other pages slow.
 
 	17. Library CDN:
 
@@ -166,24 +166,34 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 	18. Social Links:
 
-		Add your social links under `social` like following:
+		First set `enable` of `social` to `true`, then add your social links under `links` like following:
 
 		```yaml
 		social:
-		  Display Name:
-		    link: Link Address
-		    icon: Class property of Font Awesome icon you want to use
+		  enable: true
+		  links:
+		    - name: Display Name
+		      link: Link Address
+		      icon: Class property of Font Awesome icon you want to use
+		    - name: Display Name
+		      link: Link Address
+		      icon: Class property of Font Awesome icon you want to use
 		```
 
 		Get icons in [Font Awesome](https://fontawesome.com/).
 
 	19. Blogrolls:
 
-		Add links under `blogroll` like following:
+		First set `enable` of `blogroll` to `true`, then add links under `links` like following:
 
 		```yaml
 		blogroll:
-		  Display Name: Link Address
+		  enable: true
+		  links:
+		    - name: Display Name
+		      link: Link Address
+		    - name: Display Name
+		      link: Link Address
 		```
 
 	20. Comment Support:
@@ -198,11 +208,28 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 	21. Reward:
 
-		Set `reward` to `enable: true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Comment to disable a QRCode.
+		Set `enable` of `reward` to `true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Comment to disable a QRCode.
 
 	22. Auto Excerpt:
 
 		If you want to generate post excerpt at homepage automatically, you can use this. For example, `auto_excerpt: 200` will use first 200 chars (HTML doc) as excerpt. However, if you want to get a better look, it is recommended to **place a `<!--more-->` tag to where you want, words before this tag will be used as except**.
+
+	23. Custom Fonts:
+
+		Set `enable` of `custom_font` to `true`, then go to a webfont server like [Google Fonts](https://fonts.google.com/) (If you cannot open it, choose another), select all fonts you need, then copy the `href` property of generated `<link>` tag to `link` option. Then set different fonts to different parts.
+
+		Example like:
+
+		```yaml
+		custom_font:
+		  enable: true
+		  link: //fonts.googleapis.com/css?family=Lato|Roboto+Condensed|Skranji|Ubuntu|Ubuntu+Mono
+		  all: Ubuntu # Font of <body>.
+		  title: Roboto Condensed # Font of title.
+		  subtitle: Roboto Condensed # Font of subtitle.
+		  main: Ubuntu # Font of main part (after the menu and before the footer).
+		  code: Ubuntu Mono # Font of code.
+		```
 
 6. Custom CSS and JavaScript：
 

@@ -51,6 +51,28 @@ $color-code-background = $pink;
 $font-sans = "Roboto", "Noto Sans", Helvetica, Arial, sans-serif;
 $font-serif = "Roboto Slab", "Noto Serif", Georgia, "Times New Roman", serif;
 $font-mono = "Monaco for Powerline", Monaco, Menlo, Consolas, monospace;
+// $font-all inherits $font-sans, other fonts inherit $font-all except $font-code.
+$font-all = $font-sans;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
+  $font-all = hexo-config("custom_font.main"), $font-all;
+}
+$font-title = $font-all;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.title")) {
+  $font-title = hexo-config("custom_font.title"), $font-title;
+}
+$font-subtitle = $font-all;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.subtitle")) {
+  $font-subtitle = hexo-config("custom_font.subtitle"), $font-subtitle;
+}
+$font-main = $font-all;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
+  $font-main = hexo-config("custom_font.main"), $font-main;
+}
+// $font-code inherits $font-mono;
+$font-code = $font-mono;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.code")) {
+  $font-code = hexo-config("custom_font.code"), $font-code;
+}
 $font-size = 16px;
 
 $corner-radius = 0.15em
