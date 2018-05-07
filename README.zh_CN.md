@@ -176,8 +176,8 @@ A Hexo theme inspired by Kalafina's song ARIA.
 		      link: 网页地址
 		      icon: 你所使用的 Font Awesome 图标的 class 属性
 		    - name: 显示名称
-  		      link: 网页地址
-  		      icon: 你所使用的 Font Awesome 图标的 class 属性
+		      link: 网页地址
+		      icon: 你所使用的 Font Awesome 图标的 class 属性
 		```
 
 		前往 [Font Awesome](https://fontawesome.com/) 获取你想要的图标。
@@ -191,9 +191,9 @@ A Hexo theme inspired by Kalafina's song ARIA.
 		  enable: true
 		  links:
 		    - name: 显示名称
-        	      link: 网页地址
+		      link: 网页地址
 		    - name: 显示名称
-    		      link: 网页地址
+		      link: 网页地址
 		```
 
 	20. 评论系统：
