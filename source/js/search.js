@@ -1,6 +1,6 @@
 /*
- * A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
- * Copyright (C) 2015
+ * A local search script for [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
+ * CopyLeft (C) 2015-2018
  * Joseph Pan <http://github.com/wzpan>
  * Shuhao Mao <http://github.com/maoshuhao>
  * Edited by MOxFIVE <http://github.com/MOxFIVE>
