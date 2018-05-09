@@ -193,7 +193,7 @@ function ajax(url, callback) {
       return;
     }
     if (xhr.status !== 200) {
-      alert("XMLHttpRequest failed!");
+      console.error("XMLHttpRequest failed!");
       return;
     }
     callback(xhr);
