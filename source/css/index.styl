@@ -47,9 +47,17 @@ body {
   flex-direction: column;
   word-wrap: break-word;
 }
+header {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
 main {
   flex-shrink: 0;
   flex-grow: 1;
+}
+footer {
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 ol, ul {
   padding-left: 2em;
@@ -129,11 +137,11 @@ a.gallery-item, a.img-link {
   img {
     transition: 0.3s ease-in-out;
     border: 0.15em solid $color-background;
-    // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+    // box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, 0.19);
   }
   &:hover {
     img {
-      box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+      box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
     }
     border-bottom: none;
   }
@@ -145,10 +153,10 @@ a.button, button.button {
   transform-origin: 50%;
   border-bottom: none;
   box-sizing: border-box;
-  // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, 0.19);
   color: $color-button-font;
   &:hover {
-    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
   }
   &:active {
     top: 0.1em;
@@ -217,9 +225,9 @@ figure {
   background: $color-card-background;
   transition: 0.2s ease-in-out;
   box-sizing: border-box;
-  // box-shadow: 0 0.075em 1em 0.2em rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, 0.19);
   &:hover {
-    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
   }
 }
 .rtl {

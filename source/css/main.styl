@@ -7,7 +7,8 @@
     width: auto;
     background: $color-main-background;
     box-sizing: border-box;
-    box-shadow: 0 0.075em 1em 0.5em rgba(0, 0, 0, 0.19);
+    // 0.5em is the offset for nav shadow.
+    box-shadow: 0 0.5em 1em 0.5em rgba(0, 0, 0, 0.19);
     border-radius: bottom $corner-radius;
     display: flex;
     if (hexo-config("sidebar") == "left") {
