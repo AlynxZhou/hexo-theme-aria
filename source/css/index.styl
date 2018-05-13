@@ -187,7 +187,9 @@ code {
   overflow: auto;
   word-wrap: break-word;
   border-radius: $corner-radius;
-  font: 1em $font-code;
+  font-family: $font-code;
+  // Use a single font here makes line-height wrong.
+  font-size: 1em;
   background: $color-code-background;
   -webkit-font-feature-settings: "liga" 0; /* No variation */
   -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
@@ -206,10 +208,12 @@ figure {
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
   font-feature-settings: "liga" 0; /* No variation */
   pre {
-    font: 1em $font-code;
+    font-family: $font-code;
+    font-size: 1em;
     line-height: 1.5em;
     padding: 0;
     margin: 0;
+    white-space: pre-line;
   }
   .gutter {
     text-align: right;
