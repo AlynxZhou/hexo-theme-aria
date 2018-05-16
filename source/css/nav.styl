@@ -1,9 +1,8 @@
 @import "variables";
 @import "nib";
 .nav {
-  font-size: $font-size;
-  margin: 0;
   position: relative;
+  margin: 0;
   padding: 0 0.5em;
   background: $color-nav-background;
   // -0.5em is the offset for main shadow.
@@ -15,7 +14,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 100%;
     li {
       line-height: 2em;
       position: relative;
@@ -23,12 +21,12 @@
       display: inline-block;
       margin: 0 0.1em;
       a {
+        display: block;
         font-size: 1.5em;
         padding: 0.75em;
         color: $color-nav-link;
         text-decoration: none;
         text-shadow: 0 0.05em rgba(0, 0, 0, 0.2);
-        display: block;
         transition: 0.2s ease-in;
         border-bottom: none;
         &:hover {
