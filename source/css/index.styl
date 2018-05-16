@@ -137,7 +137,6 @@ a.gallery-item, a.img-link {
   img {
     transition: 0.3s ease-in-out;
     border: 0.15em solid $color-background;
-    // box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, 0.19);
   }
   &:hover {
     img {
@@ -153,7 +152,6 @@ a.button, button.button {
   transform-origin: 50%;
   border-bottom: none;
   box-sizing: border-box;
-  // box-shadow: 0 0 1em 0.2em rgba(0, 0, 0, 0.19);
   color: $color-button-font;
   &:hover {
     box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
@@ -177,7 +175,6 @@ hr {
   position: relative;
   display: block;
   box-sizing: content-box;
-  // background-color: #ccc;
   background: repeating-linear-gradient(-45deg, #ccc, #ccc 0.25em, transparent 0.25em, transparent 0.5em);
 }
 code {
@@ -201,7 +198,7 @@ figure {
   overflow: auto;
   border-radius: $corner-radius;
   padding: 0.5em;
-  margin: 1em
+  margin: 0.5em
   -webkit-font-feature-settings: "liga" 0; /* No variation */
   -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
@@ -234,11 +231,6 @@ figure {
     box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
   }
 }
-.rtl {
-  p, a, h1, h2, h3, h4, h5, h6, li, ul, ol {
-    direction: rtl;
-  }
-}
 .caption {
   color: $color-quote;
   display: block;
@@ -261,7 +253,6 @@ figure {
     overflow: hidden;
     font-size: 1.2em;
     padding: 0.5em;
-    display: inline;
     margin: 0 0.5em;
     text-decoration: none;
     border-bottom: 0.15em solid $color-link;
