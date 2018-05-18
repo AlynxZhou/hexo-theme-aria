@@ -79,6 +79,19 @@ A Hexo theme inspired by Kalafina's song ARIA.
 		  content_limit_delim: ' '
 		```
 
+	4. 修改高亮设置：
+
+		Hexo 内置的语法高亮功能使用了 highlight.js，但默认却没有给高亮的类名添加 `hljs-` 的前缀，而 highlight.js 项目提供的 CSS 文件却使用了这个前缀。为了保持和 highlight.js 项目 CSS 文件的兼容性，你需要像下面一样添加 `hljs: true` 到对应的配置里：
+
+		```yaml
+		highlight:
+		  enable: true
+		  hljs: true # 添加这一行！
+		  line_number: true
+		  auto_detect: true
+		  tab_replace:
+		```
+
 4. 复制 ARIA 目录中的 `_config.yml.example` 为 `_config.yml`：
 
 	```
@@ -114,7 +127,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	5. 代码高亮主题：
 
-		ARIA 内置了四种常见代码高亮主题，设置 `highlight` 项为 `atom-one-dark`、`atom-one-light`、`solarized-dark`、`solarized-light` 中的一个。
+		ARIA 内置了四种常见代码高亮主题，设置 `highlight` 项为 `atom-one-dark`、`atom-one-light`、`solarized-dark`、`solarized-light` 中的一个。ARIA 使用了 Hexo 内置的 highlight.js，因此如果你想添加更多的高亮主题，直接访问 [highlight.js 的样式仓库](https://github.com/isagalaev/highlight.js/tree/master/src/styles)，下载你需要的 CSS 文件到主题的 `source/css` 目录，然后设置这里的值为你下载的文件名。
 
 	6. 自定义信息：
 

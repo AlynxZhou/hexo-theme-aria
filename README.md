@@ -79,6 +79,19 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 		  content_limit_delim: ' '
 		```
 
+	4. Change highlight config:
+
+		Hexo's highlight doesn't add `hljs-` prefix to highlight class, but by default highlight.js project's CSS file uses this prefix. To keep compatibility with CSS files from highlight.js project, you need to add `hljs: true` like this:
+
+		```yaml
+		highlight:
+		  enable: true
+		  hljs: true # Add this line!
+		  line_number: true
+		  auto_detect: true
+		  tab_replace:
+		```
+
 4. Copy ARIA's `_config.yml.example` to `_config.yml`:
 
 	```
@@ -114,7 +127,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 	5. Code Highlight:
 
-		ARIA has 4 highlight theme. You can choose the value of `highlight` in one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`.
+		ARIA has 4 highlight theme. You can choose the value of `highlight` in one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`. ARIA uses Hexo's internal highlight.js, so if you want to add more highlight theme, go to [highlight.js' style repo](https://github.com/isagalaev/highlight.js/tree/master/src/styles) and download CSS file you need to theme's `source/css` dir, then set here to your downloaded file name.
 
 	6. Custom Info:
 
