@@ -34,6 +34,7 @@
     }
   }
   a {
+    position: relative;
     color: $color-footer-link;
     text-decoration: none;
     border-bottom: 0.05em dotted $color-footer-link;
@@ -53,6 +54,7 @@
       margin: 0;
     }
     a {
+      position: relative;
       border-bottom: none;
       background: $color-background;
       color: $color-link;
@@ -65,10 +67,9 @@
       font-size: 2em;
       &:hover {
         color: $color-link-hover;
-        border-bottom: none;
       }
-      &:active{
-        border-bottom: none;
+      &:active {
+        top: 0;
       }
     }
   }

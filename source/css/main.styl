@@ -48,11 +48,13 @@
               transition: 0.3s ease-in-out;
             }
             &:hover {
-              border-bottom: none;
               &::after {
                 visibility: visible;
                 transform: scaleX(1);
               }
+            }
+            &:active {
+              top: 0.1em;
             }
           }
         }
@@ -60,12 +62,16 @@
           text-align: center;
           .post-tags {
             .post-tag {
+              position: relative;
               margin: 0.5em;
               display: inline-block;
               text-decoration: none;
               color: $color-link-index-button;
               padding: 0.15em;
               line-height: 1.2em;
+              &:active {
+                top: 0.1em;
+              }
             }
           }
         }
