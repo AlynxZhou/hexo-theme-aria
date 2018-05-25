@@ -23,7 +23,7 @@
     // jQuery won't calculate scroll bar size. But CSS will.
     var minWidth = Math.round((40 - 0.4) * 16);
     // Auto hide main nav menus in small screen.
-    if ($(window).width() < minWidth) {
+    if ($(window).width() <= minWidth) {
       $("#menu").hide();
     }
     var windowWidth = $(window).width();
