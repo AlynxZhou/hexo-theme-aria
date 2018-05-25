@@ -41,23 +41,13 @@ body {
   color: $color-font;
   background: $color-background;
   font: $font-size $font-all
-  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
   display: flex;
   min-height: 100%;
   flex-direction: column;
-  word-wrap: break-word;
 }
-header {
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-main {
-  flex-shrink: 0;
-  flex-grow: 1;
-}
-footer {
-  flex-shrink: 0;
-  flex-grow: 0;
+header, main, footer {
+  flex: auto;
 }
 ol, ul {
   padding-left: 2em;
@@ -171,8 +161,6 @@ hr {
   height: 0.3em;
   border: none;
   margin: 2em 0;
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
   position: relative;
   display: block;
