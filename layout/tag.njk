@@ -10,9 +10,7 @@
 {% block content %}
 <div id="tag" class="tag">
   <div class="tag-container">
-    <div class="tag-title">
-      <h1>{{ page.tag }}</h1>
-    </div>
+    <h1 class="tag-title">{{ page.tag }}</h1>
     {% for post in page.posts.toArray() %}
     <article class="tag-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
       <h1 class="post-title" itemprop="name headline">
