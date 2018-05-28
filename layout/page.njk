@@ -20,7 +20,7 @@
 {% block title %}{{ __(page.title) }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<section id="page-content" class="page-content">
+<div id="page-content" class="page-content">
   <article class="page-article card{% if theme.animate %} animate{% endif %}">
     <header class="page-header">
       <h1 class="page-title" itemprop="name headline">
@@ -37,6 +37,6 @@
   {% if theme.comment.enable %}
   {% include "comment.njk" %}
   {% endif %}
-</section>
+</div>
 {% endblock %}
 {% endif %}

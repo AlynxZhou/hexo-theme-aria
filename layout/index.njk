@@ -4,7 +4,7 @@
 
 {% block content %}
 {% set comment = false %}
-<section id="index" class="index">
+<div id="index" class="index">
   {% for post in page.posts.toArray() %}
   <article class="index-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
@@ -99,5 +99,5 @@
   {% if theme.comment.enable %}
   {% include "comment.njk" %}
   {% endif %}
-</section>
+</div>
 {% endblock %}

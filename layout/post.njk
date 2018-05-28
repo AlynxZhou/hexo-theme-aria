@@ -8,7 +8,7 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<section id="post" class="post">
+<div id="post" class="post">
   {% set post = page %}
   <article class="post-container card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
@@ -103,5 +103,5 @@
   {% if theme.comment.enable %}
   {% include "comment.njk" %}
   {% endif %}
-</section>
+</div>
 {% endblock %}

@@ -8,7 +8,7 @@
 {% block title %}{{ __("archives") }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<section id="archive" class="archive">
+<div id="archive" class="archive">
   <div class="archive-container">
     <h1 class="archive-counter">
       {% if site.posts.length > 1 %}
@@ -48,5 +48,5 @@
     }}
   </nav>
   {% endif %}
-</section>
+</div>
 {% endblock %}

@@ -8,7 +8,7 @@
 {% block title %}{{ __("tag") }}: {{ page.tag }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<section id="tag" class="tag">
+<div id="tag" class="tag">
   <div class="tag-container">
     <div class="tag-title">
       <h1>{{ page.tag }}</h1>
@@ -37,5 +37,5 @@
     }}
   </nav>
   {% endif %}
-</section>
+</div>
 {% endblock %}

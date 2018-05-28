@@ -8,7 +8,7 @@
 {% block title %}{{ __("category") }}: {{ page.category }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<section id="category" class="category">
+<div id="category" class="category">
   <div class="category-container">
     <div class="category-title">
       <h1>{{ page.category }}</h1>
@@ -37,5 +37,5 @@
     }}
   </nav>
   {% endif %}
-</section>
+</div>
 {% endblock %}
