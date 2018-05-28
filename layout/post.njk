@@ -16,16 +16,14 @@
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="{{ config.author }}">
        <meta itemprop="description" content="{{ config.description }}">
-       <meta itemprop="image" content="{{ url_for( theme.avatar) }}">
+       <meta itemprop="image" content="{{ url_for(theme.avatar) }}">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
        <meta itemprop="name" content="{{ config.title }}">
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-       <span class="{% if page.direction and page.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}">{{ page.title }}</span>
-      </h1>
+      <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
       <div class="post-meta">
         {% if page.date %}
         <span class="post-date">
@@ -62,7 +60,7 @@
         {% endif %}
       </div>
     </header>
-    <main class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction and page.direction.toLowerCase() === \"rtl\" %} rtl{% endif %}" itemprop="articleBody">
+    <main class="post-body" itemprop="articleBody">
       {{ page.content }}
     </main>
     <footer class="post-footer">
