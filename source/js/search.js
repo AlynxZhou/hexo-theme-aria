@@ -184,7 +184,7 @@ function ajax(url, callback) {
     xhr = new ActiveXObject("Microsoft.XMLHTTP");
   }
   if (xhr == null) {
-    alert("Your broswer does not support XMLHttpRequest!");
+    console.error("Your broswer does not support XMLHttpRequest!");
     return;
   }
   xhr.onreadystatechange = function () {
