@@ -14,7 +14,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 - 优雅的响应式双栏设计和 CSS 动画。
 
-- 内置评论系统（目前支持 [HyperComments](https://www.hypercomments.com/) 和 [Disqus](https://disqus.com/) 以及 [commenjs](https://github.com/wzpan/comment.js)）。
+- 内置评论系统（目前支持 [Disqus](https://disqus.com/) 以及 [commenjs](https://github.com/wzpan/comment.js)）。（由于 HyperComments 转为必须付费，已经移除。）
 
 - 不蒜子访问量计数。
 
@@ -211,7 +211,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	20. 评论系统：
 
-		首先将 `comment` 下 `enable` 设成 `true` 以全局启用评论（首页、归档、分类、标签页面除外），然后填入你的 HyperComments ID 或者 Disqus Shortname。如果你有哪个页面想单独关闭评论，添加文件头 `comment: false` （`comment` 不是 `comments`！）。
+		首先将 `comment` 下 `enable` 设成 `true` 以全局启用评论（首页、归档、分类、标签页面除外），然后填入你的 Disqus Shortname。如果你有哪个页面想单独关闭评论，添加文件头 `comment: false` （`comment` 不是 `comments`！）。
 
 		如果你使用 commentjs，首先将它的 `enable` 设置成 `true`，然后根据你的网站页面存放位置设置 `type`，支持 `github` 和 `oschina`，`user` 是你在这些网站的用户名，`repo` 是你这个仓库的名字，`client_id` 和 `client_secret` 需要你去 [github](https://github.com/settings/applications/new) 或者 [oschina](https://git.oschina.net/oauth/applications/new) 生成一个应用，然后复制 Token。
 

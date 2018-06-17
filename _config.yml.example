@@ -142,7 +142,6 @@ blogroll:
 # `comment.commentjs.type`: Choose between `github` and `oschina`.
 comment:
   enable: false
-  hypercomments_id:
   disqus_shortname:
   commentjs:
     enable: false

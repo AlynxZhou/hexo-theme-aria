@@ -14,7 +14,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 - Elegant responsive double column layout with css animation.
 
-- Comment system (currently supprt [HyperComments](https://www.hypercomments.com/), [Disqus](https://disqus.com/) and [commentjs](https://github.com/wzpan/comment.js)).
+- Comment system (currently supprt [Disqus](https://disqus.com/) and [commentjs](https://github.com/wzpan/comment.js)). (Removed HyperComments because it needs to pay now.)
 
 - Busuanzi counting.
 
@@ -211,7 +211,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 	20. Comment Support:
 
-		First set `comment` to `enable: true` to enable comment in all pages (except Home, Archives, Categories, Tags), then fill your HyperComments ID or Disqus Shortname. If you want to disable comment in some pages, add front-matter `comment: false` (`comment` NOT `comments`!).
+		First set `comment` to `enable: true` to enable comment in all pages (except Home, Archives, Categories, Tags), then fill your Disqus Shortname. If you want to disable comment in some pages, add front-matter `comment: false` (`comment` NOT `comments`!).
 
 		If you use commentjs, first set `enable` to `true`, then set `type` according to your host service between `github` and `oschina`, `user` is your user name of the host, `repo` is your repo name, `client_id` and `client_secret` needs you go to [github](https://github.com/settings/applications/new) or [oschina](https://git.oschina.net/oauth/applications/new) to create an application, and copy your token.
 

@@ -42,14 +42,7 @@
         </span>
         {% endif %}
         {% if page.comment !== false and theme.comment.enable %}
-        {% if theme.comment.hypercomments_id %}
-        {% if page.categories or page.date %}
-        <span class="post-meta-divider divider">|</span>
-        {% endif %}
-        <span class="post-comment-count">
-          <i class="far fa-comments"></i><span><a href="{{ url_for(page.path) }}#comments" itemprop="discussionUrl"><span class="post-comment-count hc-comment-count" data-xid="{{ page.path }}" itemprop="commentsCount"></span></a></span>
-        </span>
-        {% elif theme.comment.disqus_shortname %}
+        {% if theme.comment.disqus_shortname %}
         {% if page.categories or page.date %}
         <span class="post-meta-divider divider">|</span>
         {% endif %}
