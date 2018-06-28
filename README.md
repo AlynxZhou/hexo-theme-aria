@@ -58,7 +58,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 	2. Set language:
 
-		Available values are `zh_CN`, `zh_HK`, `zh_TW` and `en`. If you are from other themes like NexT, please note there are no `zh-Hans` but `zh_CN`. `default` is an alias of `en`.
+		Available values are `zh_CN`, `zh_HK`, `zh_TW` and `en`. If you are from other themes like old versions of NexT, please note there are no `zh-Hans` but `zh_CN`. `default` is an alias of `en`.
 
 		```yaml
 		language: zh_CN
