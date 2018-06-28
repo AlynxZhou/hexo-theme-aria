@@ -56,7 +56,15 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 		theme: aria
 		```
 
-	2. Add config of Hexo search plugin:
+	2. Set language:
+
+		Available values are `zh_CN`, `zh_HK`, `zh_TW` and `en`. If you are from other themes like NexT, please note there are no `zh-Hans` but `zh_CN`. `default` is an alias of `en`.
+
+		```yaml
+		language: zh_CN
+		```
+
+	3. Add config of Hexo search plugin:
 
 		```yaml
 		# Hexo localsearch
@@ -65,7 +73,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 		  field: all
 		```
 
-	3. Add config of Hexo RSS plugin:
+	4. Add config of Hexo RSS plugin:
 
 		```yaml
 		# Hexo generator feed
@@ -79,7 +87,7 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 		  content_limit_delim: ' '
 		```
 
-	4. Change highlight config:
+	5. Change highlight config:
 
 		Hexo's highlight doesn't add `hljs-` prefix to highlight class, but by default highlight.js project's CSS file uses this prefix. To keep compatibility with CSS files from highlight.js project, you need to add `hljs: true` like this:
 

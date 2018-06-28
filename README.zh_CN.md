@@ -56,7 +56,15 @@ A Hexo theme inspired by Kalafina's song ARIA.
 		theme: aria
 		```
 
-	2. 添加 Hexo 搜索插件的配置：
+	2. 修改语言：
+
+		可以设置的值为 `zh_CN`、`zh_HK`、`zh_TW` 或 `en`。如果你从别的主题转移过来比如旧版本 NexT，请注意这里不是 `zh-Hans` 而是 `zh_CN`。`default` 是 `en` 的别名。
+
+		```yaml
+		language: zh_CN
+		```
+
+	3. 添加 Hexo 搜索插件的配置：
 
 		```yaml
 		# Hexo localsearch
@@ -65,7 +73,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 		  field: all
 		```
 
-	3. 添加 Hexo RSS 插件的配置：
+	4. 添加 Hexo RSS 插件的配置：
 
 		```yaml
 		# Hexo generator feed
@@ -79,7 +87,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 		  content_limit_delim: ' '
 		```
 
-	4. 修改高亮设置：
+	5. 修改高亮设置：
 
 		Hexo 内置的语法高亮功能使用了 highlight.js，但默认却没有给高亮的类名添加 `hljs-` 的前缀，而 highlight.js 项目提供的 CSS 文件却使用了这个前缀。为了保持和 highlight.js 项目 CSS 文件的兼容性，你需要像下面一样添加 `hljs: true` 到对应的配置里：
 
