@@ -57,9 +57,6 @@
       {{ page.content }}
     </main>
     <footer class="post-footer">
-      {% if theme.alipay or theme.wechatpay %}
-      {% include "reward.njk" %}
-      {% endif %}
       {% if page.tags and page.tags.toArray().length %}
       <div class="post-tags">
         {% if theme.tags_color %}
@@ -74,7 +71,7 @@
       {% endif %}
     </footer>
   </article>
-  {% if theme.reward %}
+  {% if theme.reward.enable %}
   {% include "reward.njk" %}
   {% endif %}
   {% if page.prev or page.next %}
