@@ -20,7 +20,7 @@
 {% block title %}{{ __(page.title) }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<div id="page-content" class="page-content">
+<div id="page" class="page">
   <article class="page-article card{% if theme.animate %} animate{% endif %}">
     <header class="page-header">
       <h1 class="page-title" itemprop="name headline">
@@ -28,9 +28,7 @@
       </h1>
     </header>
     <main class="page-main">
-      <div class="page-container">
-        {{ page.content }}
-      </div>
+      {{ page.content }}
     </main>
     <footer class="page-footer"></footer>
   </article>

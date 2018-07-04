@@ -14,19 +14,17 @@
       <h1 class="page-title" itemprop="name headline">{{ __(page.title) }}</h1>
     </header>
     <main class="page-main">
-      <div class="categories-container">
-        <h2 class="categories-counter">
-          {% if site.categories.length > 1 %}
-          {{ _p("categorycount.more", site.categories.length) }}
-          {% elif site.categories.length === 1 %}
-          {{ _p("categorycount.one", site.categories.length) }}
-          {% else %}
-          {{ __("categorycount.none") }}
-          {% endif %}
-        </h2>
-        <div class="categories-list">
-          {{ list_categories() }}
-        </div>
+      <h2 class="categories-counter">
+        {% if site.categories.length > 1 %}
+        {{ _p("categorycount.more", site.categories.length) }}
+        {% elif site.categories.length === 1 %}
+        {{ _p("categorycount.one", site.categories.length) }}
+        {% else %}
+        {{ __("categorycount.none") }}
+        {% endif %}
+      </h2>
+      <div class="categories-list">
+        {{ list_categories() }}
       </div>
     </main>
     <footer class="page-footer"></footer>

@@ -38,7 +38,7 @@
       }
     });
 
-    $(".content img").each(function (i) {
+    $(".content article img").each(function (i) {
       if ($(this).parent().prop("tagName") !== "A") {
         if (this.alt) {
           $(this).after("<span class=\"caption\">" + this.alt + "</span>");

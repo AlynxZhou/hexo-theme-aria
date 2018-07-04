@@ -6,7 +6,7 @@
 {% set comment = false %}
 <div id="index" class="index">
   {% for post in page.posts.toArray() %}
-  <article class="index-post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
+  <article class="index-article card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
