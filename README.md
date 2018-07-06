@@ -22,7 +22,7 @@ I am a collage student and I don't have a job to get some income, I just code th
 
 	![AliPay](https://sh.alynx.xyz/images/AliPay.png)
 
-- PayPal: [Click Here](paypal.me/AlynxZhou)
+- PayPal: [Click Here](http://paypal.me/AlynxZhou)
 
 # Feature:
 

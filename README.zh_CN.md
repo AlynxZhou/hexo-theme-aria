@@ -22,7 +22,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	![AliPay](https://sh.alynx.xyz/images/AliPay.png)
 
-- PayPal：[点击这里](paypal.me/AlynxZhou)
+- PayPal：[点击这里](http://paypal.me/AlynxZhou)
 
 
 # 主题特色：
