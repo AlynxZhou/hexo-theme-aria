@@ -10,6 +10,21 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 ![屏幕截图](ARIA.png)
 
+# 捐助：
+
+作为一个学生，我没有能带来稳定收入的工作，我只是出于热爱占用我的空闲时间编写了这个主题。如果你喜欢它或者它和它的代码帮助到了你，你可以通过微信支付或者支付宝或者 PayPal 捐助我来支持我的开发，下面是我的二维码和链接：
+
+- 微信支付：
+
+	![WeChatPay](https://sh.alynx.xyz/images/WeChatPay.png)
+
+- 支付宝：
+
+	![AliPay](https://sh.alynx.xyz/images/AliPay.png)
+
+- PayPal：[点击这里](paypal.me/AlynxZhou)
+
+
 # 主题特色：
 
 - 优雅的响应式双栏设计和 CSS 动画。
