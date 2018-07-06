@@ -9,9 +9,27 @@
   if (hexo-config("comment.commentjs.enable")) {
     .commentjs {
       padding: 2em;
-      .avatar {
-        width: 3em;
-        height: 3em;
+      .avatar-parent-child {
+        a {
+          text-decoration: none;
+          border-bottom: none;
+          display: block;
+          text-align: center;
+          img {
+            transition: 0.3s ease-in-out;
+            border: 0.15em solid $color-background;
+          }
+          &:hover {
+            img {
+              box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
+            }
+            border-bottom: none;
+          }
+        }
+        .avatar {
+          width: 3em;
+          height: 3em;
+        }
       }
       .comment-body {
         width: 85%;
