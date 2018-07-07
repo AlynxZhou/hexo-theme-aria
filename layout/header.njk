@@ -6,9 +6,11 @@
         <h1 class="title"><a href="{{ url_for() }}">{{ config.title }}</a></h1>
         <h2 class="subtitle">{{ config.subtitle }}</h2>
       </div>
+      {% if theme.logo %}
       <div class="logo">
         <img src="{{ url_for(theme.logo) }}" alt="logo">
       </div>
+      {% endif %}
     </div>
     {% include "nav.njk" %}
   </div>
