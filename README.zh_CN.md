@@ -162,7 +162,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 	8. 自定义 Logo：
 
-		设置方法类似于头像，`logo` 项的值将会被显示在默认顶部 `ARIA` 的位置。
+		设置方法类似于头像，`logo` 项的值将会被显示在默认顶部 `ARIA` 的位置，或者如果你想隐藏 logo，把这一项留空。
 
 	9. 自定义主题色和标签色：
 

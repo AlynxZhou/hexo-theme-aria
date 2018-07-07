@@ -161,7 +161,7 @@ I am a collage student and I don't have a job to get some income, I just code th
 
 	8. Custom Logo:
 
-		Set it like avatar, and your logo will be shown in header, which by default shows `ARIA`.
+		Set it like avatar, and your logo will be shown in header, which by default shows `ARIA`, or leave it blank to hide logo.
 
 	9. Custom Theme Color And Tags Color:
 
