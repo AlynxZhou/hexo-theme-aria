@@ -243,7 +243,7 @@ I am a collage student and I don't have a job to get some income, I just code th
 
 	21. Reward:
 
-		Set `enable` of `reward` to `true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Comment to disable a QRCode.
+		Set `enable` of `reward` to `true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Leave blank to disable a QRCode.
 
 	22. Auto Excerpt:
 
