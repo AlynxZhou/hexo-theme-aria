@@ -68,7 +68,7 @@ $ git clone https://github.com/AlynxZhou/hexo-theme-aria themes/aria
 
 ## Edit Site Config
 
-Following needs to be changed in your site's `_config.yml`.
+Following needs to be changed in your **site's** `_config.yml`.
 
 ### Change Theme to `aria`
 
@@ -130,7 +130,7 @@ $ cp themes/aria/_config.yml.example themes/aria/_config.yml
 
 ## Edit Theme Config
 
-Following needs to be changed in theme's `_config.yml` in ARIA's dir, not all config needs customization, you just change what you need：
+Following needs to be changed in **theme's** `_config.yml` in ARIA's dir, not all config needs customization, you just change what you need：
 
 ### Menu Settings
 
