@@ -10,21 +10,23 @@ Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
 
 ![Screenshot](ARIA.png)
 
-# Donate:
+# Donate
 
 I am a collage student and I don't have a job to get some income, I just code this theme in my spare time with my passion. If you like my theme or this theme and code helps you, you can donate me for my work via WeChatPay or AliPay or PayPal to support my develop, here are my qrcodes and links:
 
-- WeChatPay:
+- WeChatPay
 
 	![WeChatPay](https://sh.alynx.xyz/images/WeChatPay.png)
 
-- AliPay:
+- AliPay
 
 	![AliPay](https://sh.alynx.xyz/images/AliPay.png)
 
-- PayPal: [Click Here](http://paypal.me/AlynxZhou)
+- PayPal:
 
-# Feature:
+	[Click Here](http://paypal.me/AlynxZhou)
+
+# Feature
 
 - Elegant responsive double column layout with css animation.
 
@@ -40,37 +42,41 @@ I am a collage student and I don't have a job to get some income, I just code th
 
 - RSS supported (need to install `hexo-generator-feed` and set config as its [README](https://github.com/hexojs/hexo-generator-feed)).
 
-# Before Using:
+# Before Using
 
 - Using a static website generator needs some basic knowledge, if you know nothing, Hexo and ARIA are not your best choice. Please be sure you know Hexo, YAML, git, Markdown and Web before continuing.
 
 - ARIA uses [FlexBox layout](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) to place elements, and Internet Explorer before version 9 has no way to support it. So if you use IE, upgrade to IE 11 or later, or use a modern browser like [Google Chrome](https://www.google.com/chrome/) or [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/). Or if you know how to fallback FlexBox in elder IE, please send PRs, thanks.
 
-# Usage:
+# Usage
 
-## Change to your Hexo website dir and install plugins:
+## Install Plugins
 
-Use `hexo-renderer-njucks` instead of `hexo-renderer-nunjucks` or `hexo-renderer-njk` or `hexo-renderer-njks`, those three plugins are unmaintained and cannot support Nunjucks 3.
+First change to your Hexo website dir. Use `hexo-renderer-njucks` instead of `hexo-renderer-nunjucks` or `hexo-renderer-njk` or `hexo-renderer-njks`, those three plugins are not maintained and cannot support Nunjucks 3.
 
 ```
 $ npm install --save hexo-renderer-njucks hexo-renderer-stylus hexo-generator-search hexo-generator-feed
 ```
 
-## Clone this repo to `themes/aria`:
+## Clone This Repo
+
+Clone it to `themes/aria`:
 
 ```
 $ git clone https://github.com/AlynxZhou/hexo-theme-aria themes/aria
 ```
 
-## Edit your site's `_config.yml`:
+## Edit Site Config
 
-### Change theme to `aria`:
+Following needs to be changed in your site's `_config.yml`.
+
+### Change Theme to `aria`
 
 ```yaml
 theme: aria
 ```
 
-### Set language:
+### Language Settings
 
 Available values are `zh_CN`, `zh_HK`, `zh_TW` and `en`. If you are from other themes like old versions of NexT, please note there are no `zh-Hans` but `zh_CN`. `default` is an alias of `en`.
 
@@ -78,7 +84,7 @@ Available values are `zh_CN`, `zh_HK`, `zh_TW` and `en`. If you are from other t
 language: zh_CN
 ```
 
-### Add config of Hexo search plugin:
+### Hexo Search Plugin Settings
 
 ```yaml
 # Hexo localsearch
@@ -87,7 +93,7 @@ search:
   field: all
 ```
 
-### Add config of Hexo RSS plugin:
+### Hexo RSS Plugin Settings
 
 ```yaml
 # Hexo generator feed
@@ -101,7 +107,7 @@ feed:
   content_limit_delim: ' '
 ```
 
-### Change highlight config:
+### Highlight Settings
 
 Hexo's highlight doesn't add `hljs-` prefix to highlight class, but by default highlight.js project's CSS file uses this prefix. To keep compatibility with CSS files from highlight.js project, you need to add `hljs: true` like this:
 
@@ -114,15 +120,19 @@ highlight:
   tab_replace:
 ```
 
-## Copy ARIA's `_config.yml.example` to `_config.yml`:
+## Copy ARIA's Config
+
+Copy `_config.yml.example` to `_config.yml`:
 
 ```
 $ cp themes/aria/_config.yml.example themes/aria/_config.yml
 ```
 
-## Edit `_config.yml` in ARIA's dir, not all config needs customization, you just change what you need：
+## Edit Theme Config
 
-### Menu Settings:
+Following needs to be changed in theme's `_config.yml` in ARIA's dir, not all config needs customization, you just change what you need：
+
+### Menu Settings
 
 If you want to add "Categories" and "Tags" page, uncomment `categories` and `tags`, then run `hexo new page categories` and `hexo new page tags`, then add `layout: categories` and `layout: tags` to those pages' front-matter. If you want a about page, just `hexo new page about` and uncomment it:
 
@@ -135,55 +145,55 @@ menu:
   about: about/
 ```
 
-### Generating Favicon：
+### Generating Favicon
 
 First prepare a image of your favicon then go to  <https://realfavicongenerator.net/> to generate favicons for different browsers, then download the zip file and extract it into website's `source/favicons` dir (create it first). ARIA will load them.
 
-### Website Keywords:
+### Website Keywords
 
 Set the value of `keywords` to a list of keywords.
 
-### CreativeCommons Licenses：
+### CreativeCommons Licenses
 
 Set it in `creative_commons`. To keep it simple ARIA will show a link in footer. You can choose one of `by`, `by-sa`, `by-nd`, `by-nc`, `by-nc-sa`, `by-nc-nd`. Go to <https://creativecommons.org/licenses/> to learn more.
 
-### Code Highlight:
+### Code Highlight
 
 ARIA has 4 highlight theme. You can choose the value of `highlight` in one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`. ARIA uses Hexo's internal highlight.js, so if you want to add more highlight theme, go to [highlight.js' style repo](https://github.com/isagalaev/highlight.js/tree/master/src/styles) and download CSS file you need to theme's `source/css` dir, then set here to your downloaded file name.
 
-### Custom Info:
+### Custom Info
 
 The value of `custom_info` will be shown in footer. You should not use a long string because it will break footer's format.
 
-### Avatar:
+### Avatar
 
 Set the value of `avatar` to your avatar's link, for example, you set `avatar: images/myavatar.png` then you needs to put you avatar to `source/images/myavatar.png`.
 
-### Custom Logo:
+### Custom Logo
 
 Set it like avatar, and your logo will be shown in header, which by default shows `ARIA`, or leave it blank to hide logo.
 
-### Custom Theme Color And Tags Color:
+### Custom Theme Color and Tags Color
 
 Theme color `color` will be used in header and footer background, and also in some browsers' title bar like Android Chrome, by default it's theme's dark. Tags Color `tags_color` is a list and post tags will use it in a loop. Because color starts with `#`, you need to use double quote to prevent YAML from making it a comment. If you are not sure, don't change here.
 
-### Google Site Verification:
+### Google Site Verification
 
 If you want to let Google collect your website, you need to show that this is your website. When verifying, choose "Use <meta> tag" and copy the value of property `content` to `google_verification` then re-generate and re-deploy your website.
 
-### Website start year:
+### Website Start Year
 
 Set `since` to your start year，if blank or the same as current year, it will only show current year, else it will show `start - current`.
 
-### Searching Settings:
+### Searching Settings
 
 To enable search, first keep sure that you installed `hexo-generator-search` and add config like the 2nd step, then set `search` to `true`, it will be placed on the top of sidebar.
 
-### Sidebar Settings:
+### Sidebar Settings
 
 Choose between `left`, `right` and `false`, if false, sidebar will be hidden.
 
-### Animation:
+### Animation
 
 Set `animate` to `true` will enable the flipping of cards (Not recommended because it's slow in some old browsers and computers).
 
@@ -191,15 +201,15 @@ Set `animate` to `true` will enable the flipping of cards (Not recommended becau
 
 If you want to disable Busuanzi, set `busuanzi` to `false`, or it will display `website visit counting`, `website visit persion counting`, `page visit counting`.
 
-### MathJax:
+### MathJax
 
 [MathJax](https://www.mathjax.org/) is a library of displaying math formula in webpage, because it is large, ARIA does not contain it. If you need it, first set `enable` of `mathjax` to `true` and **set `cdn` to your MathJax CDN**, then **add `mathjax: true` to the page's front-matter in which you has formula**. Set `global` to `true` can enable MathJax in all pages but it will let other pages slow.
 
-### Library CDN:
+### Library CDN
 
-You can use cdn with ARIA's internal lib. First set `lib_cdn` to `enable: true`, then add CDN link to the library. If you don't know what you are doing, just skip it.
+You can use CDN with ARIA's internal lib. First set `lib_cdn` to `enable: true`, then add CDN link to the library. If you don't know what you are doing, just skip it.
 
-### Social Links:
+### Social Links
 
 First set `enable` of `social` to `true`, then add your social links under `links` like following:
 
@@ -217,7 +227,7 @@ social:
 
 Get icons in [Font Awesome](https://fontawesome.com/).
 
-### Blogrolls:
+### Blogrolls
 
 First set `enable` of `blogroll` to `true`, then add links under `links` like following:
 
@@ -231,7 +241,7 @@ blogroll:
       link: Link Address
 ```
 
-### Comment Support:
+### Comment Support
 
 First set `comment` to `enable: true` to enable comment in all pages (except Home, Archives, Categories, Tags), then fill your Disqus Shortname. If you want to disable comment in some pages, add front-matter `comment: false` (`comment` NOT `comments`!).
 
@@ -241,15 +251,15 @@ If you enable more than one comment services, only the one shows in front of the
 
 Tips：If you want to edit all new pages' front-matter, just edit files in your website's `scaffolds` dir, Hexo uses them as template when create new page or post.
 
-### Reward:
+### Reward
 
 Set `enable` of `reward` to `true` to use it, then set your comment in `comment`, and set QRCode of WeChat Pay, AliPay, BitCoin like avatar. Leave blank to disable a QRCode.
 
-### Auto Excerpt:
+### Auto Excerpt
 
 If you want to generate post excerpt at homepage automatically, you can use this. For example, `auto_excerpt: 200` will use first 200 chars (HTML doc) as excerpt. However, if you want to get a better look, it is recommended to **place a `<!--more-->` tag to where you want, words before this tag will be used as except**.
 
-### Custom Fonts:
+### Custom Fonts
 
 Set `enable` of `custom_font` to `true`, then go to a webfont server like [Google Fonts](https://fonts.google.com/) (If you cannot open it, choose another), select all fonts you need, then copy the `href` property of generated `<link>` tag to `link` option. Then set different fonts to different parts.
 
@@ -266,13 +276,13 @@ custom_font:
   code: Ubuntu Mono # Font of code.
 ```
 
-## Custom CSS and JavaScript：
+## Custom CSS and JavaScript
 
 If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last.
 
 If you need some custom JavaScript, just edit `themes/aria/source/js/custom.js` which will be added last.
 
-## Update Theme:
+## Update Theme
 
 If you use custom CSS or JavaScript, please use Git to commit them first. You can only pull when your workspace is clean.
 
@@ -280,11 +290,11 @@ Then use `git pull` to get the newest commit, if there is a conflict, merge it m
 
 Don't forget to compare `_config.yml` and `_config.yml.example`, then apply changes in example to your own config manually.
 
-# License:
+# License
 
 Apache-2.0
 
-# Note:
+# Note
 
 I created this theme with less configurations and beautiful styles. You can send PRs if you need some functions like custom colored text blocks, if those functions are helpful they will be added soon. But some themes says they are "simple/simpler/simplest" but infact they are ugly or other themes have so many functions and some of them in fact has little people using or just keep default, I don't want them.
 
