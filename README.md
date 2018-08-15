@@ -276,6 +276,36 @@ custom_font:
   code: Ubuntu Mono # Font of code.
 ```
 
+## Internal Style for Writing
+
+Markdown will be compiled to HTML, and you can write HTML in a valid Markdown file. In order to help you organize your article better, here are some internal custom style class that you can use while writing.
+
+### Centerquote
+
+Just add `.centerquote` class to your HTML code, you will get a center-aligned quote with top and bottom border. Recommended for `<blockquote></blockquote>` tag:
+
+```HTML
+<blockquote class="centerquote">Centerquote Example</blockquote>
+```
+
+It looks like:
+
+![Centerquote Example](centerquote-example.png)
+
+### Colorful Alert
+
+Just add `.alert-red`, `.alert-green` or `.alert-blue` to your HTML code:
+
+```HTML
+<div class="alert-red">Alert Red Example</div>
+<div class="alert-green">Alert Green Example</div>
+<div class="alert-blue">Alert Blue Example</div>
+```
+
+It looks like:
+
+![Alert Example](alert-example.png)
+
 ## Custom CSS and JavaScript
 
 If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last.

@@ -55,51 +55,6 @@ header, footer {
 ol, ul {
   padding-left: 2em;
 }
-blockquote {
-  display: block;
-  position: relative;
-  margin: 1em;
-  word-wrap: break-word;
-  padding: 0 1em;
-  border-left: 0.25em solid $color-background;
-  p {
-    color: $color-quote;
-  }
-}
-.centerquote {
-  position: relative;
-  margin: 2em;
-  padding: 0;
-  border-left: none;
-  text-align: center;
-  color: $color-quote;
-  word-wrap: break-word;
-  &::before, &::after {
-    position: absolute;
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 1.2em;
-    opacity: 0.4;
-    background: transparent;
-    background-repeat: no-repeat;
-    background-position: 0 -0.4em;
-    background-size: 1.2em 1.2em;
-  }
-  &::before {
-    top: -1em;
-    margin: 0;
-    border-top: 0.2em solid $color-background;
-  }
-  &::after {
-    bottom: -1em;
-    margin: 0;
-    border-bottom: 0.2em solid $color-background;
-  }
-  p, div {
-    text-align: center;
-  }
-}
 .svg-inline--fa {
   margin: 0 0.2em;
 }
@@ -212,6 +167,78 @@ figure {
   .text {
     padding-left: 0.5em;
   }
+}
+blockquote {
+  display: block;
+  position: relative;
+  margin: 1em;
+  word-wrap: break-word;
+  padding: 0 1em;
+  border-left: 0.25em solid $color-background;
+  p {
+    color: $color-quote;
+  }
+}
+.centerquote {
+  position: relative;
+  margin: 2em;
+  padding: 0;
+  border-left: none;
+  text-align: center;
+  color: $color-quote;
+  word-wrap: break-word;
+  &::before, &::after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1.2em;
+    opacity: 0.4;
+    background: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 -0.4em;
+    background-size: 1.2em 1.2em;
+  }
+  &::before {
+    top: -1em;
+    margin: 0;
+    border-top: 0.2em solid $color-background;
+  }
+  &::after {
+    bottom: -1em;
+    margin: 0;
+    border-bottom: 0.2em solid $color-background;
+  }
+  p, div {
+    text-align: center;
+  }
+}
+.alert-red {
+  position: relative;
+  padding: 0.75em 1.25em;
+  border: 1px solid transparent;
+  border-radius: $corner-radius;
+  color: $color-alert-red;
+  background-color: $color-alert-red-background;
+  border-color: $color-alert-red-border;
+}
+.alert-green {
+  position: relative;
+  padding: 0.75em 1.25em;
+  border: 1px solid transparent;
+  border-radius: $corner-radius;
+  color: $color-alert-green;
+  background-color: $color-alert-green-background;
+  border-color: $color-alert-green-border;
+}
+.alert-blue {
+  position: relative;
+  padding: 0.75em 1.25em;
+  border: 1px solid transparent;
+  border-radius: $corner-radius;
+  color: $color-alert-blue;
+  background-color: $color-alert-blue-background;
+  border-color: $color-alert-blue-border;
 }
 .card {
   display: block;

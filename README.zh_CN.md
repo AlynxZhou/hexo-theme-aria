@@ -277,6 +277,36 @@ custom_font:
   code: Ubuntu Mono # 代码字体。
 ```
 
+## 内置写作样式
+
+Markdown 会被编译成 HTML，所以你可以直接在有效的 Markdown 文件里面写 HTML 代码。为了能更好地组织文章结构，主题内置了一些自定义样式类，可以在写作时使用。
+
+### 居中引用
+
+只要给你的 HTML 代码添加 `.centerquote` 这个类，你就能得到一个有上下边框的居中引用。推荐给 `<blockquote></blockquote>` 标签使用这个类：
+
+```HTML
+<blockquote class="centerquote">居中引用样例</blockquote>
+```
+
+看起来像这样：
+
+![Centerquote Example](centerquote-example.png)
+
+### 彩色警告块
+
+只要给你的 HTML 代码添加 `.alert-red`, `.alert-green` 或 `.alert-blue`：
+
+```HTML
+<div class="alert-red">红色警告块样例</div>
+<div class="alert-green">绿色警告块样例</div>
+<div class="alert-blue">蓝色警告块样例</div>
+```
+
+看起来像这样：
+
+![Alert Example](alert-example.png)
+
 ## 自定义 CSS 和 JavaScript
 
 如果你需要用自定义的 CSS 覆盖 ARIA 内置的 CSS 样式，可以编辑 `themes/aria/source/css/custom.styl`，这个文件会被最后加载。
