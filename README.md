@@ -326,7 +326,7 @@ Apache-2.0
 
 # Note
 
-I created this theme with less configurations and beautiful styles. You can send PRs if you need some functions like custom colored text blocks, if those functions are helpful they will be added soon. But some themes says they are "simple/simpler/simplest" but infact they are ugly or other themes have so many functions and some of them in fact has little people using or just keep default, I don't want them.
+I created this theme with less configurations and beautiful styles. You can send PRs if you want to add some functions, if those functions are useful they will be merged soon. However, some themes says they are "simple/simpler/simplest" but infact they are ugly or other themes have so many functions and some of them in fact has little people using or just keep default, I don't want them.
 
 For example, I will only add Hexo local search (it generates a xml of data and just use JavaScript code to query it without buying database service) to my theme because it works fine. Is there really someone paid to use Swift search or Algolia? So never send PR like *I added swift search and let some beginners use it and pay for it because they know little!* because I think local search is better for noob or beginners! if you dislike local search you can disable it (Really? You hate a simple search frame in your site?).
 
