@@ -160,7 +160,7 @@ menu:
 
 ### 代码高亮主题
 
-ARIA 内置了四种常见代码高亮主题，设置 `highlight` 项为 `atom-one-dark`、`atom-one-light`、`solarized-dark`、`solarized-light` 中的一个。ARIA 使用了 Hexo 内置的 highlight.js，因此如果你想添加更多的高亮主题，直接访问 [highlight.js 的样式仓库](https://github.com/isagalaev/highlight.js/tree/master/src/styles)，下载你需要的 CSS 文件到主题的 `source/css` 目录，然后设置这里的值为你下载的文件名。
+ARIA 内置了四种常见代码高亮主题，设置 `highlight` 项为 `atom-one-dark`、`atom-one-light`、`solarized-dark`、`solarized-light` 中的一个。ARIA 使用了 Hexo 内置的 highlight.js，因此如果你想添加更多的高亮主题，直接访问 [highlight.js 的样式仓库](https://github.com/isagalaev/highlight.js/tree/master/src/styles)，下载你需要的 CSS 文件到你站点的 `source/css/` 目录（也即在你存放 Markdown 文件的 `source/` 目录下面创建一个 `css/` 目录，你也可以把它放到主题的 `source/css/` 目录，但是这样会污染 git 工作区），然后设置这里的值为你下载的文件名（**不要** 添加`.css` 后缀，这个是自动添加的）。
 
 ### 自定义信息
 

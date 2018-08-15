@@ -159,7 +159,7 @@ Set it in `creative_commons`. To keep it simple ARIA will show a link in footer.
 
 ### Code Highlight
 
-ARIA has 4 highlight theme. You can choose the value of `highlight` in one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`. ARIA uses Hexo's internal highlight.js, so if you want to add more highlight theme, go to [highlight.js' style repo](https://github.com/isagalaev/highlight.js/tree/master/src/styles) and download CSS file you need to theme's `source/css` dir, then set here to your downloaded file name.
+ARIA has 4 highlight theme. You can choose the value of `highlight` in one of `atom-one-dark`, `atom-one-light`, `solarized-dark`, `solarized-light`. ARIA uses Hexo's internal highlight.js, so if you want to add more highlight theme, go to [highlight.js' style repo](https://github.com/isagalaev/highlight.js/tree/master/src/styles) and download CSS file you need to your site's `source/css/` dir (just create a `css/` dir in `source/` that you store Markdown files, you can also put it into theme's `source/css/` but it will make git workspace dirty), then set here to your downloaded file name (without `.css` suffix, it will be add automatically).
 
 ### Custom Info
 
