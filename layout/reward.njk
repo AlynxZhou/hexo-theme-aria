@@ -2,7 +2,7 @@
 <div class="reward" id="reward">
   <p>{{ theme.reward.comment }}</p>
   <button id="reward-button" class="button" disable="enable">{{ __("reward.button") }}</button>
-  <div id="qr" class="qr" style="display: none;">
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     {% if theme.reward.wechatpay_qrcode %}
     <div id="wechat">
       <img id="wechat_qr" src="{{ url_for(theme.reward.wechatpay_qrcode) }}" alt="{{ __("reward.wechatpay") }}"/>

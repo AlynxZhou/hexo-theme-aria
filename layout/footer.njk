@@ -2,7 +2,7 @@
 <footer id="footer" class="footer"{% if theme.color %} style="background: {{ theme.color }};"{% endif %}>
   <div class="container">
     <div class="back-to-top">
-      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+      <a id="back-to-top"><i class="fas fa-angle-double-up" aria-label="{{ __("accessibility.back_to_top") }}"></i></a>
     </div>
     <div class="footer-container">
       <div class="footer-left">
@@ -20,7 +20,7 @@
           {% endif %}
         </div>
         <div class="powered-by">
-          {{ _p("poweredby", "<a href=\"https://hexo.io/\" target=\"_blank\">Hexo</a>")}} | {{ _p("theme", "<a href=\"https://github.com/AlynxZhou/hexo-theme-aria/\" target=\"_blank\">ARIA</a>") }}
+          {{ _p("poweredby", "<a href=\"https://hexo.io/\" target=\"_blank\">Hexo</a>") }} | {{ _p("theme", "<a href=\"https://github.com/AlynxZhou/hexo-theme-aria/\" target=\"_blank\">ARIA</a>") }}
         </div>
       </div>
     </div>

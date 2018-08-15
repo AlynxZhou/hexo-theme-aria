@@ -42,3 +42,12 @@ commentjs:
 
 poweredby: Proudly Powered by %s
 theme: Theme is %s
+
+accessibility:
+  prev_page: Previous Page
+  next_page: Next Page
+  back_to_top: Back to Top
+  nav_toggle: Toggle Navbar
+  site_pv: Site Visit Count
+  site_uv: Site User Count
+  page_pv: Page Click Count

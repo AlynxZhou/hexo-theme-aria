@@ -3,14 +3,24 @@
   $(document).ready(function () {
     // To top button.
     $("#back-to-top").on("click", function () {
-      $("body, html").animate({ "scrollTop": 0 }, 600);
+      $("body, html").animate({"scrollTop": 0}, 600);
     });
 
     $("#reward-button").on("click", function () {
+      if ($("#qr").attr("aria-hidden") === "true") {
+        $("#qr").attr("aria-hidden", "false");
+      } else {
+        $("#qr").attr("aria-hidden", "true");
+      }
       $("#qr").slideToggle();
     });
 
     $("#nav-toggle").on("click", function () {
+      if ($("#menu").attr("aria-hidden") === "true") {
+        $("#menu").attr("aria-hidden", "false");
+      } else {
+        $("#menu").attr("aria-hidden", "true");
+      }
       $("#menu").slideToggle();
     });
 
@@ -21,18 +31,24 @@
     // Auto hide main nav menus in small screen.
     if ($(window).width() <= minWidth) {
       $("#menu").hide();
+      $("#menu").attr("aria-hidden", "true");
+      $("#nav-toggle").attr("aria-hidden", "false");
     }
     var windowWidth = $(window).width();
     // Show menu again when window becomes bigger.
     $(window).resize(function () {
       if ($(window).width() > minWidth) {
         $("#menu").show();
+        $("#menu").attr("aria-hidden", "false");
+        $("#nav-toggle").attr("aria-hidden", "true");
       } else {
         // Android chrome fires resize when scroll down.
         // Because it hides address bar to enlarge window height.
         // To avoid it, check width.
         if ($(window).width() !== windowWidth) {
           $("#menu").hide();
+          $("#menu").attr("aria-hidden", "true");
+          $("#nav-toggle").attr("aria-hidden", "false");
           windowWidth = $(window).width();
         }
       }

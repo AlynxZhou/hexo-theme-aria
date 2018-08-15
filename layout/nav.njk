@@ -1,7 +1,7 @@
 {% block nav %}
 <nav id="nav" class="nav">
-  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
-  <ul id="menu">
+  <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="{{ __("accessibility.nav_toggle") }}"></i></a>
+  <ul id="menu" aria-hidden="false">
     {% for k, v in theme.menu %}
     <li><a href="{{ url_for(v) }}"{% if is_current(url_for(v), true) %} class="current"{% endif %}>{{ __(k) }}</a></li>
     {% endfor %}

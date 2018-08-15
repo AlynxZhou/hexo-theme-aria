@@ -42,3 +42,13 @@ commentjs:
 
 poweredby: 由 %s 強力驅動
 theme: 主題 %s
+
+
+accessibility:
+  prev_page: 上一頁
+  next_page: 下一頁
+  back_to_top: 回到頂部
+  nav_toggle: 切換導航欄
+  site_pv: 站點訪問量
+  site_uv: 站點用戶數
+  page_pv: 頁面訪問量
