@@ -58,10 +58,8 @@ ol, ul {
 .svg-inline--fa {
   margin: 0 0.2em;
 }
-.post-meta {
-  span {
-    margin: 0 0.1em;
-  }
+.post-meta span {
+  margin: 0 0.1em;
 }
 a {
   position: relative;
@@ -88,10 +86,10 @@ a.gallery-item, a.img-link {
     border: 0.15em solid $color-background;
   }
   &:hover {
+    border-bottom: none;
     img {
       box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
     }
-    border-bottom: none;
   }
 }
 a.button, button.button {
@@ -125,6 +123,39 @@ hr {
   box-sizing: content-box;
   background: repeating-linear-gradient(-45deg, #ccc, #ccc 0.25em, transparent 0.25em, transparent 0.5em);
 }
+article table {
+  display: block;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  thead tr {
+    background: $color-table-head-background;
+    th {
+      padding: 0.4em 0.7em;
+      border: 0.1em solid $color-table-head-border;
+    }
+  }
+  tbody tr {
+    background: $color-table-odd-row-background;
+    td {
+      padding: 0.4em 0.7em;
+      border: 0.1em solid $color-table-border;
+      &:nth-child(2n) {
+        background: white;
+      }
+    }
+    &:nth-child(2n) {
+      background: $color-table-even-row-background;
+      td {
+        padding: 0.4em 0.7em;
+        border: 0.1em solid $color-table-border;
+        &:nth-child(2n) {
+          background: $grey-lighter;
+        }
+      }
+    }
+  }
+}
 code {
   margin: 0.05em 0.05em;
   color: $orange;
@@ -152,20 +183,29 @@ figure {
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
   font-feature-settings: "liga" 0; /* No variation */
-  pre {
-    font-family: $font-code;
-    font-size: $font-size;
-    line-height: 1.5em;
-    padding: 0;
-    margin: 0;
-  }
-  .gutter {
-    text-align: right;
-    padding-right: 0.5em;
-    border-right: 0.1em dotted $color-background;
-  }
-  .text {
-    padding-left: 0.5em;
+  table tbody tr {
+    background: transparent;
+    td {
+      border: none;
+      &:nth-child(2n) {
+        background: transparent;
+      }
+      &.gutter {
+        text-align: right;
+        padding-right: 0.5em;
+        border-right: 0.1em dotted $color-background;
+      }
+      pre {
+        font-family: $font-code;
+        font-size: $font-size;
+        line-height: 1.5em;
+        padding: 0;
+        margin: 0;
+        code.text {
+          padding-left: 0.5em;
+        }
+      }
+    }
   }
 }
 blockquote {
@@ -245,7 +285,7 @@ blockquote {
   background: $color-card-background;
   transition: 0.2s ease-in-out;
   box-sizing: border-box;
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
   margin: 0.5em;
   &:hover {
     box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
