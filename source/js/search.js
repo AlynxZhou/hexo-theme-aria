@@ -162,7 +162,7 @@ function onInput(input, resultContent, datas) {
     // Show search results
     li.push("<li><a href=\"")
     li.push(matchedDataProps[i]["dataURL"]);
-    li.push("\" class=\"search-result-title\">&gt; ");
+    li.push("\" class=\"search-result-title\">");
     li.push(buildHighlightedTitle(matchedDataProps[i]));
     li.push("</a>");
     li.push("<p class=\"search-result-content\">...");
