@@ -20,7 +20,6 @@ Replace [ ] with [x] to check / 把 [ ] 换成 [x] 来选择
 - [ ] Yes, I already verified I found a theme problem, not a Hexo problem or because of my lack of Markdown usage and Hexo usage. / 是的，我已经确定我发现了一个主题的问题，而不是 Hexo 的问题或者因为我缺乏对于 Markdown 和 Hexo 用法的了解。
 - [ ] Yes, I already searched opening issues and not found related issues. / 是的，我查找过了未解决的 issue 并且没有发现类似的。
 
-
 # Expected Behavior / 预期行为
 
 <!-- Describe here / 在这里描述 -->
