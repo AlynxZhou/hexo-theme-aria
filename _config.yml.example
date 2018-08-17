@@ -47,7 +47,7 @@ custom_font:
 
 avatar: images/avatar.png
 
-logo: images/ARIA_logo.png
+logo: images/logo.png
 
 # Theme color.
 # Need quote to prevent `#` from comment.
