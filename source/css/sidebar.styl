@@ -18,7 +18,7 @@
     input {
       width: 70%;
       height: 1.8em;
-      border: 0.1em solid transparent;
+      border: none;
       border-bottom: 0.1em dotted $color-search-font;
       background: $color-search-background;
       color: $color-search-font;
@@ -46,27 +46,17 @@
     }
   }
   .sidebar-item {
-    padding: 1em;
+    margin: 1em;
   }
   .sidebar-sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    padding-bottom: 1em;
   }
+  // Replace hr color in index.styl.
   hr {
-    height: 0.3em;
-    border: none;
-    margin: 0;
-    width: 100%;
-    position: relative;
-    display: block;
-    box-sizing: content-box;
     background: repeating-linear-gradient(-45deg, #fff, #fff 0.25em, transparent 0.25em, transparent 0.5em);
-  }
-  .social-link, .blogroll {
-    div {
-      margin: 0.5em;
-    }
   }
   @media (max-width: $media-main-fold-width) {
     width: 100%;

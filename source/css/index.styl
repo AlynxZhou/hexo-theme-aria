@@ -3,8 +3,6 @@
 @import "nav";
 @import "main";
 @import "footer";
-@import "reward";
-@import "comment";
 @import "nib";
 html, body, .container {
   height: 100%;
@@ -79,7 +77,7 @@ a.gallery-item, a.img-link {
   text-decoration: none;
   border-bottom: none;
   display: block;
-  padding: 1em;
+  margin: 1em 0 0 0;
   text-align: center;
   img {
     transition: 0.3s ease-in-out;
@@ -116,16 +114,13 @@ img {
 hr {
   height: 0.3em;
   border: none;
-  margin: 2em 0;
+  margin: 1.5em 0;
   width: 100%;
-  position: relative;
-  display: block;
   box-sizing: content-box;
   background: repeating-linear-gradient(-45deg, #ccc, #ccc 0.25em, transparent 0.25em, transparent 0.5em);
 }
 article table {
-  display: block;
-  width: 100%;
+  margin: 1em auto;
   border-spacing: 0;
   border-collapse: collapse;
   thead tr {
@@ -177,104 +172,90 @@ figure {
   overflow: auto;
   border-radius: $corner-radius;
   padding: 0.5em;
-  margin: 0.5em
+  margin: 1em 0;
   -webkit-font-feature-settings: "liga" 0; /* No variation */
   -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
   font-feature-settings: "liga" 0; /* No variation */
-  table tbody tr {
-    background: transparent;
-    td {
-      border: none;
-      &:nth-child(2n) {
-        background: transparent;
-      }
-      &.gutter {
-        text-align: right;
-        padding-right: 0.5em;
-        border-right: 0.1em dotted $color-background;
-      }
-      pre {
-        font-family: $font-code;
-        font-size: $font-size;
-        line-height: 1.5em;
-        padding: 0;
-        margin: 0;
-        code.text {
-          padding-left: 0.5em;
+  table {
+    margin: 0;
+    tbody tr {
+      background: transparent;
+      td {
+        border: none;
+        &:nth-child(2n) {
+          background: transparent;
+        }
+        &.gutter {
+          text-align: right;
+          padding-right: 0.5em;
+          border-right: 0.1em dotted $color-background;
+        }
+        pre {
+          font-family: $font-code;
+          font-size: $font-size;
+          line-height: 1.5em;
+          padding: 0;
+          margin: 0;
+          code.text {
+            padding-left: 0.5em;
+          }
         }
       }
     }
   }
 }
 blockquote {
-  display: block;
-  position: relative;
-  margin: 1em;
+  margin: 1em 0;
   word-wrap: break-word;
   padding: 0 1em;
   border-left: 0.25em solid $color-background;
+  color: $color-quote;
   p {
     color: $color-quote;
+    padding: 0;
+    margin: 0;
   }
 }
 .centerquote {
-  position: relative;
-  margin: 2em;
-  padding: 0;
+  margin: 1em 0;
+  padding: 0.5em 1em;
   border-left: none;
+  border-top: 0.2em solid $color-background;
+  border-bottom: 0.2em solid $color-background;
   text-align: center;
   color: $color-quote;
   word-wrap: break-word;
-  &::before, &::after {
-    position: absolute;
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 1.2em;
-    opacity: 0.4;
-    background: transparent;
-    background-repeat: no-repeat;
-    background-position: 0 -0.4em;
-    background-size: 1.2em 1.2em;
-  }
-  &::before {
-    top: -1em;
-    margin: 0;
-    border-top: 0.2em solid $color-background;
-  }
-  &::after {
-    bottom: -1em;
-    margin: 0;
-    border-bottom: 0.2em solid $color-background;
-  }
   p, div {
     text-align: center;
   }
 }
 .alert-red {
-  position: relative;
-  padding: 0.75em 1.25em;
-  border: 1px solid transparent;
+  text-align: center;
+  margin: 1em 0;
+  padding: 0.5em;
+  border: 0.1em solid transparent;
   border-radius: $corner-radius;
   color: $color-alert-red;
   background-color: $color-alert-red-background;
   border-color: $color-alert-red-border;
 }
 .alert-green {
-  position: relative;
-  padding: 0.75em 1.25em;
-  border: 1px solid transparent;
+  text-align: center;
+  margin: 1em 0;
+  padding: 0.5em;
+  border: 0.1em solid transparent;
   border-radius: $corner-radius;
   color: $color-alert-green;
   background-color: $color-alert-green-background;
   border-color: $color-alert-green-border;
 }
 .alert-blue {
-  position: relative;
-  padding: 0.75em 1.25em;
-  border: 1px solid transparent;
+  text-align: center;
+  margin: 1em 0;
+  padding: 0.5em;
+  border: 0.1em solid transparent;
   border-radius: $corner-radius;
   color: $color-alert-blue;
   background-color: $color-alert-blue-background;
@@ -295,47 +276,17 @@ blockquote {
   color: $color-quote;
   display: block;
   text-align: center;
+  margin: 0 0 1em 0;
 }
 .container {
-  position: relative;
   padding: 0;
   max-width: $container-max-width;
   width: 100%;
   margin: 0 auto;
 }
-.pagination {
-  padding: 1.5em;
-  display: block;
-  text-align: center;
-  color: $color-link;
-  .page-number, .extend {
-    position: relative;
-    overflow: hidden;
-    font-size: 1.2em;
-    padding: 0.5em;
-    margin: 0 0.5em;
-    text-decoration: none;
-    border-bottom: 0.15em solid $color-link;
-    transition: 0.3s ease-in-out;
-    &:hover {
-      border-bottom: 0.15em solid $color-link-hover;
-    }
-    &.current {
-      color: $color-link-hover;
-      border-bottom: 0.15em solid $color-link-hover;
-      border-top: 0.07em solid $color-link-hover;
-    }
-  }
-  .space {
-    font-size: 1em;
-    margin: 0 0.5em;
-    color: $color-link;
-  }
-}
 if (hexo-config("animate")) {
   .animate {
     animation: 0.3s flip forwards;
-    position: relative;
     opacity: 0;
     transform-origin: 50%;
     transform: rotateX(180deg);

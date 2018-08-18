@@ -72,6 +72,35 @@
           }
         }
       }
+      .pagination {
+        margin: 1em 0;
+        padding: 1em 0;
+        display: block;
+        text-align: center;
+        color: $color-link;
+        .page-number, .extend {
+          overflow: hidden;
+          font-size: 1.2em;
+          padding: 0.5em;
+          margin: 0 0.5em;
+          text-decoration: none;
+          border-bottom: 0.15em solid $color-link;
+          transition: 0.3s ease-in-out;
+          &:hover {
+            border-bottom: 0.15em solid $color-link-hover;
+          }
+          &.current {
+            color: $color-link-hover;
+            border-bottom: 0.15em solid $color-link-hover;
+            border-top: 0.07em solid $color-link-hover;
+          }
+        }
+        .space {
+          font-size: 1em;
+          margin: 0 0.5em;
+          color: $color-link;
+        }
+      }
     }
   }
   @media (max-width: $media-main-fold-width) {

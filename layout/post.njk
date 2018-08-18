@@ -75,7 +75,7 @@
   {% include "reward.njk" %}
   {% endif %}
   {% if page.prev or page.next %}
-  <div class="post-nav">
+  <nav class="post-nav">
     <div class="post-nav-next post-nav-item">
       {% if page.next %}
       <a href="{{ url_for(page.next.path) }}" rel="next" title="{{ page.next.title }}"><i class="fas fa-angle-left"></i><span class="nav-title">{{ page.next.title }}</span></a>
@@ -86,7 +86,7 @@
       <a href="{{ url_for(page.prev.path) }}" rel="prev" title="{{ page.prev.title }}"><span class="nav-title">{{ page.prev.title }}</span><i class="fas fa-angle-right"></i></a>
       {% endif %}
     </div>
-  </div>
+  </nav>
   {% endif %}
   {% if theme.comment.enable %}
   {% include "comment.njk" %}
