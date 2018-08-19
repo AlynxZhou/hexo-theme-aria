@@ -53,14 +53,9 @@
     top: 0;
     padding-bottom: 1em;
   }
-  .post-toc {
-    div {
-      margin: 0.5em;
-    }
-    .toc-link.active {
-      color: $color-link-hover;
-      border-bottom: 0.05em solid $color-link-hover;
-    }
+  .post-toc .toc-link.active {
+    color: $color-link-hover;
+    border-bottom: 0.05em solid $color-link-hover;
   }
   // Replace hr color in index.styl.
   hr {
@@ -68,7 +63,7 @@
   }
   @media (max-width: $media-main-fold-width) {
     width: 100%;
-    .social-link, .blogroll {
+    .sidebar-item {
       text-align: center;
       ul {
         padding: 0;
@@ -77,15 +72,13 @@
           margin: 0.5em 1em;
         }
       }
-    }
-    .post-toc {
-      text-align: center;
-      ol li {
+      .toc {
         text-align: left;
+        display: inline-block;
       }
     }
     .sidebar-sticky {
-      position: relative;
+      position: static;
     }
   }
 }
