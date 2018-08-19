@@ -8,9 +8,9 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<div id="post" class="post">
+<div id="post" class="page">
   {% set post = page %}
-  <article class="post-article card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
+  <article class="article post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(page.path) }}">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -75,13 +75,13 @@
   {% include "reward.njk" %}
   {% endif %}
   {% if page.prev or page.next %}
-  <nav class="post-nav">
-    <div class="post-nav-next post-nav-item">
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
       {% if page.next %}
       <a href="{{ url_for(page.next.path) }}" rel="next" title="{{ page.next.title }}"><i class="fas fa-angle-left"></i><span class="nav-title">{{ page.next.title }}</span></a>
       {% endif %}
     </div>
-    <div class="post-nav-prev post-nav-item">
+    <div class="page-nav-prev page-nav-item">
       {% if page.prev %}
       <a href="{{ url_for(page.prev.path) }}" rel="prev" title="{{ page.prev.title }}"><span class="nav-title">{{ page.prev.title }}</span><i class="fas fa-angle-right"></i></a>
       {% endif %}

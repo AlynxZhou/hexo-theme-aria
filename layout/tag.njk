@@ -2,24 +2,26 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/tag.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for("css/post.css") }}">
 {% endblock %}
 
 {% block title %}{{ __("tag") }}: {{ page.tag }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<div id="tag" class="tag">
-  <h1 class="tag-title">{{ page.tag }}</h1>
+<div id="tag" class="tag page">
+  <h1 class="page-title">{{ page.tag }}</h1>
   {% for post in page.posts.toArray() %}
-  <article class="tag-article card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
-    </h1>
-    {% if post.date %}
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
-    </span>
-    {% endif %}
+  <article class="article post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+      </h1>
+      {% if post.date %}
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
+      </span>
+      {% endif %}
+    </header>
   </article>
   {% endfor %}
   {% if page.prev or page.next %}

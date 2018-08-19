@@ -2,14 +2,15 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/archive.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for("css/post.css") }}">
 {% endblock %}
 
 {% block title %}{{ __("archive") }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<div id="archive" class="archive">
-  <h1 class="archive-counter">
+<div id="archive" class="archive page">
+  <h1 class="page-title">{{ __("archive") }}</h1>
+  <h2 class="page-counter">
     {% if site.posts.length > 1 %}
     {{ _p("postcount.more", site.posts.length) }}
     {% elif site.posts.length === 1 %}
@@ -17,22 +18,24 @@
     {% else %}
     {{ __("postcount.none") }}
     {% endif %}
-  </h1>
+  </h2>
   {% set year = "1970" %}
   {% for post in page.posts.toArray() %}
   {% if date(post.date, "YYYY") !== year %}
   {% set year = date(post.date, "YYYY") %}
-  <h1 class="archive-title">{{ year }}</h1>
+  <h2 class="page-title">{{ year }}</h1>
   {% endif %}
-  <article class="archive-article card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
-    </h1>
-    {% if post.date %}
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
-    </span>
-    {% endif %}
+  <article class="article post card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
+    <header id="post-header" class="post-header">
+      <h1 class="post-title-simple" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
+      </h1>
+      {% if post.date %}
+      <span class="post-date">
+        <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
+      </span>
+      {% endif %}
+    </header>
   </article>
   {% endfor %}
   {% if page.prev or page.next %}

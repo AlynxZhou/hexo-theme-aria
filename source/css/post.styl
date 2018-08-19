@@ -1,9 +1,64 @@
 @import "variables";
 @import "nib";
 @import "reward";
-.post-article {
+.post {
   .post-header {
     text-align: center;
+    .post-title-simple {
+      margin: 0;
+    }
+    .post-title .post-title-link {
+      display: inline-block;
+      position: relative;
+      text-decoration: none;
+      border-bottom: none;
+      color: $color-font;
+      &::after {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 0.1em;
+        bottom: 0;
+        left: 0;
+        background: $color-font;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: 0.3s ease-in-out;
+      }
+      &:hover {
+        &::after {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+      &:active {
+        top: 0.1em;
+      }
+    }
+    .post-meta span {
+      margin: 0 0.1em;
+    }
+  }
+  .post-main {
+    a.headerlink {
+      border: none;
+      &:hover {
+        border: none;
+      }
+      &:active {
+        top: 0;
+      }
+      &::before {
+        content: "#";
+        margin-right: 0.3em;
+      }
+    }
+    .caption {
+      color: $color-quote;
+      display: block;
+      text-align: center;
+      margin: 0 0 1em 0;
+    }
   }
   .post-footer {
     text-align: center;
@@ -18,48 +73,6 @@
       &:active {
         top: 0.1em;
       }
-    }
-  }
-}
-.post-nav {
-  margin: 1em;
-  padding: 1em 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  .post-nav-item {
-    flex: 1 0 auto;
-    font-size: 1.2em;
-    a {
-      position: relative;
-      display: inline-flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      text-decoration: none;
-      border-bottom: none;
-      span {
-        margin: 0.3em;
-      }
-      &:active {
-        top: 0.1em;
-      }
-    }
-  }
-  .post-nav-next {
-    max-width: 45%;
-    text-align: left;
-    a {
-      justify-content: flex-start;
-    }
-  }
-  .post-nav-prev {
-    max-width: 45%;
-    text-align: right;
-    a {
-      justify-content: flex-end;
     }
   }
 }

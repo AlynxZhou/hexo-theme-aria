@@ -11,13 +11,40 @@
   {% include "info.njk" %}
   <div class="sidebar-sticky">
     {% if page.content %}
-    {% include "toc.njk" %}
+    {% if post.encrypt %}
+    {% set toc = toc(page.origin, { "list_number": false }) %}
+    {% else %}
+    {% set toc = toc(page.content, { "list_number": false }) %}
+    {% endif %}
+    {% if toc.length > 0 %}
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div"{% if post.encrypt %} style="display: none;"{% endif %}>
+      <div><i class="fas fa-list-ol"></i>{{ __("toc") }}</div>
+      <div class="post-toc-content">{{ toc }}</div>
+    </div>
+    {% endif %}
     {% endif %}
     {% if theme.social.enable %}
-    {% include "sociallink.njk" %}
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>{{ __("sociallink") }}</p></div>
+      <ul>
+        {% for e in theme.social.links %}
+        <li>{% if e.icon %}<i class="{{ e.icon }}"></i>{% endif %}<a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
     {% endif %}
     {% if theme.blogroll.enable %}
-    {% include "blogroll.njk" %}
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>{{ __("blogroll")}}</div>
+      <ul>
+        {% for e in theme.blogroll.links %}
+        <li><a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
     {% endif %}
   </div>
 </aside>

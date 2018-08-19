@@ -54,7 +54,7 @@
       }
     });
 
-    $(".content article img").each(function (i) {
+    $(".post img").each(function (i) {
       if ($(this).parent().prop("tagName") !== "A") {
         if (this.alt) {
           $(this).after("<span class=\"caption\">" + this.alt + "</span>");
@@ -69,7 +69,7 @@
       }
     });
     if (typeof lightGallery != "undefined") {
-      $(".content").each(function (i, entry) {
+      $(".post").each(function (i, entry) {
         lightGallery(entry, {"selector": ".gallery-item"});
       });
     }

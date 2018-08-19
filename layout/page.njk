@@ -15,22 +15,23 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for("css/post.css") }}">
 {% endblock %}
 
 {% block title %}{{ __(page.title) }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
 <div id="page" class="page">
-  <article class="page-article card{% if theme.animate %} animate{% endif %}">
-    <header class="page-header">
-      <h1 class="page-title" itemprop="name headline">
+  <article class="article post card{% if theme.animate %} animate{% endif %}">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
         <span>{{ __(page.title) }}</span>
       </h1>
     </header>
-    <main class="page-main">
+    <main class="post-main">
       {{ page.content }}
     </main>
-    <footer class="page-footer"></footer>
+    <footer class="post-footer"></footer>
   </article>
   {% if theme.comment.enable %}
   {% include "comment.njk" %}

@@ -2,19 +2,19 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/tags.css") }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for("css/post.css") }}">
 {% endblock %}
 
 {% block title %}{{ __(page.title) }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
 
 {% block content %}
-<div class="tags" id="tags">
-  <article class="page-article card{% if theme.animate %} animate{% endif %}">
-    <header class="page-header">
-      <h1 class="page-title" itemprop="name headline">{{ __(page.title) }}</h1>
+<div id="tags" class="tags page">
+  <article class="article post card{% if theme.animate %} animate{% endif %}">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">{{ __(page.title) }}</h1>
     </header>
-    <main class="page-main">
-      <h2 class="tags-counter">
+    <main class="post-main">
+      <h2 class="page-counter">
         {% if site.tags.length > 1 %}
         {{ _p("tagcount.more", site.tags.length) }}
         {% elif site.tags.length === 1 %}
@@ -27,7 +27,7 @@
         {{ tagcloud({min_font: 16, max_font: 32, amount: 300, color: true, start_color: "#777", end_color: "#111"}) }}
       </div>
     </main>
-    <footer class="page-footer"></footer>
+    <footer class="post-footer"></footer>
   </article>
 </div>
 {% endblock %}

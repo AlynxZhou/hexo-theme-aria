@@ -50,14 +50,14 @@ main {
 header, footer {
   flex: none;
 }
+.container {
+  padding: 0;
+  max-width: $container-max-width;
+  width: 100%;
+  margin: 0 auto;
+}
 ol, ul {
   padding-left: 2em;
-}
-.svg-inline--fa {
-  margin: 0 0.2em;
-}
-.post-meta span {
-  margin: 0 0.1em;
 }
 a {
   position: relative;
@@ -272,17 +272,8 @@ blockquote {
     box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
   }
 }
-.caption {
-  color: $color-quote;
-  display: block;
-  text-align: center;
-  margin: 0 0 1em 0;
-}
-.container {
-  padding: 0;
-  max-width: $container-max-width;
-  width: 100%;
-  margin: 0 auto;
+.svg-inline--fa {
+  margin: 0 0.2em;
 }
 if (hexo-config("animate")) {
   .animate {

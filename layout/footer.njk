@@ -10,7 +10,9 @@
           <span class="author">{{ config.author }}</span><span class="year"><i class="far fa-copyright"></i>{% if theme.since %}{{ theme.since }}{% if moment().format("YYYY") !== theme.since %} - {{ moment().format("YYYY") }}{% endif %}{% else %}{{ moment().format("YYYY") }}{% endif %}</span>{% if theme.creative_commons %}<span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/{{ theme.creative_commons }}/4.0/" target="_blank">{{ theme.creative_commons.toUpperCase() }} 4.0</a></span>{% endif %}
         </div>
         {% if theme.busuanzi %}
-        {% include "busuanzi.njk" %}
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="{{ __("accessibility.site_pv") }}" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="{{ __("accessibility.site_uv") }}" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="{{ __("accessibility.page_pv") }}" aria-hidden="false"></span></span>
+        </div>
         {% endif %}
       </div>
       <div class="footer-right">
