@@ -87,7 +87,7 @@ language: zh_CN
 ### Hexo Search Plugin Settings
 
 ```yaml
-# Hexo localsearch
+# Hexo local search
 search:
   path: search.xml
   field: all
@@ -96,7 +96,7 @@ search:
 ### Hexo RSS Plugin Settings
 
 ```yaml
-# Hexo generator feed
+# Hexo feed
 feed:
   type: atom
   path: atom.xml
@@ -219,10 +219,10 @@ social:
   links:
     - name: Display Name
       link: Link Address
-      icon: Class property of Font Awesome icon you want to use
+      icon: Font Awesome icon tag you want to use
     - name: Display Name
       link: Link Address
-      icon: Class property of Font Awesome icon you want to use
+      icon: Font Awesome icon tag you want to use
 ```
 
 Get icons in [Font Awesome](https://fontawesome.com/).

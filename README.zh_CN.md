@@ -88,7 +88,7 @@ language: zh_CN
 ### Hexo 搜索插件的配置
 
 ```yaml
-# Hexo localsearch
+# Hexo local search
 search:
   path: search.xml
   field: all
@@ -97,7 +97,7 @@ search:
 ### Hexo RSS 插件的配置
 
 ```yaml
-# Hexo generator feed
+# Hexo feed
 feed:
   type: atom
   path: atom.xml
@@ -220,10 +220,10 @@ social:
   links:
     - name: 显示名称
       link: 网页地址
-      icon: 你所使用的 Font Awesome 图标的 class 属性
+      icon: 你所使用的 Font Awesome 图标的 HTML 标签
     - name: 显示名称
       link: 网页地址
-      icon: 你所使用的 Font Awesome 图标的 class 属性
+      icon: 你所使用的 Font Awesome 图标的 HTML 标签
 ```
 
 前往 [Font Awesome](https://fontawesome.com/) 获取你想要的图标。

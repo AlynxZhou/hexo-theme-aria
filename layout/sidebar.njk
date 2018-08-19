@@ -30,7 +30,7 @@
       <div><i class="far fa-address-card"></i>{{ __("sociallink") }}</p></div>
       <ul>
         {% for e in theme.social.links %}
-        <li>{% if e.icon %}<i class="{{ e.icon }}"></i>{% endif %}<a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
+        <li>{% if e.icon %}{{ e.icon }}{% endif %}<a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
         {% endfor %}
       </ul>
     </div>
