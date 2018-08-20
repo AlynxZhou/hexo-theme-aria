@@ -173,9 +173,9 @@ Set the value of `avatar` to your avatar's link, for example, you set `avatar: i
 
 Set it like avatar, and your logo will be shown in header, which by default shows `ARIA`, or leave it blank to hide logo.
 
-### Custom Theme Color and Tags Color
+### Custom Theme Color
 
-Theme color `color` will be used in header and footer background, and also in some browsers' title bar like Android Chrome, by default it's theme's dark. Tags Color `tags_color` is a list and post tags will use it in a loop. Because color starts with `#`, you need to use double quote to prevent YAML from making it a comment. If you are not sure, don't change here.
+Theme color `color` will be used in header and footer background, and also in some browsers' title bar like Android Chrome, by default it's theme's dark. Because color starts with `#`, you need to use double quote to prevent YAML from making it a comment. If you are not sure, don't change here.
 
 ### Google Site Verification
 

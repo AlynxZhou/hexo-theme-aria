@@ -59,13 +59,8 @@
     <footer class="post-footer">
       {% if page.tags and page.tags.toArray().length %}
       <div class="post-tags">
-        {% if theme.tags_color %}
-        {% set colors = theme.tags_color %}
-        {% else %}
-        {% set colors = ["#fc6423", "#a3bb54", "#47aaff"] %}
-        {% endif %}
         {% for tag in page.tags.toArray() %}
-        <a class="post-tag button" href="{{ url_for(tag.path) }}" style="background: {{ colors[loop.index0 % colors.length] }};" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
+        <a class="post-tag button" href="{{ url_for(tag.path) }}" rel="tag"><i class="fas fa-tags"></i>{{ tag.name }}</a>
         {% endfor %}
       </div>
       {% endif %}

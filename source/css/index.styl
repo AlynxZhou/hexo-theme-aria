@@ -74,7 +74,6 @@ a {
   }
 }
 a.gallery-item, a.img-link {
-  text-decoration: none;
   border-bottom: none;
   display: block;
   margin: 1em 0 0 0;
@@ -90,6 +89,12 @@ a.gallery-item, a.img-link {
     }
   }
 }
+.caption {
+  color: $color-quote;
+  display: block;
+  text-align: center;
+  margin: 0 0 1em 0;
+}
 a.button, button.button {
   position: relative;
   transition: 0.3s ease-in-out;
@@ -99,6 +104,8 @@ a.button, button.button {
   border-bottom: none;
   box-sizing: border-box;
   color: $color-button-font;
+  background: $color-button-background;
+  border: 0.1em solid $color-button-border;
   &:hover {
     box-shadow: 0 0 1em 0.5em rgba(0, 0, 0, 0.19);
   }
@@ -152,7 +159,7 @@ article table {
 }
 code {
   margin: 0.05em 0.05em;
-  color: $orange;
+  color: $color-code-font;
   padding: 0.125em 0.25em;
   overflow: auto;
   word-wrap: break-word;
@@ -230,35 +237,26 @@ blockquote {
     text-align: center;
   }
 }
-.alert-red {
+.alert-red, .alert-green, .alert-blue {
   text-align: center;
   margin: 1em 0;
   padding: 0.5em;
-  border: 0.1em solid transparent;
   border-radius: $corner-radius;
+}
+.alert-red {
   color: $color-alert-red;
+  border: 0.1em solid $color-alert-red-border;
   background-color: $color-alert-red-background;
-  border-color: $color-alert-red-border;
 }
 .alert-green {
-  text-align: center;
-  margin: 1em 0;
-  padding: 0.5em;
-  border: 0.1em solid transparent;
-  border-radius: $corner-radius;
   color: $color-alert-green;
+  border: 0.1em solid $color-alert-green-border;
   background-color: $color-alert-green-background;
-  border-color: $color-alert-green-border;
 }
 .alert-blue {
-  text-align: center;
-  margin: 1em 0;
-  padding: 0.5em;
-  border: 0.1em solid transparent;
-  border-radius: $corner-radius;
   color: $color-alert-blue;
+  border: 0.1em solid $color-alert-blue-border;
   background-color: $color-alert-blue-background;
-  border-color: $color-alert-blue-border;
 }
 .card {
   display: block;

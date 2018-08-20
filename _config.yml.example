@@ -53,12 +53,6 @@ logo: images/logo.png
 # Need quote to prevent `#` from comment.
 color: "#33363b"
 
-# Tags will use color here in a loop.
-tags_color:
-  - "#fc6423"
-  - "#a3bb54"
-  - "#47aaff"
-
 google_verification:
 
 since:
