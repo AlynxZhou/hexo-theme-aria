@@ -237,9 +237,13 @@ blogroll:
   links:
     - name: Display Name
       link: Link Address
+      icon: Font Awesome icon tag you want to use
     - name: Display Name
       link: Link Address
+      icon: Font Awesome icon tag you want to use
 ```
+
+Get icons in [Font Awesome](https://fontawesome.com/).
 
 ### Comment Support
 

@@ -41,7 +41,7 @@
       <div><i class="fas fa-link"></i>{{ __("blogroll")}}</div>
       <ul>
         {% for e in theme.blogroll.links %}
-        <li><a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
+        <li>{% if e.icon %}{{ e.icon }}{% endif %}<a href="{{ e.link }}" target="_blank">{{ e.name }}</a></li>
         {% endfor %}
       </ul>
     </div>

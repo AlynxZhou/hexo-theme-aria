@@ -128,10 +128,13 @@ blogroll:
   links:
     - name: GitHub
       link: https://github.com/
+      icon: <i class="fas fa-link"></i>
     - name: MDN
       link: https://developer.mozilla.org/
+      icon: <i class="fas fa-link"></i>
     - name: Nunjucks
       link: https://mozilla.github.io/nunjucks/
+      icon: <i class="fas fa-link"></i>
 
 # `comment.commentjs.type`: Choose between `github` and `oschina`.
 comment:

@@ -238,9 +238,13 @@ blogroll:
   links:
     - name: 显示名称
       link: 网页地址
+      icon: 你所使用的 Font Awesome 图标的 HTML 标签
     - name: 显示名称
       link: 网页地址
+      icon: 你所使用的 Font Awesome 图标的 HTML 标签
 ```
+
+前往 [Font Awesome](https://fontawesome.com/) 获取你想要的图标。
 
 ### 评论系统
 
