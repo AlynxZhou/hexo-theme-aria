@@ -84,11 +84,11 @@ $color-table-odd-row-background = $grey-lighter;
 $color-table-even-row-background = white;
 $color-reward-font = $grey-deep;
 
-$font-sans = "Roboto", "Noto Sans", Helvetica, Arial, sans-serif;
-$font-serif = "Roboto Slab", "Noto Serif", Georgia, "Times New Roman", serif;
-$font-mono = "Monaco for Powerline", Monaco, Menlo, Consolas, monospace;
-// $font-all inherits $font-sans, other fonts inherit $font-all except $font-code.
-$font-all = $font-sans;
+$font-sans = Roboto, "Noto Sans", "Noto Sans CJK", Helvetica, Arial, sans-serif;
+$font-serif = "Roboto Slab", "Noto Serif", "Noto Serif CJK", Georgia, "Times New Roman", serif;
+$font-mono = Monaco, Menlo, Consolas, monospace;
+// $font-all inherits $font-sans and $font-serif, other fonts inherit $font-all.
+$font-all = $font-sans, $font-serif;
 if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
   $font-all = hexo-config("custom_font.main"), $font-all;
 }
@@ -104,8 +104,9 @@ $font-main = $font-all;
 if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
   $font-main = hexo-config("custom_font.main"), $font-main;
 }
-// $font-code inherits $font-mono;
+// $font-code inherits $font-mono and $font-all;
 $font-code = $font-mono;
+$font-code = $font-code, $font-all;
 if (hexo-config("custom_font.enable") && hexo-config("custom_font.code")) {
   $font-code = hexo-config("custom_font.code"), $font-code;
 }
