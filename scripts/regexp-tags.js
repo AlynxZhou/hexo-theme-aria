@@ -4,12 +4,10 @@ const fs = require("fs");
 const path = require("path");
 // In fact, this works after every page rendered, not only post.
 hexo.extend.filter.register("after_post_render", (data) => {
-  if (data.title.indexOf("Automata") !== -1)
-  console.log(data.excerpt);
   if (hexo.config.post_asset_folder) {
     for (let key of ["excerpt", "more", "content"]) {
       if (data[key] != null) {
-        // Replace asset image markdown src to absolute path.
+        // Replace Markdown asset image src to absolute path.
         data[key] = data[key].replace(/<img src="([^"]+)/g,
                                       (match, src) => {
           if (src.startsWith("https://") || src.startsWith("http://") ||
@@ -21,6 +19,7 @@ hexo.extend.filter.register("after_post_render", (data) => {
           return `<img src="${path.posix.join(path.posix.sep,
                                               data.path, src)}`;
         })
+        // Replace Markdown asset link href to absolute path.
         data[key] = data[key].replace(/<a href="([^"]+)/g,
                                       (match, href) => {
           if (href.startsWith("https://") || href.startsWith("http://") ||
