@@ -42,6 +42,8 @@ I am a collage student and I don't have a job to get some income, I just code th
 
 - RSS supported (need to install `hexo-generator-feed` and set config as its [README](https://github.com/hexojs/hexo-generator-feed)).
 
+- Automatically convert Markdown asset folder links and images to absolute path. (No need for `hexo-asset-image` plugin.)
+
 # Before Using
 
 - Using a static website generator needs some basic knowledge, if you know nothing, Hexo and ARIA are not your best choice. Please be sure you know Hexo, YAML, git, Markdown and Web before continuing.
