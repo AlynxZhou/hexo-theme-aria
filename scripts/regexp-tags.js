@@ -12,7 +12,7 @@ hexo.extend.filter.register("after_post_render", (data) => {
                                       (match, src) => {
           if (src.startsWith("https://") || src.startsWith("http://") ||
               src.startsWith("//") || src.startsWith("/") ||
-              src.startWith("data:image") || data["asset_dir"] == null ||
+              src.startsWith("data:image") || data["asset_dir"] == null ||
               !fs.existsSync(path.join(data["asset_dir"], src))) {
             return match;
           }
