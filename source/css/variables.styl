@@ -89,8 +89,8 @@ $font-serif = "Roboto Slab", "Noto Serif", "Noto Serif CJK", Georgia, "Times New
 $font-mono = Monaco, Menlo, "Roboto Mono", Consolas, monospace;
 // $font-all inherits $font-sans and $font-serif, other fonts inherit $font-all.
 $font-all = $font-sans, $font-serif;
-if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
-  $font-all = hexo-config("custom_font.main"), $font-all;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.all")) {
+  $font-all = hexo-config("custom_font.all"), $font-all;
 }
 $font-title = $font-all;
 if (hexo-config("custom_font.enable") && hexo-config("custom_font.title")) {
