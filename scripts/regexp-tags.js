@@ -34,13 +34,15 @@ hexo.extend.filter.register("after_post_render", (data) => {
       }
     }
   }
-  data.content = (data.content
+});
+hexo.extend.filter.register("after_render:html", (str, data) => {
+  return str
   // Hexo-util generates <figure> tag with `highlight` class,
   // but hljs uses `hljs` class.
   .replace(/<figure class="highlight/g, "<figure class=\"hljs highlight")
   // Bootstrap toc scrollspy needs such classes.
   .replace(/<ol class="toc/g, "<ol class=\"list-group toc")
-  .replace(/<a class="toc-link/g, "<a class=\"list-group-item toc-link"));
+  .replace(/<a class="toc-link/g, "<a class=\"list-group-item toc-link");
   // Removed: Cannot fit various conditions, use browser DOM operation instead.
   // Add class for image link.
   // .replace(/<a(?!\s+class="gallery-item")(.+?><img.+?>)/g,

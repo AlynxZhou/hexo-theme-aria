@@ -6,7 +6,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 [中文说明](README.zh_CN.md)
 
-Live Demo: [喵's StackHarbor](https://sh.alynx.xyz/)
+Live Demo: [喵's StackHarbor](http://aria.ismyonly.one/)
 
 ![Screenshot](ARIA.png)
 
