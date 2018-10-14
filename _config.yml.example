@@ -154,3 +154,6 @@ reward:
   # wechatpay_qrcode: images/WeChatPay.png
   # alipay_qrcode: images/AliPay.png
   # bitcoin_qrcode: images/BitCoin.png
+
+# Google Analytics Tracking ID
+google_analytics:
