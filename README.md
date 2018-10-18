@@ -312,6 +312,14 @@ It looks like:
 
 ![Alert Example][alert-example]
 
+### Google Analytics
+
+Add `google_analytics` with tracking ID to config.
+
+```yaml
+google_analytics:
+```
+
 ## Custom CSS and JavaScript
 
 If you need to cover some CSS style of ARIA, just edit `themes/aria/source/css/custom.styl` which will be added last.

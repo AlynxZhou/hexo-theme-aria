@@ -8,6 +8,16 @@
     <meta name="theme-color" content="{{ theme.color }}">
     <meta name="msapplication-TileColor" content="{{ theme.color }}">
     {% endif %}
+    {% if theme.google_analytics %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ theme.google_analytics }}');
+    </script>
+    {% endif %}
     {% if theme.google_verification %}
     <meta name="google-site-verification" content="{{ theme.google_verification }}">
     {% endif %}
