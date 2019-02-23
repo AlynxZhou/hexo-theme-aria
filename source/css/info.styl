@@ -37,13 +37,16 @@
     margin: 1em 0;
     text-align: center;
     font-size: 1em;
-    div {
+    div.count-block {
       flex: 1 0 auto;
-    }
-    .site-count-divider {
-      flex: none;
-      line-height: 1.5em;
-      font-size: 2em;
+      border-left: 0.05em $color-quote solid;
+      border-right: 0.05em $color-quote solid;
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
     }
     .site-count-title {
       margin: 0;

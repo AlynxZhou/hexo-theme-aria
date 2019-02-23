@@ -1,11 +1,21 @@
 # If a option has many sub-options, and it's optional, then give it a `enable` sub-option. If not optional, don't use `enable`.
 
 menu:
-  home: /
-  archives: archives/
-  # categories: categories/
-  # tags: tags/
-  # about: about/
+- name: home
+  link: /
+  icon: <i class="fas fa-home"></i>
+- name: archives
+  link: archives/
+  icon: <i class="fas fa-archive"></i>
+# - name: categories
+#   link: categories/
+#   icon: <i class="fas fa-th-list"></i>
+# - name: tags
+#   link: tags/
+#   icon: <i class="fas fa-tags"></i>
+# - name: about
+#   link: about/
+#   icon: <i class="fas fa-user-edit"></i>
 
 # Transform your image to those favicons in https://realfavicongenerator.net/.
 favicon:

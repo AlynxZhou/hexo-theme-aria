@@ -6,30 +6,24 @@
   <h1 class="author-name">{{ config.author }}</h1>
   <h2 class="author-description">{{ config.description }}</h2>
   <div class="site-count">
-    {% if theme.menu.archives %}
-    <div class="archives-count">
+    {% for e in theme.menu %}
+    {% if e.name === "archives" %}
+    <div class="archives-count count-block">
       <div class="site-count-title">{{ __("archives") }}</div>
-      <div><a href="{{ url_for(theme.menu.archives) }}">{{ site.posts.length }}</a></div>
+      <div><a href="{{ url_for(e.link) }}">{{ site.posts.length }}</a></div>
     </div>
-    {% endif %}
-    {% if theme.menu.categories %}
-    {% if theme.menu.archives %}
-    <span class="site-count-divider divider">|</span>
-    {% endif %}
-    <div class="categories-count">
+    {% elif e.name === "categories" %}
+    <div class="categories-count count-block">
       <div class="site-count-title">{{ __("categories") }}</div>
-      <div><a href="{{ url_for(theme.menu.categories) }}">{{ site.categories.length }}</a></div>
+      <div><a href="{{ url_for(e.link) }}">{{ site.categories.length }}</a></div>
     </div>
-    {% endif %}
-    {% if theme.menu.tags %}
-    {% if theme.menu.categories or theme.menu.archives %}
-    <span class="site-count-divider divider">|</span>
-    {% endif %}
-    <div class="tags-count">
+    {% elif e.name === "tags" %}
+    <div class="tags-count count-block">
       <div class="site-count-title">{{ __("tags") }}</div>
-      <div><a href="{{ url_for(theme.menu.tags) }}">{{ site.tags.length }}</a></div>
+      <div><a href="{{ url_for(e.link) }}">{{ site.tags.length }}</a></div>
     </div>
     {% endif %}
+    {% endfor %}
   </div>
   {% if config.feed.path %}
   <div class="rss">
