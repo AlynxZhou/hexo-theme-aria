@@ -140,11 +140,21 @@ If you want to add "Categories" and "Tags" page, uncomment `categories` and `tag
 
 ```yaml
 menu:
-  home: /
-  archives: archives/
-  categories: categories/
-  tags: tags/
-  about: about/
+  - name: home
+    link: /
+    icon: <i class="fas fa-home"></i>
+  - name: archives
+    link: archives/
+    icon: <i class="fas fa-archive"></i>
+  - name: categories
+    link: categories/
+    icon: <i class="fas fa-th-list"></i>
+  - name: tags
+    link: tags/
+    icon: <i class="fas fa-tags"></i>
+  - name: about
+    link: about/
+    icon: <i class="fas fa-user-edit"></i>
 ```
 
 ### Generating Favicon
