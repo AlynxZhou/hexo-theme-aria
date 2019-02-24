@@ -30,7 +30,7 @@ I am a collage student and I don't have a job, I just code this theme in my spar
 
 - Elegant responsive double column layout with css animation.
 
-- Comment system (currently supprt [Disqus](https://disqus.com/) and [commentjs](https://github.com/wzpan/comment.js)). (Removed HyperComments because it needs to pay now.)
+- Comment system (currently supprt [Disqus](https://disqus.com/), [commentjs](https://github.com/wzpan/comment.js) and [Valine](https://valine.js.org/)). (Removed HyperComments because it needs to pay now.)
 
 - Busuanzi counting.
 
@@ -263,7 +263,9 @@ First set `comment` to `enable: true` to enable comment in all pages (except Hom
 
 If you use commentjs, first set `enable` to `true`, then set `type` according to your host service between `github` and `oschina`, `user` is your user name of the host, `repo` is your repo name, `client_id` and `client_secret` needs you go to [github](https://github.com/settings/applications/new) or [oschina](https://git.oschina.net/oauth/applications/new) to create an application, and copy your token.
 
-If you enable more than one comment services, only the one shows in front of the queue will be shown (queue: HyperComments, Disqus, commentjs).
+If you use Valine, read its docs and fill options `apiID`, `apiKey`, set `enable` to `true` and custom other options.
+
+If you enable more than one comment services, only the one shows in front of the queue will be shown (queue: Disqus, commentjs, Valine).
 
 Tips：If you want to edit all new pages' front-matter, just edit files in your website's `scaffolds` dir, Hexo uses them as template when create new page or post.
 

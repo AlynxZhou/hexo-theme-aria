@@ -31,7 +31,7 @@ A Hexo theme inspired by Kalafina's song ARIA.
 
 - 优雅的响应式双栏设计和 CSS 动画。
 
-- 内置评论系统（目前支持 [Disqus](https://disqus.com/) 以及 [commenjs](https://github.com/wzpan/comment.js)）。（由于 HyperComments 转为必须付费，已经移除。）
+- 内置评论系统（目前支持 [Disqus](https://disqus.com/)、[commenjs](https://github.com/wzpan/comment.js) 以及 [Valine](https://valine.js.org/)）。（由于 HyperComments 转为必须付费，已经移除。）
 
 - 不蒜子访问量计数。
 
@@ -264,7 +264,9 @@ blogroll:
 
 如果你使用 commentjs，首先将它的 `enable` 设置成 `true`，然后根据你的网站页面存放位置设置 `type`，支持 `github` 和 `oschina`，`user` 是你在这些网站的用户名，`repo` 是你这个仓库的名字，`client_id` 和 `client_secret` 需要你去 [github](https://github.com/settings/applications/new) 或者 [oschina](https://git.oschina.net/oauth/applications/new) 生成一个应用，然后复制 Token。
 
-如果启用多个评论系统，默认只会显示顺序靠前的（顺序：HyperComments，Disqus，commentjs）。
+如果你使用 Valine，首先设置 `api_id` 与 `api_key`，并将 `enable` 设置为 `true`，其它配置项参照 Valine 文档设置。
+
+如果启用多个评论系统，默认只会显示顺序靠前的（顺序：Disqus，commentjs，Valine）。
 
 Tips：如果想批量更改新生成的文件的文件头，编辑站点目录下 `scaffolds` 目录里的文件，Hexo 会把这个目录内的文件作为生成新文件时的模板。
 
