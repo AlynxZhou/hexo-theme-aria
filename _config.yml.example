@@ -164,7 +164,7 @@ comment:
     verify: false
     notify: false
     avatar: mm
-    meta: ["nick", "mail", "link"]
+    meta: "[\"nick\", \"mail\", \"link\"]"
     page_size: 10
     lang: zh-cn
     visitor: false
