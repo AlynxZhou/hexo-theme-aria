@@ -40,6 +40,9 @@ commentjs:
   none: 这个页面还没有评论，现在就去评论吧！
   comment: 去评论
 
+valine:
+  placeholder: 在这里说点什么……
+
 poweredby: 由 %s 强力驱动
 theme: 主题 %s
 

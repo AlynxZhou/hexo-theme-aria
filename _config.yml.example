@@ -157,6 +157,19 @@ comment:
     repo:
     client_id:
     client_secret:
+  valine:
+    enable: false
+    app_id:
+    app_key:
+    verify: false
+    notify: false
+    avatar: mm
+    meta: ["nick", "mail", "link"]
+    page_size: 10
+    lang: zh-cn
+    visitor: false
+    highlight: true
+    avatar_force: false
 
 reward:
   enable: false

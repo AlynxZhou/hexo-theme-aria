@@ -40,6 +40,9 @@ commentjs:
   none: This page has no comment, go to comment now!
   comment: Go to Comment
 
+valine:
+  placeholder: Write your comment here……
+
 poweredby: Proudly Powered by %s
 theme: Theme is %s
 
