@@ -15,6 +15,10 @@ blogroll: 友情链接
 
 # readmore: 阅读全文
 
+clipboard:
+  copy: 复制
+  copied: 已复制
+
 reward:
   button: 打赏
   wechatpay: 微信支付

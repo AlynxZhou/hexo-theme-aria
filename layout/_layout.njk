@@ -67,6 +67,7 @@
     <link rel="stylesheet" type="text/css" href="{% if theme.lib_cdn.enable and theme.lib_cdn.lightgallery.css %}{{ theme.lib_cdn.lightgallery.css }}{% else %}{{ url_for("css/lightgallery.min.css") }}{% endif %}">
     <script type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.jquery %}{{ theme.lib_cdn.jquery }}{% else %}{{ url_for("js/jquery.min.js") }}{% endif %}"></script>
     <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.util %}{{ theme.lib_cdn.util }}{% else %}{{ url_for("js/util.js") }}{% endif %}"></script>
+    <script defer type="text/javascript" src="{% if themeConfig.lib_cdn.enable and themeConfig.lib_cdn.clipboard %}{{ themeConfig.lib_cdn.clipboard }}{% else %}{{ url_for("js/clipboard.min.js") }}{% endif %}"></script>
     <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.scrollspy %}{{ theme.lib_cdn.scrollspy }}{% else %}{{ url_for("js/scrollspy.js") }}{% endif %}"></script>
     <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.fontawesome %}{{ theme.lib_cdn.fontawesome }}{% else %}{{ url_for("js/fontawesome-all.min.js") }}{% endif %}"></script>
     <script defer type="text/javascript" src="{% if theme.lib_cdn.enable and theme.lib_cdn.lightgallery.js %}{{ theme.lib_cdn.lightgallery.js }}{% else %}{{ url_for("js/lightgallery.min.js") }}{% endif %}"></script>
@@ -114,6 +115,34 @@
     {% endif %}
     {% endif %}
     <script defer type="text/javascript" src="{{ url_for("js/index.js") }}"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $(".post figure.highlight").each(function (i, e) {
+        $(e).before("<button class=\"copy button\">{{ __("clipboard.copy") }}</button>")
+      });
+      var cb = new ClipboardJS("button.copy", {
+        "target": function (trigger) {
+            // Get target element by DOM API.
+            // nextElementSibling is figure,highlight.
+            // And following is the sequence of Hexo's internal
+            // highlight layout.
+            return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+        }
+      });
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "{{ __("clipboard.copied") }}";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "{{ __("clipboard.copy") }}";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
     {% block js %}{% endblock %}
     <script defer type="text/javascript" src="{{ url_for("js/custom.js") }}"></script>
     <title>{% block title %}{% endblock %}</title>

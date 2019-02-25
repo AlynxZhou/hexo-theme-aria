@@ -15,6 +15,10 @@ blogroll: Blogroll
 
 # readmore: Read More
 
+clipboard:
+  copy: Copy
+  copied: Copied
+
 reward:
   button: Reward
   wechatpay: WechatPay

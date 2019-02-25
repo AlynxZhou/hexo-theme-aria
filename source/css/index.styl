@@ -174,6 +174,13 @@ code {
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
   font-feature-settings: "liga" 0; /* No variation */
 }
+button.copy {
+  transition: 0.2s ease-in-out;
+  &.copied {
+    background: $color-button-copied-background;
+    border: 0.1em solid $color-button-copied-border;
+  }
+}
 figure {
   overflow: auto;
   border-radius: $corner-radius;
