@@ -119,6 +119,9 @@ lib_cdn:
   commentjs:
     js:
     css:
+  av_min:
+  valine:
+  clipboard:
 
 social:
   enable: true
