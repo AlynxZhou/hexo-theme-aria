@@ -13,9 +13,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ theme.google_analytics }}');
+      var gtag = function () {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "{{ theme.google_analytics }}");
     </script>
     {% endif %}
     {% if theme.google_verification %}
@@ -117,18 +119,39 @@
     <script defer type="text/javascript" src="{{ url_for("js/index.js") }}"></script>
     <script type="text/javascript">
     $(document).ready(function () {
-      $(".post figure.highlight").each(function (i, e) {
-        $(e).before("<button class=\"copy button\">{{ __("clipboard.copy") }}</button>")
-      });
-      var cb = new ClipboardJS("button.copy", {
-        "target": function (trigger) {
-            // Get target element by DOM API.
-            // nextElementSibling is figure,highlight.
-            // And following is the sequence of Hexo's internal
-            // highlight layout.
-            return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
-        }
-      });
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">{{ __("clipboard.copy") }}</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">{{ __("clipboard.copy") }}</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
       cb.on("success", function (e) {
         e.clearSelection();
         var trigger = e.trigger;
