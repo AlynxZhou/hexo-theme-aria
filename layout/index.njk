@@ -62,7 +62,8 @@
       {% elif post.description %}
       {{ post.description }}
       {% elif theme.auto_excerpt %}
-      {{ post.content.substring(0, theme.auto_excerpt) }}
+      {% set st_content = post.content | striptags %}
+      {{ st_content.substring(0, theme.auto_excerpt) }}
       {% else %}
       {{ post.content }}
       {% endif %}
