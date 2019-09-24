@@ -4,79 +4,90 @@ $grey = #ccc;
 $grey-dark = #999;
 $grey-dim = #666;
 $grey-deep = #444;
+$black-lighter = #3d444c;
 $black-light = #33363b;
+$black-dark = #26272b;
 $black-dim = #252525;
 $black-deep = #222;
-$black-dark = #26272b;
 $pink = #f8f8f8;
 $orange = #fc6423;
 $red-lighter = #f8d7da;
 $red-light = #f5c6cb;
 $red = #ff2a2a;
-$red-dark = #721c24;
+$red-dark = #9f1313;
+$red-deep = #721c24;
+$yellow = #fdbc40;
 $green-lighter = #d4edda;
 $green-light = #c3e6cb;
 $green = #37cf38;
-$green-dark = #155724;
+$green-dark = #237f23;
+$green-deep = #155724;
 $blue-lighter = #cce5ff;
 $blue-light = #b8daff;
 $blue-bright = #cbeafb;
-$blue = #33aaef;
-$blue-deep = #3366ee;
-$blue-dark = #004085;
+$blue = #3366ee;
+$blue-dark = #2356af;
+$blue-deep = #13229f;
 
 $color-font = $black-dark;
-$color-quote = $grey-dim;
-$color-selection-background = $blue-bright;
+$color-quote-font = $grey-dim;
 $color-selection-font = $black-deep;
+$color-selection-background = $blue-bright;
 $color-background = $grey;
-$color-link = $grey-dim;
-$color-link-hover = $blue-deep;
+$color-link-font = $grey-dim;
+$color-link-hover-font = $blue;
 $color-header-font = $grey-lighter;
 $color-header-background = $black-light;
-$color-title = $grey-lighter;
-$color-nav-link = $grey-light;
+$color-title-font = $grey-lighter;
+$color-nav-link-font = $grey-light;
 $color-nav-background = $black-light;
-$color-nav-hover = $black-dim;
-$color-nav-link-hover = white;
+$color-nav-hover-background = $black-dim;
+$color-nav-link-hover-font = white;
 $color-nav-current-background = $black-deep;
 $color-main-background = $grey-lighter;
 $color-card-background = white;
 $color-sidebar-background = $grey-light;
 $color-footer-background = $black-light;
 $color-footer-font = $grey-lighter;
-$color-footer-link = $grey-light;
-$color-footer-link-hover = white;
+$color-footer-link-font = $grey-light;
+$color-footer-link-hover-font = white;
+$color-link-copy-font = $grey-light;
+$color-link-copy-hover-font = white;
 $color-search-font = white;
-$color-search-background = $blue-deep;
+$color-search-hover-font = $grey-light;
+$color-search-background = $blue;
 $color-button-font = white;
 $color-button-background = $grey-dark;
 $color-button-border = $grey-light;
-$color-button-rss-background = $red;
+$color-button-rss-background = $red-dark;
 $color-button-rss-border = $red-light;
-$color-button-reward-background = $red;
+$color-button-reward-background = $red-dark;
 $color-button-reward-border = $red-light;
-$color-button-commentjs-background = $red;
+$color-button-commentjs-background = $red-dark;
 $color-button-commentjs-border = $red-light;
-$color-button-tag-first-background = $red;
+$color-button-tag-first-background = $red-dark;
 $color-button-tag-first-border = $red-light;
-$color-button-tag-second-background = $green;
+$color-button-tag-second-background = $green-dark;
 $color-button-tag-second-border = $green-light;
-$color-button-tag-third-background = $blue;
+$color-button-tag-third-background = $blue-dark;
 $color-button-tag-third-border = $blue-light;
-$color-button-copied-background = $red;
-$color-button-copied-border = $red-light;
-$color-author-name = $black-dark;
-$color-author-description = $grey-deep;
+$color-button-dot-close-background = $red;
+$color-button-dot-maximize-background = $green;
+$color-button-dot-minimize-background = $yellow;
+$color-author-name-font = $black-dark;
+$color-author-description-font = $grey-deep;
 $color-code-font = $orange;
 $color-code-background = $pink;
-$color-alert-red = $red-dark;
+$color-code-border = $black-light;
+$color-code-titlebar-font = white;
+$color-code-titlebar-background = $black-light;
+$color-alert-red-font = $red-deep;
 $color-alert-red-background = $red-lighter;
 $color-alert-red-border = $red-light;
-$color-alert-green = $green-dark;
+$color-alert-green-font = $green-deep;
 $color-alert-green-background = $green-lighter;
 $color-alert-green-border = $green-light;
-$color-alert-blue = $blue-dark;
+$color-alert-blue-font = $blue-deep;
 $color-alert-blue-background = $blue-lighter;
 $color-alert-blue-border = $blue-light;
 $color-table-border = $grey-light;
@@ -85,32 +96,37 @@ $color-table-head-background = white;
 $color-table-odd-row-background = $grey-lighter;
 $color-table-even-row-background = white;
 $color-reward-font = $grey-deep;
+$color-scrollbar = $grey-dark;
+$color-scrollbar-hover = $grey-dim;
+$color-scrollbar-background = $grey;
+$color-scrollbar-corner = $grey-dim;
+$color-scrollbar-resizer = $grey-lighter;
 
 $font-sans = Roboto, "Noto Sans", "Noto Sans CJK", Helvetica, Arial, sans-serif;
 $font-serif = "Roboto Slab", "Noto Serif", "Noto Serif CJK", Georgia, "Times New Roman", serif;
 $font-mono = Monaco, Menlo, "Roboto Mono", Consolas, monospace;
 // $font-all inherits $font-sans and $font-serif, other fonts inherit $font-all.
 $font-all = $font-sans, $font-serif;
-if (hexo-config("custom_font.enable") && hexo-config("custom_font.all")) {
-  $font-all = hexo-config("custom_font.all"), $font-all;
+if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.all")) {
+  $font-all = getThemeConfig("customFont.all"), $font-all;
 }
 $font-title = $font-all;
-if (hexo-config("custom_font.enable") && hexo-config("custom_font.title")) {
-  $font-title = hexo-config("custom_font.title"), $font-title;
+if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.title")) {
+  $font-title = getThemeConfig("customFont.title"), $font-title;
 }
 $font-subtitle = $font-all;
-if (hexo-config("custom_font.enable") && hexo-config("custom_font.subtitle")) {
-  $font-subtitle = hexo-config("custom_font.subtitle"), $font-subtitle;
+if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.subtitle")) {
+  $font-subtitle = getThemeConfig("customFont.subtitle"), $font-subtitle;
 }
 $font-main = $font-all;
-if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
-  $font-main = hexo-config("custom_font.main"), $font-main;
+if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.main")) {
+  $font-main = getThemeConfig("customFont.main"), $font-main;
 }
 // $font-code inherits $font-mono and $font-all;
 $font-code = $font-mono;
 $font-code = $font-code, $font-all;
-if (hexo-config("custom_font.enable") && hexo-config("custom_font.code")) {
-  $font-code = hexo-config("custom_font.code"), $font-code;
+if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.code")) {
+  $font-code = getThemeConfig("customFont.code"), $font-code;
 }
 $font-size = 16px;
 

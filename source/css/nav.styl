@@ -27,20 +27,20 @@
         display: block;
         font-size: 1.5em;
         padding: 0.75em;
-        color: $color-nav-link;
+        color: $color-nav-link-font;
         text-decoration: none;
         text-shadow: 0 0.05em rgba(0, 0, 0, 0.2);
         transition: 0.2s ease-in;
         border-bottom: none;
         &:hover {
-          color: $color-nav-link-hover;
-          background: $color-nav-hover;
+          color: $color-nav-link-hover-font;
+          background: $color-nav-hover-font;
         }
         &:active {
           top: 0;
         }
         &.current {
-          color: $color-nav-link-hover;
+          color: $color-nav-link-hover-font;
           background: $color-nav-current-background;
         }
       }
@@ -58,7 +58,7 @@
     border-bottom: none;
     &:hover {
       border-bottom: none;
-      color: $color-nav-link-hover;
+      color: $color-nav-link-hover-font;
     }
   }
   @media (max-width: $media-footer-header-nav-fold-width) {
@@ -75,8 +75,8 @@
           position: relative;
           border-bottom: none;
           &:hover {
-            color: $color-nav-link-hover;
-            background: $color-nav-hover;
+            color: $color-nav-link-hover-font;
+            background: $color-nav-hover-font;
           }
         }
       }

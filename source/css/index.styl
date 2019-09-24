@@ -61,13 +61,13 @@ ol, ul {
 }
 a {
   position: relative;
-  color: $color-link;
+  color: $color-link-font;
   text-decoration: none;
-  border-bottom: 0.05em dotted $color-link;
+  border-bottom: 0.05em dotted $color-link-font;
   transition: 0.3s ease-in-out;
   &:hover {
-    color: $color-link-hover;
-    border-bottom: 0.05em solid $color-link-hover;
+    color: $color-link-hover-font;
+    border-bottom: 0.05em solid $color-link-hover-font;
   }
   &:active {
     top: 0.1em;
@@ -174,18 +174,79 @@ code {
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards explicitly set feature values */
   font-feature-settings: "liga" 0; /* No variation */
 }
-button.copy {
-  transition: 0.2s ease-in-out;
-  &.copied {
-    background: $color-button-copied-background;
-    border: 0.1em solid $color-button-copied-border;
+.code-titlebar {
+  display: flex;
+  flex-direction: row;
+  flex-warp: nowarp;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: top $corner-radius;
+  color: $color-code-titlebar-font;
+  background: $color-code-titlebar-background;
+  padding: 0.25em 0.5em;
+  .titlebar-left {
+    flex: 0 0 auto;
+    text-align: left;
+    padding: 0 0.25em;
   }
+  .titlebar-center {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 0.25em;
+  }
+  .titlebar-right {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0 0.25em;
+  }
+  button.copy {
+    background: transparent;
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    margin: 0.25em;
+    box-sizing: border-box;
+    color: $color-link-copy-font;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      color: $color-link-copy-hover-font;
+      border-bottom: none;
+    }
+    &.copied {
+      color: $color-link-copy-hover-font;
+    }
+  }
+  button.button-dot {
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    margin: 0.25em;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .dot-close {
+    background: $color-button-dot-close-background;
+  }
+  .dot-maximize {
+    background: $color-button-dot-maximize-background;
+  }
+  .dot-minimize {
+    background: $color-button-dot-minimize-background;
+  }
+}
+pre code {
+  border-radius: 0;
+  margin: 0;
 }
 figure {
   overflow: auto;
-  border-radius: $corner-radius;
-  padding: 0.5em;
-  margin: 1em 0;
+  padding: 0;
+  margin: 0;
   -webkit-font-feature-settings: "liga" 0; /* No variation */
   -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
