@@ -107,26 +107,26 @@ $font-serif = "Roboto Slab", "Noto Serif", "Noto Serif CJK", Georgia, "Times New
 $font-mono = Monaco, Menlo, "Roboto Mono", Consolas, monospace;
 // $font-all inherits $font-sans and $font-serif, other fonts inherit $font-all.
 $font-all = $font-sans, $font-serif;
-if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.all")) {
-  $font-all = getThemeConfig("customFont.all"), $font-all;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.all")) {
+  $font-all = hexo-config("custom_font.all"), $font-all;
 }
 $font-title = $font-all;
-if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.title")) {
-  $font-title = getThemeConfig("customFont.title"), $font-title;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.title")) {
+  $font-title = hexo-config("custom_font.title"), $font-title;
 }
 $font-subtitle = $font-all;
-if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.subtitle")) {
-  $font-subtitle = getThemeConfig("customFont.subtitle"), $font-subtitle;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.subtitle")) {
+  $font-subtitle = hexo-config("custom_font.subtitle"), $font-subtitle;
 }
 $font-main = $font-all;
-if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.main")) {
-  $font-main = getThemeConfig("customFont.main"), $font-main;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.main")) {
+  $font-main = hexo-config("custom_font.main"), $font-main;
 }
 // $font-code inherits $font-mono and $font-all;
 $font-code = $font-mono;
 $font-code = $font-code, $font-all;
-if (getThemeConfig("customFont.enable") && getThemeConfig("customFont.code")) {
-  $font-code = getThemeConfig("customFont.code"), $font-code;
+if (hexo-config("custom_font.enable") && hexo-config("custom_font.code")) {
+  $font-code = hexo-config("custom_font.code"), $font-code;
 }
 $font-size = 16px;
 
